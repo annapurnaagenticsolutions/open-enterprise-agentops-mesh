@@ -1,0 +1,7 @@
+Docker Compose smoke plan
+1. cp .env.example .env
+2. docker compose config
+3. docker compose up --build
+4. curl http://localhost:8080/health
+5. open http://localhost:8081/index.html
+Boundary: no live connectors, no live providers, no raw secrets

@@ -1,0 +1,2 @@
+Public repo validation passed
+Checked 20 required files and 75 OpenAPI-lite endpoints

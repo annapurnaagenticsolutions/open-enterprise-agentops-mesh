@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tool Sandbox Execution Schema",
+  "type": "object",
+  "required": [
+    "agent_id",
+    "connector_id",
+    "tool_id",
+    "action",
+    "target_environment",
+    "payload"
+  ],
+  "properties": {
+    "agent_id": {
+      "type": "string"
+    },
+    "actor_role": {
+      "type": "string"
+    },
+    "connector_id": {
+      "type": "string"
+    },
+    "tool_id": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "target_environment": {
+      "enum": [
+        "sandbox",
+        "pilot",
+        "production"
+      ]
+    },
+    "payload": {
+      "type": "object"
+    },
+    "dry_run": {
+      "type": "boolean"
+    },
+    "simulate_side_effects": {
+      "type": "boolean"
+    },
+    "has_human_approval": {
+      "type": "boolean"
+    }
+  }
+}

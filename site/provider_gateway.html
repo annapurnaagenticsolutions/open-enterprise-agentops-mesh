@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Provider Gateway Governance</title>
+  <style>
+    body { font-family: Inter, Arial, sans-serif; margin: 0; background: #f7f7fb; color: #151823; }
+    header { background: #151823; color: white; padding: 32px 40px; }
+    main { padding: 32px 40px; max-width: 1180px; margin: auto; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+    .card { background: white; border: 1px solid #e2e5ef; border-radius: 16px; padding: 20px; box-shadow: 0 8px 24px rgba(21,24,35,.05); }
+    .tag { display: inline-block; padding: 5px 10px; border-radius: 999px; background: #eef1f8; font-size: 12px; margin: 2px; }
+    code { background: #eef1f8; padding: 2px 6px; border-radius: 6px; }
+    .warn { border-left: 5px solid #b36b00; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Provider Gateway Governance</h1>
+  <p>v1.8 model-routing controls for provider, model, region, data sensitivity, cost, fallback, and approval decisions.</p>
+</header>
+<main>
+  <section class="card warn">
+    <h2>Boundary</h2>
+    <p>Live provider execution remains disabled. This console demonstrates route governance only.</p>
+  </section>
+  <section class="grid" id="profiles"></section>
+</main>
+<script>
+fetch('data/provider_gateway_profiles.json')
+  .then(r => r.json())
+  .then(data => {
+    const el = document.getElementById('profiles');
+    el.innerHTML = data.profiles.map(p => `
+      <article class="card">
+        <h2>${p.display_name}</h2>
+        <p><code>${p.provider_id}:${p.model_id}</code></p>
+        <p><strong>Trust tier:</strong> ${p.provider_trust_tier}</p>
+        <p><strong>Max sensitivity:</strong> ${p.max_data_sensitivity}</p>
+        <p><strong>Environments:</strong> ${p.allowed_environments.map(x=>`<span class="tag">${x}</span>`).join('')}</p>
+        <p><strong>Regions:</strong> ${p.allowed_regions.map(x=>`<span class="tag">${x}</span>`).join('')}</p>
+        <p><strong>Capabilities:</strong> ${p.capabilities.map(x=>`<span class="tag">${x}</span>`).join('')}</p>
+      </article>`).join('');
+  });
+</script>
+</body>
+</html>

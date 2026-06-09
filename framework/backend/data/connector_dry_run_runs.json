@@ -1,0 +1,3012 @@
+[
+  {
+    "run_id": "cdr-ddd2363383e8",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:33:48.969133+00:00"
+  },
+  {
+    "run_id": "cdr-8cb95074f29a",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:33:48.974384+00:00"
+  },
+  {
+    "run_id": "cdr-1d566ac377e2",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:39:02.953299+00:00"
+  },
+  {
+    "run_id": "cdr-28b7a1e3dfc0",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:39:02.961285+00:00"
+  },
+  {
+    "run_id": "cdr-d73874c35f3e",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:39:16.606564+00:00"
+  },
+  {
+    "run_id": "cdr-3021c892d209",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:39:16.614544+00:00"
+  },
+  {
+    "run_id": "cdr-6d783faf7b28",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:44:21.628802+00:00"
+  },
+  {
+    "run_id": "cdr-c2996ea13f81",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:44:21.636213+00:00"
+  },
+  {
+    "run_id": "cdr-c2ef4d9bd61a",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:44:35.772878+00:00"
+  },
+  {
+    "run_id": "cdr-90dab66d1196",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:44:35.781095+00:00"
+  },
+  {
+    "run_id": "cdr-2c13136cfcda",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:44:54.006281+00:00"
+  },
+  {
+    "run_id": "cdr-2ba337b7bc8d",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:44:54.014409+00:00"
+  },
+  {
+    "run_id": "cdr-3c83ec78e11a",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:48:56.779171+00:00"
+  },
+  {
+    "run_id": "cdr-74c7270ce49a",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:48:56.791443+00:00"
+  },
+  {
+    "run_id": "cdr-438144250370",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:57:01.948382+00:00"
+  },
+  {
+    "run_id": "cdr-71d2d4a52aee",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:57:01.957602+00:00"
+  },
+  {
+    "run_id": "cdr-f15404786bd3",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:57:22.535296+00:00"
+  },
+  {
+    "run_id": "cdr-d8a8b13c3def",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T12:57:22.543881+00:00"
+  },
+  {
+    "run_id": "cdr-34ad8647bb91",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:02:37.223411+00:00"
+  },
+  {
+    "run_id": "cdr-164bf971ed83",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:02:37.232238+00:00"
+  },
+  {
+    "run_id": "cdr-119da0906309",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:02:50.385724+00:00"
+  },
+  {
+    "run_id": "cdr-2f663359f636",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:02:50.398191+00:00"
+  },
+  {
+    "run_id": "cdr-64fe50338b2f",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:03:02.332416+00:00"
+  },
+  {
+    "run_id": "cdr-44eeeea63972",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:03:02.345176+00:00"
+  },
+  {
+    "run_id": "cdr-5a1855634a0d",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:03:54.501026+00:00"
+  },
+  {
+    "run_id": "cdr-280276f135e3",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:03:54.512991+00:00"
+  },
+  {
+    "run_id": "cdr-a999ea51a16c",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:10:10.667897+00:00"
+  },
+  {
+    "run_id": "cdr-a1f67f0a9081",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:10:10.680012+00:00"
+  },
+  {
+    "run_id": "cdr-d17969cf9c57",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:10:27.785456+00:00"
+  },
+  {
+    "run_id": "cdr-6ad5e540670b",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:10:27.797394+00:00"
+  },
+  {
+    "run_id": "cdr-df5a766675e3",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:10:39.131664+00:00"
+  },
+  {
+    "run_id": "cdr-70249e92b6a5",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:10:39.156867+00:00"
+  },
+  {
+    "run_id": "cdr-beeac67b4757",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:11:05.192859+00:00"
+  },
+  {
+    "run_id": "cdr-ccb2e1b5a2c6",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:11:05.206500+00:00"
+  },
+  {
+    "run_id": "cdr-446907c59d68",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:17:02.324215+00:00"
+  },
+  {
+    "run_id": "cdr-1a3540269346",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:17:02.339210+00:00"
+  },
+  {
+    "run_id": "cdr-bfd4e3929970",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:17:47.691060+00:00"
+  },
+  {
+    "run_id": "cdr-88180ee2d2fe",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:17:47.705894+00:00"
+  },
+  {
+    "run_id": "cdr-06491a35341b",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:18:37.157476+00:00"
+  },
+  {
+    "run_id": "cdr-7538f8571573",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:18:37.175018+00:00"
+  },
+  {
+    "run_id": "cdr-1717f7fbec90",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:25:20.683747+00:00"
+  },
+  {
+    "run_id": "cdr-f807b095bca7",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:25:20.702556+00:00"
+  },
+  {
+    "run_id": "cdr-6f0564f02408",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:25:59.274696+00:00"
+  },
+  {
+    "run_id": "cdr-16223b19308c",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:25:59.304597+00:00"
+  },
+  {
+    "run_id": "cdr-e30609cfa638",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:45:52.051744+00:00"
+  },
+  {
+    "run_id": "cdr-69648e882b9e",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:45:52.074590+00:00"
+  },
+  {
+    "run_id": "cdr-b604c4d3a5a9",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:46:24.296566+00:00"
+  },
+  {
+    "run_id": "cdr-8345e22a0531",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:46:24.315713+00:00"
+  },
+  {
+    "run_id": "cdr-0903a865c42c",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:46:53.821115+00:00"
+  },
+  {
+    "run_id": "cdr-31dff6418599",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:46:53.845556+00:00"
+  },
+  {
+    "run_id": "cdr-adf57c9108a2",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:53:11.299672+00:00"
+  },
+  {
+    "run_id": "cdr-99db1c2b1457",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:53:11.318130+00:00"
+  },
+  {
+    "run_id": "cdr-f8283524555b",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:53:24.372978+00:00"
+  },
+  {
+    "run_id": "cdr-be8b30d40648",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:53:24.398818+00:00"
+  },
+  {
+    "run_id": "cdr-ad5c22f35d9a",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:53:50.863816+00:00"
+  },
+  {
+    "run_id": "cdr-76636e87aad5",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T13:53:50.891813+00:00"
+  },
+  {
+    "run_id": "cdr-b790c9c2c7d4",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:05:16.638274+00:00"
+  },
+  {
+    "run_id": "cdr-eef4014b6e17",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:05:16.665060+00:00"
+  },
+  {
+    "run_id": "cdr-8576997676e5",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:05:35.127349+00:00"
+  },
+  {
+    "run_id": "cdr-243ef5b951d1",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:05:35.150910+00:00"
+  },
+  {
+    "run_id": "cdr-1bd183928b48",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:10:40.326275+00:00"
+  },
+  {
+    "run_id": "cdr-1cfbdbc1bed8",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:10:40.356834+00:00"
+  },
+  {
+    "run_id": "cdr-9741b79a8363",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:10:54.143752+00:00"
+  },
+  {
+    "run_id": "cdr-2a510a4e45c6",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:10:54.168941+00:00"
+  },
+  {
+    "run_id": "cdr-ed8e4a037206",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:17:34.190430+00:00"
+  },
+  {
+    "run_id": "cdr-3e0d5dad531e",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:17:34.215412+00:00"
+  },
+  {
+    "run_id": "cdr-0c3896535c5a",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:19:50.644364+00:00"
+  },
+  {
+    "run_id": "cdr-2210e1744292",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:19:50.674078+00:00"
+  },
+  {
+    "run_id": "cdr-ce8f76157071",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "compare_invoice_to_po",
+    "decision": "dry_run_executed",
+    "allowed": true,
+    "simulated_result": {
+      "match_status": "matched",
+      "variance_amount": 0.0,
+      "simulated": true
+    },
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "invoice_source_validation",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended",
+      "trace_ledger_required",
+      "vendor_scope_check"
+    ],
+    "boundary_violations": [],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.compare_invoice_to_po decision 'dry_run_executed' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Review simulated result",
+      "Attach run record to evidence vault",
+      "Do not enable live execution until v1.7+ controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "apr-proc-001",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:20:40.594942+00:00"
+  },
+  {
+    "run_id": "cdr-7f2138fd132e",
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "adapter_id": "adapter-procurement-system-dry-run",
+    "connector_id": "procurement_system_mock",
+    "operation_id": "create_exception_draft",
+    "decision": "blocked_pending_approval",
+    "allowed": false,
+    "simulated_result": {},
+    "required_controls": [
+      "audit_event_required",
+      "audit_secret_access",
+      "connector_contract_required",
+      "dry_run_only",
+      "evidence_linkage_required",
+      "financial_threshold_check",
+      "human_approval_required",
+      "least_privilege_scope_review",
+      "no_live_system_call",
+      "no_raw_secret_material",
+      "tenant_context_required",
+      "time_bound_access_recommended"
+    ],
+    "boundary_violations": [
+      "approval_required_for_operation"
+    ],
+    "audit_summary": "Dry-run connector operation adapter-procurement-system-dry-run.create_exception_draft decision 'blocked_pending_approval' for tenant 'tenant-procurement'.",
+    "next_actions": [
+      "Resolve connector boundary violations",
+      "Attach approval/evidence if required",
+      "Retry dry-run after controls are satisfied"
+    ],
+    "actor_id": "user-proc-analyst-01",
+    "actor_role": "procurement_analyst",
+    "target_environment": "pilot",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-proc-001"
+    ],
+    "created_at": "2026-06-08T14:20:40.623064+00:00"
+  }
+]

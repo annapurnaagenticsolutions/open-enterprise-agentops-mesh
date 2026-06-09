@@ -1,0 +1,24 @@
+name: Use-case submission
+description: Propose an enterprise-agent use case or accelerator candidate.
+title: "[Use Case]: "
+labels: ["use-case", "triage"]
+body:
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      placeholder: procurement, HR, customer support, IT support
+    validations:
+      required: true
+  - type: textarea
+    id: business_problem
+    attributes:
+      label: Business problem
+    validations:
+      required: true
+  - type: textarea
+    id: agentops_relevance
+    attributes:
+      label: Why this needs an AgentOps control plane
+    validations:
+      required: true

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Provider Gateway Profile Catalog",
+  "type": "object",
+  "required": [
+    "version",
+    "live_provider_execution_status",
+    "profiles"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "live_provider_execution_status": {
+      "type": "string"
+    },
+    "global_controls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "cost_policy": {
+      "type": "object"
+    },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

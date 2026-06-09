@@ -1,0 +1,32 @@
+{
+  "version": "0.8.0",
+  "principles": [
+    "Dry-run is preferred for first execution of every connector tool.",
+    "High and Critical risk tools require human approval before simulation with side effects.",
+    "Production writes are blocked in v0.8.",
+    "External communication is blocked or approval-gated and remains simulated in v0.8.",
+    "Every sandbox run must be ledgered."
+  ],
+  "side_effect_classes": {
+    "read_only": {
+      "approval_required_by_default": false,
+      "live_execution_allowed_v0_8": false
+    },
+    "draft_only": {
+      "approval_required_by_default": false,
+      "live_execution_allowed_v0_8": false
+    },
+    "reversible_write": {
+      "approval_required_by_default": true,
+      "live_execution_allowed_v0_8": false
+    },
+    "irreversible_action": {
+      "approval_required_by_default": true,
+      "live_execution_allowed_v0_8": false
+    },
+    "system_of_record_update": {
+      "approval_required_by_default": true,
+      "live_execution_allowed_v0_8": false
+    }
+  }
+}

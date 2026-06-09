@@ -1,0 +1,33 @@
+name: Architecture critique
+description: Submit a structured architecture, security, governance, or adoption critique.
+title: "[Architecture Critique]: "
+labels: ["architecture", "triage"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - product boundary
+        - security model
+        - policy enforcement
+        - tenant isolation
+        - auditability
+        - connector readiness
+        - provider governance
+        - benchmark validity
+        - documentation clarity
+    validations:
+      required: true
+  - type: textarea
+    id: finding
+    attributes:
+      label: Finding
+    validations:
+      required: true
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommendation
+    validations:
+      required: true

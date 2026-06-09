@@ -1,0 +1,27 @@
+{
+  "release": "v1.1",
+  "name": "Security, RBAC, and Multi-Tenant Readiness",
+  "status": "implemented",
+  "capabilities_added": [
+    "role_catalog",
+    "tenant_boundary_catalog",
+    "capability_catalog",
+    "access_check_engine",
+    "security_posture_summary",
+    "security_console"
+  ],
+  "backend_endpoints_added": [
+    "GET /security/roles",
+    "GET /security/tenants",
+    "GET /security/capabilities",
+    "GET /security/posture",
+    "POST /security/access/check"
+  ],
+  "non_goals": [
+    "real authentication",
+    "OIDC/SAML integration",
+    "tenant-isolated database enforcement",
+    "production secrets management"
+  ],
+  "recommended_next_release": "v1.2 Persistence Upgrade and Tenant-Scoped Storage"
+}

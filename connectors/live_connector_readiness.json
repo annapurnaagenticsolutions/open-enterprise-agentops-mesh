@@ -1,0 +1,21 @@
+{
+  "version": "1.4.0",
+  "overall_readiness": "sandbox_ready_live_blocked",
+  "live_connector_status": "not_enabled",
+  "rationale": "The control plane now supports approval workflow and audit events, but still deliberately blocks live connector side effects until secrets, rollback, IAM, and immutable audit storage are implemented.",
+  "ready_controls": [
+    "approval workflow API",
+    "audit event bus",
+    "policy-as-code guardrails",
+    "tool sandbox",
+    "tenant-scoped local storage"
+  ],
+  "remaining_controls": [
+    "enterprise IAM/OIDC",
+    "secrets management",
+    "rollback/compensation contracts",
+    "immutable audit retention",
+    "connector-specific rate limits",
+    "tenant-isolated production database"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "version": "2.4.0",
+  "validations": [
+    {
+      "profile_id": "local-dev",
+      "target_environment": "local",
+      "has_docker": false,
+      "has_oidc": false,
+      "has_external_vault": false,
+      "requested_live_connectors": false,
+      "requested_live_providers": false
+    },
+    {
+      "profile_id": "docker-compose-local",
+      "target_environment": "local",
+      "has_docker": true,
+      "has_oidc": false,
+      "has_external_vault": false,
+      "requested_live_connectors": false,
+      "requested_live_providers": false
+    },
+    {
+      "profile_id": "enterprise-reference-non-prod",
+      "target_environment": "enterprise_nonprod",
+      "has_docker": true,
+      "has_oidc": true,
+      "has_external_vault": true,
+      "requested_live_connectors": false,
+      "requested_live_providers": false
+    },
+    {
+      "profile_id": "enterprise-reference-non-prod",
+      "target_environment": "enterprise_nonprod",
+      "has_docker": true,
+      "has_oidc": true,
+      "has_external_vault": false,
+      "requested_live_connectors": true,
+      "requested_live_providers": false
+    }
+  ]
+}

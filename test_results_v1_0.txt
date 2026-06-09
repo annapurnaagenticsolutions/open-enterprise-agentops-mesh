@@ -1,0 +1,7 @@
+v1.0 validation results
+
+Backend tests:
+34 passed in 1.12s
+
+API smoke script:
+8 API smoke checks passed

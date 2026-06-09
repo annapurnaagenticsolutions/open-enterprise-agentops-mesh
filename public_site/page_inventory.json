@@ -1,0 +1,68 @@
+{
+  "release": "v2.6",
+  "page_count": 1,
+  "recommended_home": "site/index.html",
+  "new_pages": [
+    "site/interactive_demo_path.html",
+    "site/public_site_ux_console.html"
+  ],
+  "page_groups": [
+    {
+      "group": "landing",
+      "pages": [
+        "index.html",
+        "public_launch_console.html",
+        "interactive_demo_path.html"
+      ]
+    },
+    {
+      "group": "control_plane",
+      "pages": [
+        "control_plane_console.html",
+        "api_catalog.html",
+        "deployment_console.html"
+      ]
+    },
+    {
+      "group": "governance",
+      "pages": [
+        "governance_workflow.html",
+        "policy_workbench.html",
+        "approval_console.html",
+        "audit_console.html"
+      ]
+    },
+    {
+      "group": "runtime_safety",
+      "pages": [
+        "runtime_console.html",
+        "tool_sandbox.html",
+        "provider_gateway.html",
+        "model_safety_console.html"
+      ]
+    },
+    {
+      "group": "adoption",
+      "pages": [
+        "benchmark_console.html",
+        "contributor_console.html",
+        "community_intake_console.html",
+        "public_site_ux_console.html"
+      ]
+    }
+  ],
+  "ux_findings": [
+    "The project has enough capability depth, but the public site needs audience-based entry points.",
+    "The procurement demo should become the primary guided story because it is business-readable.",
+    "Architecture pages should remain available, but not be the only entry path.",
+    "Every page should include a boundary note to prevent live-execution confusion."
+  ],
+  "pages": [
+    {
+      "page_id": "release-evidence-console",
+      "path": "site/release_evidence_console.html",
+      "audience": "maintainer,executive,architect",
+      "purpose": "Review launch proof, demo recording readiness, and validation evidence."
+    }
+  ]
+}

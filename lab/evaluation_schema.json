@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentOps Evaluation Input",
+  "type": "object",
+  "required": [
+    "use_case_id",
+    "name",
+    "domain",
+    "autonomy_level",
+    "risk_factors",
+    "scores"
+  ],
+  "properties": {
+    "use_case_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "autonomy_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "risk_factors": {
+      "type": "object",
+      "properties": {
+        "data_sensitivity": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "external_action": {
+          "type": "boolean"
+        },
+        "financial_impact": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "reversibility": {
+          "type": "string",
+          "enum": [
+            "easy",
+            "moderate",
+            "hard"
+          ]
+        },
+        "customer_or_employee_impact": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "scores": {
+      "type": "object",
+      "required": [
+        "business_value",
+        "task_suitability",
+        "data_readiness",
+        "governance_readiness",
+        "evaluation_coverage",
+        "safety_security",
+        "human_in_loop",
+        "operational_readiness",
+        "open_architecture_fit"
+      ],
+      "properties": {
+        "business_value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "task_suitability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "data_readiness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "governance_readiness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "evaluation_coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "safety_security": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "human_in_loop": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "operational_readiness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "open_architecture_fit": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

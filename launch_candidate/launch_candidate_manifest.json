@@ -1,0 +1,39 @@
+{
+  "release": "v2.8",
+  "name": "Public Launch Candidate and GitHub Pages Finalization",
+  "decision": "public_launch_candidate_ready",
+  "launch_candidate_score": 97,
+  "product_narrative": "Open-source AgentOps control plane for governing, evaluating, operating, and auditing enterprise AI agents before production.",
+  "primary_public_surfaces": [
+    "README.md",
+    "site/index.html",
+    "site/interactive_demo_path.html",
+    "site/launch_candidate_console.html",
+    "site/release_evidence_console.html",
+    "site/api_catalog.html"
+  ],
+  "new_assets": [
+    "launch_candidate/launch_candidate_manifest.json",
+    "launch_candidate/github_pages_config.json",
+    "launch_candidate/publication_sequence.json",
+    "launch_candidate/final_public_checklist.json",
+    "launch_candidate/release_candidate_evidence.json",
+    "launch_candidate/social_launch_copy.json"
+  ],
+  "boundaries": {
+    "live_model_provider_calls": false,
+    "live_connector_execution": false,
+    "raw_secret_storage": false,
+    "production_iam": false,
+    "external_api_calls": false,
+    "cloud_provisioning": false
+  },
+  "recommended_next_actions": [
+    "Run validation scripts locally",
+    "Review static site locally",
+    "Configure GitHub Pages source to /site",
+    "Record five-minute demo",
+    "Publish launch announcement",
+    "Invite architecture critique and use-case submissions"
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Open Enterprise AgentOps Mesh Audit Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "tenant_id",
+    "actor_id",
+    "actor_role",
+    "agent_id",
+    "event_type",
+    "source_system",
+    "action",
+    "target_environment",
+    "decision_outcome",
+    "allowed",
+    "created_at"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "actor_id": {
+      "type": "string"
+    },
+    "actor_role": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "enum": [
+        "governance_decision",
+        "evaluation_decision",
+        "policy_decision",
+        "runtime_execution",
+        "tool_sandbox_execution",
+        "access_decision",
+        "storage_write",
+        "evidence_update",
+        "agent_registry_update",
+        "accelerator_case_decision",
+        "manual_review"
+      ]
+    },
+    "source_system": {
+      "type": "string"
+    },
+    "capability": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "target_environment": {
+      "enum": [
+        "sandbox",
+        "pilot",
+        "production"
+      ]
+    },
+    "decision_outcome": {
+      "enum": [
+        "allow",
+        "allow_with_controls",
+        "require_approval",
+        "deny",
+        "informational"
+      ]
+    },
+    "allowed": {
+      "type": "boolean"
+    },
+    "policy_decision": {
+      "type": "string"
+    },
+    "risk_level": {
+      "type": "string"
+    },
+    "autonomy_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "subject_type": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "related_case_id": {
+      "type": "string"
+    },
+    "related_request_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "required_controls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    }
+  }
+}

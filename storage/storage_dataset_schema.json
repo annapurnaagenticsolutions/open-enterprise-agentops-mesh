@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tenant Scoped Storage Dataset",
+  "type": "object",
+  "required": [
+    "tenant_id",
+    "dataset",
+    "filename",
+    "record_count",
+    "isolation_status"
+  ],
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "dataset": {
+      "type": "string"
+    },
+    "filename": {
+      "type": "string"
+    },
+    "record_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "isolation_status": {
+      "type": "string"
+    },
+    "controls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "last_inspected_at": {
+      "type": "string"
+    }
+  }
+}

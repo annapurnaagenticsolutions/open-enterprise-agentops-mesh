@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentOps Security Access Check Request",
+  "type": "object",
+  "required": [
+    "tenant_id",
+    "actor_id",
+    "actor_role",
+    "capability",
+    "target_environment",
+    "risk_level",
+    "autonomy_level"
+  ],
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "actor_id": {
+      "type": "string"
+    },
+    "actor_role": {
+      "type": "string"
+    },
+    "capability": {
+      "type": "string"
+    },
+    "target_environment": {
+      "enum": [
+        "sandbox",
+        "pilot",
+        "production"
+      ]
+    },
+    "risk_level": {
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ]
+    },
+    "autonomy_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "requested_data_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "requested_tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "purpose": {
+      "type": "string"
+    }
+  }
+}

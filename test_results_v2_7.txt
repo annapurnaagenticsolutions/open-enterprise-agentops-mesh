@@ -1,0 +1,5 @@
+Backend tests: 121 passed in 2.58s
+API smoke checks: 72 API smoke checks passed
+Public repo validation: Checked 25 required files and 81 OpenAPI-lite endpoints
+Benchmark harness: Decision benchmark_passed; Score 96.83; Scenarios 8 passed / 0 failed
+Release evidence report: release_evidence_ready score=96 proof_items=6 demo_segments=6

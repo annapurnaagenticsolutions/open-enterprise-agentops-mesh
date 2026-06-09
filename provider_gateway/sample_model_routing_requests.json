@@ -1,0 +1,57 @@
+[
+  {
+    "tenant_id": "tenant-procurement",
+    "agent_id": "agent-procurement-control-plane",
+    "actor_id": "platform-architect-001",
+    "actor_role": "platform_owner",
+    "provider_id": "internal_vllm",
+    "model_id": "llama-3-8b-instruct-internal",
+    "target_environment": "pilot",
+    "data_sensitivity": "high",
+    "region": "in-south-1",
+    "estimated_input_tokens": 1200,
+    "estimated_output_tokens": 600,
+    "requires_tool_use": false,
+    "required_capabilities": [
+      "summarization",
+      "structured_output"
+    ],
+    "approval_id": "apr-provider-route-001",
+    "approval_roles": [
+      "platform_owner"
+    ],
+    "evidence_ids": [
+      "ev-model-route-001",
+      "ev-data-classification-001"
+    ],
+    "fallback_provider_id": "internal_vllm",
+    "fallback_model_id": "llama-3-8b-instruct-internal",
+    "live_provider_execution_requested": false,
+    "purpose": "Govern the model route for high-sensitivity procurement validation summary."
+  },
+  {
+    "tenant_id": "tenant-hr",
+    "agent_id": "agent-hr-policy-assistant",
+    "actor_id": "product-owner-hr-001",
+    "actor_role": "business_owner",
+    "provider_id": "openai_compatible_gateway",
+    "model_id": "approved-frontier-reasoning-model",
+    "target_environment": "pilot",
+    "data_sensitivity": "high",
+    "region": "us-east-1",
+    "estimated_input_tokens": 5000,
+    "estimated_output_tokens": 2500,
+    "requires_tool_use": true,
+    "required_capabilities": [
+      "reasoning",
+      "tool_use"
+    ],
+    "approval_id": "",
+    "approval_roles": [],
+    "evidence_ids": [],
+    "fallback_provider_id": "local_ollama",
+    "fallback_model_id": "llama3:8b",
+    "live_provider_execution_requested": false,
+    "purpose": "Example unsafe route: high-sensitivity HR data to external gateway without approval."
+  }
+]

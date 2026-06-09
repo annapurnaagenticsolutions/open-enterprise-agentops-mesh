@@ -1,0 +1,9 @@
+[
+  {
+    "tenant_id": "tenant-hr",
+    "agent_id": "hr-policy-agent-001",
+    "name": "HR Policy Advisor Agent",
+    "domain": "hr",
+    "status": "proposed"
+  }
+]

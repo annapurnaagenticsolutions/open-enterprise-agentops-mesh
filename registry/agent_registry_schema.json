@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent Registry Record",
+  "type": "object",
+  "required": [
+    "agent_id",
+    "name",
+    "domain",
+    "business_process",
+    "business_owner",
+    "technical_owner",
+    "status",
+    "autonomy_level",
+    "risk_level",
+    "target_environment"
+  ],
+  "properties": {
+    "agent_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "business_process": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "business_owner": {
+      "type": "string"
+    },
+    "technical_owner": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "intake_review",
+        "pilot_candidate",
+        "pilot",
+        "production_candidate",
+        "production",
+        "suspended",
+        "retired"
+      ]
+    },
+    "autonomy_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "risk_level": {
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ]
+    },
+    "target_environment": {
+      "enum": [
+        "sandbox",
+        "pilot",
+        "production"
+      ]
+    },
+    "model_strategy": {
+      "type": "object"
+    },
+    "data_sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tool_scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_controls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "linked_evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "versions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

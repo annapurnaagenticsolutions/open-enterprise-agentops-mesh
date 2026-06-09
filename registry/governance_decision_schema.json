@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Governance Decision Record",
+  "type": "object",
+  "required": [
+    "decision_id",
+    "agent_id",
+    "gate_id",
+    "decision",
+    "decided_by",
+    "decided_at"
+  ],
+  "properties": {
+    "decision_id": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "gate_id": {
+      "type": "string"
+    },
+    "decision": {
+      "enum": [
+        "approved",
+        "approved_with_conditions",
+        "rejected",
+        "deferred"
+      ]
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "required_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "linked_evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decided_by": {
+      "type": "string"
+    },
+    "decided_at": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "tenant_id": "tenant-procurement",
+    "agent_id": "agent-procurement-control-plane",
+    "actor_id": "platform-architect-001",
+    "actor_role": "platform_owner",
+    "adapter_id": "procurement_erp_dry_run_adapter",
+    "connector_id": "procurement_erp",
+    "identity_id": "svc-procurement-agent",
+    "secret_ref": "sec-ref-procurement-erp-oauth",
+    "target_environment": "pilot",
+    "requested_stage": "live_candidate",
+    "approval_id": "apr-procurement-live-candidate-001",
+    "evidence_ids": [
+      "ev-dry-run-proc-001",
+      "ev-security-review-001",
+      "ev-rollback-test-001"
+    ],
+    "evidence_types": [
+      "dry_run_report",
+      "security_review",
+      "rollback_test"
+    ],
+    "approval_roles": [
+      "business_owner",
+      "security_reviewer",
+      "platform_owner"
+    ],
+    "operational_capabilities": [
+      "rollback_tested",
+      "incident_runbook",
+      "support_owner_defined"
+    ],
+    "security_capabilities": [
+      "real_iam_validation",
+      "external_secret_manager",
+      "immutable_audit"
+    ],
+    "real_iam_validation_ready": true,
+    "external_secret_manager_ready": true,
+    "immutable_audit_ready": true,
+    "rollback_test_passed": true,
+    "incident_runbook_available": true,
+    "live_execution_requested": false,
+    "purpose": "Evaluate procurement ERP adapter for live-candidate readiness; no live action execution."
+  },
+  {
+    "tenant_id": "tenant-procurement",
+    "agent_id": "agent-procurement-control-plane",
+    "actor_id": "product-owner-001",
+    "actor_role": "business_owner",
+    "adapter_id": "procurement_erp_dry_run_adapter",
+    "connector_id": "procurement_erp",
+    "identity_id": "svc-procurement-agent",
+    "secret_ref": "sec-ref-procurement-erp-oauth",
+    "target_environment": "production",
+    "requested_stage": "live_enabled",
+    "approval_id": "",
+    "evidence_ids": [
+      "ev-dry-run-proc-001"
+    ],
+    "evidence_types": [
+      "dry_run_report"
+    ],
+    "approval_roles": [
+      "business_owner"
+    ],
+    "operational_capabilities": [
+      "support_owner_defined"
+    ],
+    "security_capabilities": [
+      "immutable_audit"
+    ],
+    "real_iam_validation_ready": false,
+    "external_secret_manager_ready": false,
+    "immutable_audit_ready": true,
+    "rollback_test_passed": false,
+    "incident_runbook_available": false,
+    "live_execution_requested": true,
+    "purpose": "Unsafe sample: attempts live execution and must be blocked."
+  }
+]

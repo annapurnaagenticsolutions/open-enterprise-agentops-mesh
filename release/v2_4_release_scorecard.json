@@ -1,0 +1,24 @@
+{
+  "release": "v2.4",
+  "name": "Demo Storytelling Pack and Public Launch Assets",
+  "tests_expected": "to_be_run",
+  "api_smoke_expected": "to_be_run",
+  "launch_readiness_score": 92,
+  "public_launch_decision": "ready_after_manual_review",
+  "live_execution_boundaries": {
+    "live_model_provider_calls": false,
+    "live_connector_execution": false,
+    "raw_secret_storage": false,
+    "production_authentication": false
+  },
+  "added_endpoints": 6,
+  "added_docs": 9,
+  "added_site_pages": [
+    "site/public_launch_console.html"
+  ],
+  "tests_actual": "108 passed in 2.14s",
+  "api_smoke_actual": "52 API smoke checks passed",
+  "public_repo_validation": "Checked 15 required files and 59 OpenAPI-lite endpoints",
+  "benchmark_actual": "benchmark_passed; score 96.83; 8 passed / 0 failed",
+  "deployment_validation": "4 profiles; live connectors/providers remain disabled"
+}

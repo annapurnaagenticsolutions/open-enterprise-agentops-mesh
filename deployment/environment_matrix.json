@@ -1,0 +1,51 @@
+{
+  "version": "2.4.0",
+  "variables": [
+    {
+      "name": "AGENTOPS_APP_ENV",
+      "local_dev": "development",
+      "docker_compose": "compose",
+      "enterprise_reference": "nonprod",
+      "required": false,
+      "notes": "Controls descriptive posture only in v2.3."
+    },
+    {
+      "name": "AGENTOPS_DATA_DIR",
+      "local_dev": "framework/backend/data",
+      "docker_compose": "/app/data",
+      "enterprise_reference": "external database/object storage",
+      "required": false,
+      "notes": "Local JSON remains the default."
+    },
+    {
+      "name": "AGENTOPS_LIVE_CONNECTORS_ENABLED",
+      "local_dev": "false",
+      "docker_compose": "false",
+      "enterprise_reference": "false until production gates pass",
+      "required": true,
+      "notes": "Must stay false in v2.3."
+    },
+    {
+      "name": "AGENTOPS_LIVE_PROVIDERS_ENABLED",
+      "local_dev": "false",
+      "docker_compose": "false",
+      "enterprise_reference": "false until provider execution gates pass",
+      "required": true,
+      "notes": "Must stay false in v2.3."
+    },
+    {
+      "name": "AGENTOPS_SECRET_MODE",
+      "local_dev": "reference_only",
+      "docker_compose": "reference_only",
+      "enterprise_reference": "external_vault_required",
+      "required": true,
+      "notes": "Raw secrets are forbidden."
+    }
+  ],
+  "forbidden_values": [
+    "live_erp_write_enabled=true",
+    "AGENTOPS_LIVE_CONNECTORS_ENABLED=true",
+    "AGENTOPS_LIVE_PROVIDERS_ENABLED=true",
+    "raw_secret"
+  ]
+}

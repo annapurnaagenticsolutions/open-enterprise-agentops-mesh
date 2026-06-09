@@ -1,0 +1,9 @@
+[
+  {
+    "tenant_id": "tenant-procurement",
+    "request_id": "rt-proc-001",
+    "agent_id": "procurement-agent-001",
+    "action": "compare_po_invoice",
+    "execution_decision": "executed_with_controls"
+  }
+]

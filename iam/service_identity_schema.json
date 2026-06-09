@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentOps Service Identity Record",
+  "type": "object",
+  "required": [
+    "identity_id",
+    "tenant_id",
+    "principal_type",
+    "roles",
+    "allowed_capabilities"
+  ],
+  "properties": {
+    "identity_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "principal_type": {
+      "type": "string"
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_secret_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_connector_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "max_autonomy_level": {
+      "type": "integer"
+    }
+  }
+}

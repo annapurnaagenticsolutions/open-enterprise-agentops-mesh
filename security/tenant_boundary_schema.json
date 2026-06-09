@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentOps Tenant Boundary Record",
+  "type": "object",
+  "required": [
+    "tenant_id",
+    "display_name",
+    "status",
+    "allowed_environments",
+    "isolation_mode",
+    "max_autonomy_level"
+  ],
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "restricted",
+        "suspended"
+      ]
+    },
+    "allowed_domains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowed_environments": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "sandbox",
+          "pilot",
+          "production"
+        ]
+      }
+    },
+    "data_residency": {
+      "type": "string"
+    },
+    "isolation_mode": {
+      "type": "string"
+    },
+    "max_autonomy_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "allowed_risk_levels": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "Low",
+          "Medium",
+          "High",
+          "Critical"
+        ]
+      }
+    },
+    "required_controls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

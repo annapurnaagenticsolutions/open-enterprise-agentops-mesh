@@ -1,0 +1,50 @@
+[
+  {
+    "id": "FM-001",
+    "name": "Unsupported factual claim",
+    "category": "Grounding",
+    "control": "Require source citation or explicit uncertainty."
+  },
+  {
+    "id": "FM-002",
+    "name": "Unauthorized tool action",
+    "category": "Tool Safety",
+    "control": "Block action and route to human approval."
+  },
+  {
+    "id": "FM-003",
+    "name": "Sensitive data overexposure",
+    "category": "Data Security",
+    "control": "Apply least-privilege retrieval and redaction."
+  },
+  {
+    "id": "FM-004",
+    "name": "Prompt injection from document",
+    "category": "Security",
+    "control": "Isolate retrieved content from system instructions and test adversarial examples."
+  },
+  {
+    "id": "FM-005",
+    "name": "High-risk decision without approval",
+    "category": "Governance",
+    "control": "Enforce approval gates by autonomy and risk level."
+  },
+  {
+    "id": "FM-006",
+    "name": "Conflicting source handling failure",
+    "category": "Reliability",
+    "control": "Define source precedence and conflict escalation."
+  },
+  {
+    "id": "FM-007",
+    "name": "Stale knowledge usage",
+    "category": "Data Readiness",
+    "control": "Track freshness and require refresh policy."
+  },
+  {
+    "id": "FM-008",
+    "name": "No measurable business value",
+    "category": "Strategy",
+    "control": "Define value metric and baseline before pilot."
+  }
+]

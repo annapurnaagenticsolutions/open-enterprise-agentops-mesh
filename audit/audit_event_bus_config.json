@@ -1,0 +1,22 @@
+{
+  "version": "1.3.0",
+  "default_storage": "framework/backend/data/audit_events.json",
+  "event_id_prefix": "aud",
+  "required_emitters": [
+    "governance_workflow",
+    "agent_evaluation",
+    "policy_guardrail",
+    "runtime_enforcer",
+    "tool_sandbox",
+    "security_rbac",
+    "tenant_storage",
+    "procurement_accelerator",
+    "agent_registry",
+    "evidence_vault"
+  ],
+  "retention_policy": {
+    "local_demo": "keep_all_events",
+    "production_recommendation": "define tenant-specific retention, legal hold, export, and purge controls"
+  },
+  "immutability_policy": "append_only_by_default; corrections should be compensating events, not silent overwrites"
+}

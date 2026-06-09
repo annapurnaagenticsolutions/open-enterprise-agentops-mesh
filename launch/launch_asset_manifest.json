@@ -1,0 +1,92 @@
+{
+  "release": "v2.4",
+  "title": "Demo Storytelling Pack and Public Launch Assets",
+  "positioning": "Open Enterprise AgentOps Control Plane — an open-source control plane for governing, evaluating, operating, and auditing enterprise AI agents before production.",
+  "primary_audience": [
+    "enterprise architects",
+    "AI product leaders",
+    "platform engineering leaders",
+    "data governance leaders",
+    "consulting buyers"
+  ],
+  "launch_goal": "Convert the technical control-plane work into a public industry-presence package that is easy to explain, demo, publish, and discuss.",
+  "assets": [
+    {
+      "id": "asset-public-readme",
+      "type": "repo_entry",
+      "path": "README.md",
+      "purpose": "First 5-minute explanation for GitHub visitors"
+    },
+    {
+      "id": "asset-executive-narrative",
+      "type": "story",
+      "path": "docs/121_executive_demo_narrative.md",
+      "purpose": "Boardroom-style problem-to-solution narrative"
+    },
+    {
+      "id": "asset-launch-playbook",
+      "type": "launch",
+      "path": "docs/122_public_launch_playbook.md",
+      "purpose": "Sequence for GitHub and LinkedIn launch"
+    },
+    {
+      "id": "asset-architecture-story",
+      "type": "architecture",
+      "path": "docs/123_architecture_storytelling_guide.md",
+      "purpose": "Explain the control plane without overwhelming readers"
+    },
+    {
+      "id": "asset-linkedin-series",
+      "type": "thought_leadership",
+      "path": "docs/124_linkedin_article_series.md",
+      "purpose": "Public industry presence content"
+    },
+    {
+      "id": "asset-demo-script",
+      "type": "demo",
+      "path": "docs/125_five_minute_demo_script.md",
+      "purpose": "Repeatable demo flow"
+    },
+    {
+      "id": "asset-public-faq",
+      "type": "objection_handling",
+      "path": "docs/126_public_faq_and_objection_handling.md",
+      "purpose": "Handle credibility, scope, and production-boundary questions"
+    },
+    {
+      "id": "asset-launch-checklist",
+      "type": "readiness",
+      "path": "docs/127_github_publication_readiness_checklist.md",
+      "purpose": "Publication quality gate"
+    },
+    {
+      "id": "asset-v24-release",
+      "type": "release_notes",
+      "path": "docs/128_v2_4_release_notes.md",
+      "purpose": "Release summary"
+    },
+    {
+      "id": "asset-v25-roadmap",
+      "type": "roadmap",
+      "path": "docs/129_v2_5_forward_roadmap.md",
+      "purpose": "Next release direction"
+    }
+  ],
+  "boundaries": {
+    "live_model_provider_calls": false,
+    "live_connector_execution": false,
+    "raw_secret_storage": false,
+    "production_authentication": false,
+    "public_storytelling_assets": true
+  },
+  "recommended_public_launch_sequence": [
+    "Publish GitHub repository with site enabled from /site",
+    "Post article 1: Why enterprise AI agents need a control plane",
+    "Post article 2: Why agent governance must be deterministic first",
+    "Post article 3: AgentOps reference architecture for regulated enterprises",
+    "Share the procurement accelerator demo as proof point",
+    "Invite feedback from architects, AI product managers, and platform teams"
+  ],
+  "launch_readiness_score": 92,
+  "decision": "ready_for_public_launch_after_manual_repo_review"
+}

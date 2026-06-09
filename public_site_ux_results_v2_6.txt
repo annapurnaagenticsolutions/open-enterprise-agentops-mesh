@@ -1,0 +1,4 @@
+Public site UX readiness: public_site_ux_ready score=95
+Audience paths: 4
+Demo paths: 2
+Default demo path: procurement-governed-agent-demo

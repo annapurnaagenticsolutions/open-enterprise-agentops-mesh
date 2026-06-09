@@ -1,0 +1,142 @@
+[
+  {
+    "case_id": "proc-unit-clean",
+    "agent_id": "procurement-agent-001",
+    "po_number": "PO-TEST-001",
+    "invoice_number": "INV-TEST-001",
+    "vendor_id": "VND-100",
+    "validation_status": "pass",
+    "lifecycle_outcome": "ready_for_human_review",
+    "governance_decision": "pilot_candidate",
+    "policy_decision": "allow",
+    "runtime_request_id": "rt-5eeb16893695",
+    "tool_request_ids": [
+      "tool-6d300e729aac"
+    ],
+    "amount_variance": 0.0,
+    "discrepancy_count": 0,
+    "created_at": "2026-06-08T14:20:40.865515+00:00",
+    "tags": [
+      "procurement",
+      "accelerator",
+      "pass"
+    ]
+  },
+  {
+    "case_id": "proc-unit-mismatch",
+    "agent_id": "procurement-agent-001",
+    "po_number": "PO-TEST-001",
+    "invoice_number": "INV-TEST-001",
+    "vendor_id": "VND-100",
+    "validation_status": "caution",
+    "lifecycle_outcome": "needs_exception_review",
+    "governance_decision": "remediate_before_pilot",
+    "policy_decision": "allow",
+    "runtime_request_id": "rt-06901946a7d4",
+    "tool_request_ids": [
+      "tool-46b0c950e3da",
+      "tool-20e23053be4b"
+    ],
+    "amount_variance": 12000.0,
+    "discrepancy_count": 4,
+    "created_at": "2026-06-08T14:20:40.904029+00:00",
+    "tags": [
+      "procurement",
+      "accelerator",
+      "caution"
+    ]
+  },
+  {
+    "case_id": "proc-unit-blocked",
+    "agent_id": "procurement-agent-001",
+    "po_number": "PO-TEST-001",
+    "invoice_number": "INV-TEST-001",
+    "vendor_id": "VND-100",
+    "validation_status": "fail",
+    "lifecycle_outcome": "blocked_pending_evidence",
+    "governance_decision": "blocked",
+    "policy_decision": "allow",
+    "runtime_request_id": "rt-19824c58df14",
+    "tool_request_ids": [
+      "tool-24182a667243",
+      "tool-1c464c54d33d"
+    ],
+    "amount_variance": 0.0,
+    "discrepancy_count": 4,
+    "created_at": "2026-06-08T14:20:40.937494+00:00",
+    "tags": [
+      "procurement",
+      "accelerator",
+      "fail"
+    ]
+  },
+  {
+    "case_id": "proc-api-clean",
+    "agent_id": "procurement-agent-001",
+    "po_number": "PO-TEST-001",
+    "invoice_number": "INV-TEST-001",
+    "vendor_id": "VND-100",
+    "validation_status": "pass",
+    "lifecycle_outcome": "ready_for_human_review",
+    "governance_decision": "pilot_candidate",
+    "policy_decision": "allow",
+    "runtime_request_id": "rt-dc1bd680401e",
+    "tool_request_ids": [
+      "tool-1db4a046f2b9"
+    ],
+    "amount_variance": 0.0,
+    "discrepancy_count": 0,
+    "created_at": "2026-06-08T14:20:40.961968+00:00",
+    "tags": [
+      "procurement",
+      "accelerator",
+      "pass"
+    ]
+  },
+  {
+    "case_id": "proc-test-cleanx",
+    "agent_id": "procurement-agent-001",
+    "po_number": "PO-TEST-001",
+    "invoice_number": "INV-TEST-001",
+    "vendor_id": "VND-100",
+    "validation_status": "pass",
+    "lifecycle_outcome": "not_ready_for_pilot",
+    "governance_decision": "pilot_candidate",
+    "policy_decision": "allow",
+    "runtime_request_id": "rt-18c28bbf4cab",
+    "tool_request_ids": [
+      "tool-853aafe7138e"
+    ],
+    "amount_variance": 0.0,
+    "discrepancy_count": 0,
+    "created_at": "2026-06-08T11:44:00.078793+00:00",
+    "tags": [
+      "procurement",
+      "accelerator",
+      "pass"
+    ]
+  },
+  {
+    "case_id": "proc-smoke-v1",
+    "agent_id": "procurement-agent-001",
+    "po_number": "PO-SMOKE-001",
+    "invoice_number": "INV-SMOKE-001",
+    "vendor_id": "VND-100",
+    "validation_status": "pass",
+    "lifecycle_outcome": "ready_for_human_review",
+    "governance_decision": "pilot_candidate",
+    "policy_decision": "allow",
+    "runtime_request_id": "rt-189c857d5a49",
+    "tool_request_ids": [
+      "tool-e453ab5a8980"
+    ],
+    "amount_variance": 0.0,
+    "discrepancy_count": 0,
+    "created_at": "2026-06-08T14:20:40.517816+00:00",
+    "tags": [
+      "procurement",
+      "accelerator",
+      "pass"
+    ]
+  }
+]

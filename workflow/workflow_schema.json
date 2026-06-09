@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Open Enterprise AgentOps Mesh Governance Workflow Request",
+  "type": "object",
+  "required": [
+    "use_case_id",
+    "name",
+    "domain",
+    "business_owner",
+    "technical_owner",
+    "autonomy_level",
+    "risk_factors",
+    "scores"
+  ],
+  "properties": {
+    "use_case_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "business_owner": {
+      "type": "string"
+    },
+    "technical_owner": {
+      "type": "string"
+    },
+    "target_environment": {
+      "type": "string",
+      "enum": [
+        "sandbox",
+        "pilot",
+        "production"
+      ]
+    },
+    "autonomy_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "submitted_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk_factors": {
+      "type": "object",
+      "properties": {
+        "data_sensitivity": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "external_action": {
+          "type": "boolean"
+        },
+        "financial_impact": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "reversibility": {
+          "type": "string",
+          "enum": [
+            "easy",
+            "moderate",
+            "hard"
+          ]
+        },
+        "customer_or_employee_impact": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      }
+    },
+    "scores": {
+      "type": "object",
+      "properties": {
+        "business_value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "task_suitability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "data_readiness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "governance_readiness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "evaluation_coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "safety_security": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "human_in_loop": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "operational_readiness": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "open_architecture_fit": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      }
+    }
+  }
+}

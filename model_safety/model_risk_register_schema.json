@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Model Risk Register Profile",
+  "type": "object",
+  "required": [
+    "risk_profile_id",
+    "provider_id",
+    "model_id",
+    "model_risk_tier",
+    "allowed_environments",
+    "max_data_sensitivity"
+  ],
+  "properties": {
+    "risk_profile_id": {
+      "type": "string"
+    },
+    "provider_id": {
+      "type": "string"
+    },
+    "model_id": {
+      "type": "string"
+    },
+    "model_family": {
+      "type": "string"
+    },
+    "model_risk_tier": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "restricted"
+      ]
+    },
+    "allowed_environments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "max_data_sensitivity": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "allowed_output_types": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "high_risk_domains": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "disallowed_prompt_patterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "disallowed_response_patterns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_controls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_approval_roles": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

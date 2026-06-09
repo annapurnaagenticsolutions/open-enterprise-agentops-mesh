@@ -1,0 +1,47 @@
+{
+  "release": "v2.7",
+  "checklist_type": "demo_recording_readiness",
+  "items": [
+    {
+      "item": "Open site/index.html and verify primary navigation.",
+      "status": "ready",
+      "critical": true
+    },
+    {
+      "item": "Open site/interactive_demo_path.html and verify procurement journey.",
+      "status": "ready",
+      "critical": true
+    },
+    {
+      "item": "Open site/release_evidence_console.html and verify proof assets.",
+      "status": "ready",
+      "critical": true
+    },
+    {
+      "item": "Run backend tests before recording.",
+      "status": "requires_run",
+      "critical": true
+    },
+    {
+      "item": "Run API smoke checks before recording.",
+      "status": "requires_run",
+      "critical": true
+    },
+    {
+      "item": "Run public repo validation before recording.",
+      "status": "requires_run",
+      "critical": true
+    },
+    {
+      "item": "State live-execution boundaries verbally in closing.",
+      "status": "ready",
+      "critical": true
+    },
+    {
+      "item": "Capture screenshots for launch post.",
+      "status": "manual",
+      "critical": false
+    }
+  ],
+  "decision": "recording_ready_after_local_validation"
+}

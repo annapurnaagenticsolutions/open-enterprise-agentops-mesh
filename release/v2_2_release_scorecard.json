@@ -1,0 +1,19 @@
+{
+  "version": "2.3.0",
+  "release_name": "Scenario Library and Benchmark Harness",
+  "decision": "stable_public_mvp_with_benchmark_harness",
+  "scores": {
+    "scenario_library_quality": 90,
+    "benchmark_repeatability": 91,
+    "open_source_contribution_clarity": 90,
+    "live_execution_boundary_clarity": 96,
+    "public_adoption_readiness": 91
+  },
+  "blocked_capabilities": [
+    "live_provider_execution",
+    "live_connector_execution",
+    "real_credentials",
+    "raw_secret_storage"
+  ],
+  "recommended_next_release": "v2.3 \u2014 Reference Deployment Profiles and Local Docker Compose"
+}

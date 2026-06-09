@@ -1,0 +1,31 @@
+{
+  "version": "2.5.0",
+  "priorities": [
+    {
+      "priority": "P0",
+      "definition": "Security issue, secret exposure, unsafe live execution, license issue",
+      "response": "block_and_review"
+    },
+    {
+      "priority": "P1",
+      "definition": "Architecture flaw, governance gap, broken install path, benchmark inconsistency",
+      "response": "review_for_next_patch"
+    },
+    {
+      "priority": "P2",
+      "definition": "Missing scenario, documentation ambiguity, useful accelerator candidate",
+      "response": "triage_into_backlog"
+    },
+    {
+      "priority": "P3",
+      "definition": "Nice-to-have UI or wording improvement",
+      "response": "batch_with_adoption_polish"
+    }
+  ],
+  "rejection_rules": [
+    "generic_chatbot_platform_requests",
+    "requests_requiring_raw_secrets",
+    "live_connector_execution_without_security_gate",
+    "closed_vendor_wrapper_direction"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "scores": {
+    "industry_presence": 94,
+    "open_source_readiness": 88,
+    "architecture_clarity": 91,
+    "runtime_safety_boundary": 93,
+    "developer_onboarding": 84,
+    "monetization_readiness": 82,
+    "production_readiness": 61
+  },
+  "decision": "stable_public_mvp_ready",
+  "go_no_go": "go_for_public_repo_cleanup_and_publication",
+  "constraints": [
+    "Do not enable live connectors yet.",
+    "Do not enable live model provider execution yet.",
+    "Do not store raw secrets.",
+    "Keep demos deterministic and auditable."
+  ]
+}

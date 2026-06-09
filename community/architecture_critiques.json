@@ -1,0 +1,25 @@
+{
+  "version": "2.5.0",
+  "critiques": [
+    {
+      "critique_id": "arch-001",
+      "title": "Clarify control-plane vs runtime boundary",
+      "reviewer_role": "platform architect",
+      "area": "platform_boundary",
+      "finding": "The project contains runtime-adjacent APIs but live execution remains disabled, which should be more visible in the README.",
+      "severity": "medium",
+      "recommendation": "Add boundary callouts to README and site navigation.",
+      "status": "accepted"
+    },
+    {
+      "critique_id": "arch-002",
+      "title": "Tenant storage should remain non-production labeled",
+      "reviewer_role": "security architect",
+      "area": "tenant_storage",
+      "finding": "Tenant-scoped local JSON storage is useful for demo but should not be mistaken for production isolation.",
+      "severity": "high",
+      "recommendation": "Keep explicit warnings in storage docs and release notes.",
+      "status": "accepted"
+    }
+  ]
+}

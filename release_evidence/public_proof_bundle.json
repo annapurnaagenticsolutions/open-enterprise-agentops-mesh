@@ -1,0 +1,57 @@
+{
+  "release": "v2.7",
+  "bundle_type": "public_launch_proof_bundle",
+  "proof_items": [
+    {
+      "proof_id": "tests",
+      "title": "Backend tests",
+      "evidence": "pytest result summary",
+      "status": "generated_by_validation"
+    },
+    {
+      "proof_id": "smoke",
+      "title": "API smoke checks",
+      "evidence": "scripts/smoke_test_api.py output",
+      "status": "generated_by_validation"
+    },
+    {
+      "proof_id": "benchmark",
+      "title": "Benchmark harness",
+      "evidence": "scripts/run_benchmark_suite.py output",
+      "status": "ready",
+      "score": 96.83
+    },
+    {
+      "proof_id": "repo-validation",
+      "title": "Public repo validation",
+      "evidence": "scripts/validate_public_repo.py output",
+      "status": "generated_by_validation"
+    },
+    {
+      "proof_id": "demo-storyboard",
+      "title": "Demo recording storyboard",
+      "evidence": "release_evidence/demo_recording_storyboard.json",
+      "status": "ready"
+    },
+    {
+      "proof_id": "safety-boundaries",
+      "title": "Safety boundary statement",
+      "evidence": "evidence_manifest.boundaries",
+      "status": "ready"
+    }
+  ],
+  "recommended_screenshots": [
+    "site/index.html",
+    "site/control_plane_console.html",
+    "site/interactive_demo_path.html",
+    "site/release_evidence_console.html",
+    "site/api_catalog.html"
+  ],
+  "public_claims_supported": [
+    "Open-source control-plane MVP",
+    "Deterministic governance and evaluation workflows",
+    "Public demo path for procurement scenario",
+    "Live provider and connector execution disabled by design",
+    "Validation and benchmark evidence available"
+  ]
+}

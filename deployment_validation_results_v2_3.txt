@@ -1,0 +1,3 @@
+Deployment profile validation passed
+Profiles: 4
+Live connectors/providers remain disabled

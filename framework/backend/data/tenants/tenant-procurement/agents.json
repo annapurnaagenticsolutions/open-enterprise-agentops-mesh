@@ -1,0 +1,16 @@
+[
+  {
+    "tenant_id": "tenant-procurement",
+    "agent_id": "procurement-agent-001",
+    "name": "Procurement Control Plane Agent",
+    "domain": "procurement",
+    "status": "pilot_candidate"
+  },
+  {
+    "agent_id": "storage-test-agent-001",
+    "name": "Storage Test Agent",
+    "domain": "procurement",
+    "status": "proposed",
+    "tenant_id": "tenant-procurement"
+  }
+]

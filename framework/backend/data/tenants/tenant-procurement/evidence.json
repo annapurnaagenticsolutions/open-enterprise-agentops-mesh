@@ -1,0 +1,9 @@
+[
+  {
+    "tenant_id": "tenant-procurement",
+    "evidence_id": "ev-proc-001",
+    "agent_id": "procurement-agent-001",
+    "title": "PO invoice validation sample evidence",
+    "review_status": "approved"
+  }
+]

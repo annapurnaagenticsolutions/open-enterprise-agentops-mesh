@@ -1,0 +1,21 @@
+{
+  "version": "1.8.0",
+  "routing_principles": [
+    "Prefer internal/private models for high-sensitivity data.",
+    "Require approval for external providers handling medium-sensitivity or higher data.",
+    "Block live execution requests until a future release implements real provider execution gates.",
+    "Do not permit fallback to a less trusted provider than the primary route."
+  ],
+  "sensitivity_order": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "blocked_conditions": [
+    "live_provider_execution_requested",
+    "unknown_provider_model_route",
+    "data_sensitivity_exceeds_profile_limit",
+    "region_not_allowed",
+    "environment_not_allowed"
+  ]
+}

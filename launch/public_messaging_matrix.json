@@ -1,0 +1,46 @@
+{
+  "elevator_pitch": "Open Enterprise AgentOps Mesh is an open-source AgentOps control plane for governing, evaluating, operating, and auditing enterprise AI agents before production.",
+  "one_sentence_problem": "Enterprises can build AI agent demos quickly, but they struggle to prove that agents are safe, governed, measurable, and ready for real business workflows.",
+  "one_sentence_solution": "This project provides deterministic governance, evaluation, policy, approval, audit, provider-routing, connector-sandbox, and benchmark layers for enterprise agent programs.",
+  "not_a": [
+    "chatbot framework",
+    "model wrapper",
+    "workflow automation clone",
+    "production IAM product",
+    "live ERP connector"
+  ],
+  "is_a": [
+    "control-plane reference implementation",
+    "governance and evaluation framework",
+    "open-source architecture asset",
+    "deterministic AgentOps simulator",
+    "enterprise readiness toolkit"
+  ],
+  "audience_messages": [
+    {
+      "audience": "executive",
+      "message": "Reduce agent project risk before scaling.",
+      "proof": "Governance workflow, release gates, policy decisions, evidence and audit."
+    },
+    {
+      "audience": "enterprise architect",
+      "message": "Add a vendor-neutral control plane around agents, tools, data, and models.",
+      "proof": "Reference architecture, provider gateway, connector contracts, tenant boundaries."
+    },
+    {
+      "audience": "AI product manager",
+      "message": "Turn agent ideas into scored, reviewable, production-readiness candidates.",
+      "proof": "Evaluation lab, benchmark harness, use-case canvas, demo scenarios."
+    },
+    {
+      "audience": "governance leader",
+      "message": "Make agent decisions explainable and auditable.",
+      "proof": "Policy-as-code, approval workflow, evidence vault, audit event bus."
+    },
+    {
+      "audience": "developer",
+      "message": "Run the control plane locally and extend deterministic services safely.",
+      "proof": "FastAPI backend, tests, Docker Compose profile, static consoles."
+    }
+  ]
+}

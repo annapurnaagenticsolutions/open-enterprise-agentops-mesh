@@ -1,0 +1,18 @@
+{
+  "release": "v1.4",
+  "theme": "Real Connector Readiness and Approval Workflow",
+  "capabilities_added": [
+    "approval request lifecycle",
+    "reviewer decision API",
+    "approval readiness reporting",
+    "approval audit event emission",
+    "live connector readiness model",
+    "static approval console"
+  ],
+  "quality_gate": {
+    "backend_tests": "54 passed in 1.31s",
+    "api_smoke_tests": "17 API smoke checks passed",
+    "live_side_effects_enabled": false,
+    "self_healing_devops_included": false
+  }
+}

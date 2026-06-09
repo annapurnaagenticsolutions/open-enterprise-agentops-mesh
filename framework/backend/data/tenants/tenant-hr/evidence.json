@@ -1,0 +1,9 @@
+[
+  {
+    "tenant_id": "tenant-hr",
+    "evidence_id": "ev-hr-001",
+    "agent_id": "hr-policy-agent-001",
+    "title": "HR policy source inventory",
+    "review_status": "submitted"
+  }
+]

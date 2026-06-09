@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Decision History View",
+  "type": "object",
+  "required": [
+    "subject_type",
+    "subject_id",
+    "events",
+    "summary"
+  ],
+  "properties": {
+    "subject_type": {
+      "type": "string"
+    },
+    "subject_id": {
+      "type": "string"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "audit_event_schema.json"
+      }
+    },
+    "summary": {
+      "type": "object"
+    }
+  }
+}

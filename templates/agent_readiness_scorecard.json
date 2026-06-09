@@ -1,0 +1,41 @@
+{
+  "schema_version": "0.1",
+  "agent_name": "",
+  "use_case": "",
+  "business_owner": "",
+  "technical_owner": "",
+  "autonomy_level": "",
+  "risk_level": "",
+  "evaluation_date": "",
+  "dimensions": [
+    { "name": "Business Value", "weight": 15, "score_0_to_5": null, "notes": "" },
+    { "name": "Task Success", "weight": 15, "score_0_to_5": null, "notes": "" },
+    { "name": "Grounding Quality", "weight": 12, "score_0_to_5": null, "notes": "" },
+    { "name": "Data Readiness", "weight": 12, "score_0_to_5": null, "notes": "" },
+    { "name": "Governance Compliance", "weight": 12, "score_0_to_5": null, "notes": "" },
+    { "name": "Safety and Privacy", "weight": 10, "score_0_to_5": null, "notes": "" },
+    { "name": "Tool-Call Correctness", "weight": 8, "score_0_to_5": null, "notes": "" },
+    { "name": "Observability and Auditability", "weight": 6, "score_0_to_5": null, "notes": "" },
+    { "name": "Cost and Latency", "weight": 5, "score_0_to_5": null, "notes": "" },
+    { "name": "User Experience", "weight": 5, "score_0_to_5": null, "notes": "" }
+  ],
+  "readiness_grade_rules": [
+    { "min": 0, "max": 49, "grade": "Not Ready" },
+    { "min": 50, "max": 64, "grade": "Prototype Only" },
+    { "min": 65, "max": 74, "grade": "Controlled Pilot" },
+    { "min": 75, "max": 84, "grade": "Limited Production" },
+    { "min": 85, "max": 92, "grade": "Production Ready" },
+    { "min": 93, "max": 100, "grade": "Enterprise Certified" }
+  ],
+  "required_controls": {
+    "human_approval": false,
+    "audit_logging": false,
+    "source_citations": false,
+    "access_control": false,
+    "cost_monitoring": false,
+    "rollback_plan": false
+  },
+  "decision": "",
+  "conditions": [],
+  "next_actions": []
+}
