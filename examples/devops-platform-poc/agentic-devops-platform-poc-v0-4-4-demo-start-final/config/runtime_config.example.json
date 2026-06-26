@@ -1,0 +1,27 @@
+{
+  "runtime": {
+    "mode": "mock_claude",
+    "adapter_mode": "mock",
+    "strict_step_graph": true
+  },
+  "anthropic": {
+    "api_key_env": "ANTHROPIC_API_KEY",
+    "default_model": "claude-sonnet-latest",
+    "prompt_caching": {
+      "enabled": true,
+      "cache_system_prompt": true,
+      "cache_tool_definitions": true,
+      "cache_policy_rules": true,
+      "cache_failure_taxonomy": true,
+      "cache_checklist_templates": true,
+      "cache_runbook_summaries": true,
+      "ttl": "default",
+      "telemetry_enabled": true
+    }
+  },
+  "tools": {
+    "teamcity": {"mode": "mock", "token_env": "TEAMCITY_READ_TOKEN"},
+    "github": {"mode": "mock", "read_token_env": "GITHUB_READ_TOKEN", "docs_pr_token_env": "GITHUB_DOCS_PR_TOKEN"},
+    "jira": {"mode": "mock", "comment_token_env": "JIRA_COMMENT_TOKEN"}
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "issue_id": "DEVOPS-DEMO-003",
+  "title": "Inventory build failed on TeamCity agent disk pressure",
+  "priority": "High",
+  "owner_team": "platform-build",
+  "status": "Open"
+}

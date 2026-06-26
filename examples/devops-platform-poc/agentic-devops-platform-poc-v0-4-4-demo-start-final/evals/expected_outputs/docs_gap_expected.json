@@ -1,0 +1,7 @@
+{
+  "scenario_id": "dependency_conflict_with_docs_gap",
+  "expected_failure_class": "dependency_conflict",
+  "expected_policy_decision": "allow_with_review",
+  "expected_docs_pr_status": "draft",
+  "expected_checklist_name": "Dependency Checklist"
+}

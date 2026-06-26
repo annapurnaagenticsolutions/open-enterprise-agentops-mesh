@@ -1,0 +1,19 @@
+{
+  "build_id": "TC-DEMO-005",
+  "scenario_id": "risky_action",
+  "trace": [
+    {
+      "step": 1,
+      "tool": "policy.evaluate_action",
+      "input": {
+        "action": "auto_merge"
+      },
+      "purpose": "Check requested high-risk action."
+    }
+  ],
+  "expected_result": {
+    "policy_decision": "block",
+    "blocked_action": "auto_merge",
+    "safe_alternative": "Create reviewable MR draft."
+  }
+}

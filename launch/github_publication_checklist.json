@@ -1,0 +1,46 @@
+{
+  "checklist_id": "github-publication-v2-4",
+  "decision": "manual_review_required_before_publish",
+  "items": [
+    {
+      "area": "repo_identity",
+      "item": "README clearly states control-plane positioning",
+      "status": "ready"
+    },
+    {
+      "area": "scope",
+      "item": "Production boundaries clearly documented",
+      "status": "ready"
+    },
+    {
+      "area": "site",
+      "item": "Static launch console available",
+      "status": "ready"
+    },
+    {
+      "area": "demo",
+      "item": "Five-minute demo script available",
+      "status": "ready"
+    },
+    {
+      "area": "thought_leadership",
+      "item": "LinkedIn article drafts available",
+      "status": "ready"
+    },
+    {
+      "area": "quality",
+      "item": "Tests and smoke checks pass",
+      "status": "requires_run"
+    },
+    {
+      "area": "safety",
+      "item": "No raw secrets or live execution enabled",
+      "status": "ready"
+    },
+    {
+      "area": "launch",
+      "item": "Manual GitHub repo metadata, topics, and About description configured",
+      "status": "manual"
+    }
+  ]
+}

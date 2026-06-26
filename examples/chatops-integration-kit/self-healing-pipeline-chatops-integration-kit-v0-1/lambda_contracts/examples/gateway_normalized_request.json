@@ -1,0 +1,17 @@
+{
+  "request_id": "req-demo-001",
+  "command": "diagnose",
+  "build_id": "TC-DEMO-001",
+  "scenario_id": "dependency_conflict_with_docs_gap",
+  "user": {
+    "teams_user_id": "user-demo-123",
+    "tenant_id": "tenant-demo"
+  },
+  "auth_context": {
+    "authenticated": true,
+    "roles": [
+      "developer",
+      "pipeline_reviewer"
+    ]
+  }
+}

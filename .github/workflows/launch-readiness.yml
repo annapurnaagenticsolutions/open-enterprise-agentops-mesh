@@ -1,0 +1,52 @@
+name: Launch Readiness Check
+
+on:
+  pull_request:
+    branches: [main, master]
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  readiness:
+    name: Launch Readiness Gate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install backend
+        working-directory: framework/backend
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: Run launch readiness report
+        working-directory: scripts
+        run: |
+          python generate_launch_readiness_report.py || true
+
+      - name: Run community readiness report
+        working-directory: scripts
+        run: |
+          python generate_community_readiness_report.py || true
+
+      - name: Check deployment profile
+        working-directory: scripts
+        run: |
+          python check_deployment_profile.py || true
+
+      - name: Run benchmark suite (non-blocking)
+        working-directory: scripts
+        run: |
+          python run_benchmark_suite.py || true

@@ -1,0 +1,44 @@
+{
+  "series_title": "Enterprise AgentOps Control Plane Series",
+  "drafts": [
+    {
+      "id": "article-01-control-plane",
+      "title": "Why Enterprise AI Agents Need a Control Plane",
+      "hook": "Most agent demos look impressive. The hard question is whether the agent should be allowed to act inside an enterprise workflow.",
+      "outline": [
+        "The gap between prototype agents and production agents",
+        "Why governance cannot be an afterthought",
+        "Control plane as the missing layer",
+        "What must be governed: agents, tools, models, data, approvals, audit",
+        "Open-source reference implementation as a learning and adoption path"
+      ],
+      "call_to_action": "I am publishing an open-source AgentOps control-plane reference project and would value feedback from enterprise architects and AI product leaders."
+    },
+    {
+      "id": "article-02-deterministic-governance",
+      "title": "Why Agent Governance Should Be Deterministic First",
+      "hook": "An LLM can explain a decision, but it should not be the only mechanism enforcing a high-risk enterprise control.",
+      "outline": [
+        "LLM reasoning vs auditable control decisions",
+        "Deterministic policy gates",
+        "Approval and evidence requirements",
+        "Blocked actions as valuable learning signals",
+        "How to combine LLM assistance with inspectable enforcement"
+      ],
+      "call_to_action": "I am collecting real-world AgentOps governance patterns. Suggestions and critiques are welcome."
+    },
+    {
+      "id": "article-03-data-and-tools",
+      "title": "The Real Enterprise Agent Challenge: Data, Tools, and Accountability",
+      "hook": "The risky part of agentic AI is not only generation. It is context access, tool use, side effects, and accountability.",
+      "outline": [
+        "Agentic data readiness",
+        "Tool sandboxing and dry-run connectors",
+        "Provider/model routing controls",
+        "Audit event bus and decision history",
+        "Why production readiness requires evidence, not optimism"
+      ],
+      "call_to_action": "I would like to compare this control-plane approach with how other teams are preparing agent programs."
+    }
+  ]
+}

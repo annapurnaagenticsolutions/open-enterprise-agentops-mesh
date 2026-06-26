@@ -1,0 +1,6 @@
+{
+  "matched_pattern": "flaky_test_timeout",
+  "prior_occurrences": 4,
+  "validated_resolutions": 3,
+  "confidence_boost": 0.05
+}

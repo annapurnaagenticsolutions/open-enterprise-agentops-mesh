@@ -1,0 +1,8 @@
+{
+  "source": "teams_adaptive_card",
+  "workflow_id": "wf-demo-001",
+  "action_id": "draft_gitlab_mr",
+  "approval_token": "signed-demo-token",
+  "teams_user_id": "user-demo-123",
+  "policy_hash": "sha256:demo-policy-v0-1"
+}

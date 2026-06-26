@@ -1,0 +1,41 @@
+{
+  "version": "2.5.0",
+  "themes": [
+    {
+      "theme_id": "ux-guided-demo",
+      "title": "Guided public demo path",
+      "signal_count": 8,
+      "enterprise_relevance": 9,
+      "open_source_fit": 9,
+      "scope_expansion_risk": 2,
+      "priority": "high"
+    },
+    {
+      "theme_id": "scenario-library-expansion",
+      "title": "More reusable benchmark scenarios",
+      "signal_count": 6,
+      "enterprise_relevance": 8,
+      "open_source_fit": 10,
+      "scope_expansion_risk": 2,
+      "priority": "high"
+    },
+    {
+      "theme_id": "live-provider-execution",
+      "title": "Real model-provider execution",
+      "signal_count": 5,
+      "enterprise_relevance": 9,
+      "open_source_fit": 6,
+      "scope_expansion_risk": 8,
+      "priority": "defer_until_security_gates"
+    },
+    {
+      "theme_id": "github-discussions-sync",
+      "title": "GitHub Discussions issue-sync model",
+      "signal_count": 3,
+      "enterprise_relevance": 5,
+      "open_source_fit": 8,
+      "scope_expansion_risk": 4,
+      "priority": "medium"
+    }
+  ]
+}

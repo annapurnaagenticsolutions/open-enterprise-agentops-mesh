@@ -1,0 +1,12 @@
+{
+  "current_version": "2.0.0",
+  "current_release": "Control Plane Architecture Stabilization",
+  "next_recommended_release": "v2.1 — Documentation pruning, OpenAPI polish, and contributor readiness",
+  "deferred_until_after_v2_1": [
+    "real provider execution",
+    "real connector execution",
+    "external vault integration",
+    "database adapter migration"
+  ],
+  "stable_public_mvp": true
+}

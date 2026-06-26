@@ -1,0 +1,53 @@
+{
+  "release": "v2.7",
+  "target_duration_minutes": {
+    "minimum": 5,
+    "maximum": 7
+  },
+  "audience": "enterprise_ai_architects_and_leaders",
+  "storyline": "From agent idea to governed, evaluated, audited control-plane decision before production.",
+  "segments": [
+    {
+      "order": 1,
+      "title": "Problem setup",
+      "duration_seconds": 45,
+      "talk_track": "Enterprises are moving toward task-specific agents, but production control requires governance, policy, evaluation, audit, and approval."
+    },
+    {
+      "order": 2,
+      "title": "Public site orientation",
+      "duration_seconds": 45,
+      "talk_track": "Show the landing page and explain that this is not a chatbot framework."
+    },
+    {
+      "order": 3,
+      "title": "Interactive procurement scenario",
+      "duration_seconds": 120,
+      "talk_track": "Walk through procurement intake, governance, policy, runtime, model safety, and audit signals."
+    },
+    {
+      "order": 4,
+      "title": "Control-plane evidence",
+      "duration_seconds": 90,
+      "talk_track": "Show benchmark, smoke checks, release evidence, and safety boundaries."
+    },
+    {
+      "order": 5,
+      "title": "Open-source adoption path",
+      "duration_seconds": 60,
+      "talk_track": "Show contributor docs, API catalog, and community intake."
+    },
+    {
+      "order": 6,
+      "title": "Boundary statement and close",
+      "duration_seconds": 45,
+      "talk_track": "Clarify that live providers, live connectors, raw secrets, and production IAM remain disabled."
+    }
+  ],
+  "success_criteria": [
+    "Viewer understands the control-plane positioning.",
+    "Viewer sees concrete procurement demo path.",
+    "Viewer sees validation evidence.",
+    "Viewer does not assume production live execution is enabled."
+  ]
+}

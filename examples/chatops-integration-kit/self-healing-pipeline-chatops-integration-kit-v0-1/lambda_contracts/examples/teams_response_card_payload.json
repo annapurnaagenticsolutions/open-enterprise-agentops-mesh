@@ -1,0 +1,17 @@
+{
+  "workflow_id": "wf-demo-001",
+  "build_id": "TC-DEMO-001",
+  "failure_class": "dependency_conflict",
+  "confidence": 0.91,
+  "evidence_score": 0.86,
+  "policy_decision": "allow_with_review",
+  "root_cause": "package.json changed, but package-lock.json was not updated.",
+  "recommended_action_summary": "Draft GitLab MR, add Jira comment, and propose dependency checklist update.",
+  "actions": [
+    "view_evidence",
+    "create_jira_comment",
+    "draft_gitlab_mr",
+    "draft_docs_update",
+    "reject"
+  ]
+}

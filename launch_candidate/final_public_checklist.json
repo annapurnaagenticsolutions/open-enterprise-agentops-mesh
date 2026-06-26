@@ -1,0 +1,78 @@
+{
+  "release": "v2.8",
+  "decision": "checklist_ready",
+  "items": [
+    {
+      "id": "repo-readme",
+      "name": "README describes control-plane narrative",
+      "status": "ready",
+      "critical": true
+    },
+    {
+      "id": "license",
+      "name": "License is present",
+      "status": "ready",
+      "critical": true
+    },
+    {
+      "id": "contrib",
+      "name": "Contributor guide is present",
+      "status": "ready",
+      "critical": true
+    },
+    {
+      "id": "site-index",
+      "name": "Site landing page exists",
+      "status": "ready",
+      "critical": true
+    },
+    {
+      "id": "interactive-demo",
+      "name": "Interactive demo path exists",
+      "status": "ready",
+      "critical": true
+    },
+    {
+      "id": "launch-console",
+      "name": "Launch candidate console exists",
+      "status": "ready",
+      "critical": true
+    },
+    {
+      "id": "api-smoke",
+      "name": "API smoke checks pass locally",
+      "status": "requires_run",
+      "critical": true
+    },
+    {
+      "id": "benchmark",
+      "name": "Benchmark harness passes locally",
+      "status": "requires_run",
+      "critical": true
+    },
+    {
+      "id": "secret-scan-lite",
+      "name": "Forbidden public secret patterns are absent",
+      "status": "ready",
+      "critical": true
+    },
+    {
+      "id": "pages-source",
+      "name": "GitHub Pages source configured to /site",
+      "status": "manual",
+      "critical": true
+    },
+    {
+      "id": "demo-recording",
+      "name": "Five-minute demo recording prepared",
+      "status": "manual",
+      "critical": false
+    },
+    {
+      "id": "linkedin",
+      "name": "Launch copy prepared",
+      "status": "ready",
+      "critical": false
+    }
+  ]
+}

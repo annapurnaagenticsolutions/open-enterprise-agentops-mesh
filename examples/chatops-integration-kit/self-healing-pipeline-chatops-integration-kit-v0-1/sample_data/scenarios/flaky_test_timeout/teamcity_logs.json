@@ -1,0 +1,14 @@
+[
+  {
+    "line": 1,
+    "message": "Running integration tests."
+  },
+  {
+    "line": 2,
+    "message": "Test CartRepricingIT timed out after 300 seconds."
+  },
+  {
+    "line": 3,
+    "message": "Previous rerun passed on same commit. Possible flaky timeout."
+  }
+]

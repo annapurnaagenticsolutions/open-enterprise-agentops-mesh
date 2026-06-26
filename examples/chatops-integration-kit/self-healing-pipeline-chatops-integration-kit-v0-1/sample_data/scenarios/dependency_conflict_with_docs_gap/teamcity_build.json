@@ -1,0 +1,10 @@
+{
+  "build_id": "TC-DEMO-001",
+  "status": "failed",
+  "project": "Payments Platform",
+  "build_configuration": "payments-service-ci",
+  "failed_stage": "install_dependencies",
+  "agent": "linux-medium-07",
+  "branch": "feature/billing-client-upgrade",
+  "commit_sha": "demo-dep-001"
+}

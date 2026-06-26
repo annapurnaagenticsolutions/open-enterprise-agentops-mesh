@@ -1,0 +1,14 @@
+[
+  {
+    "line": 1,
+    "message": "Packaging artifact."
+  },
+  {
+    "line": 2,
+    "message": "No space left on device while writing build artifact."
+  },
+  {
+    "line": 3,
+    "message": "Agent linux-medium-07 disk usage at 98%."
+  }
+]

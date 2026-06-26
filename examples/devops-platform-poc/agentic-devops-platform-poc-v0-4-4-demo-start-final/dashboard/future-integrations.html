@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Future Integrations</title><style>
+:root{--bg:#f4f7f6;--surface:#fff;--border:#e0e0e0;--accent:#6C4298;--blue:#005A9C;--green:#27ae60;--amber:#d35400;--red:#c0392b;--text:#2b2b2b;--muted:#555;--soft-purple:#f6f0fb;--soft-blue:#e8f4f8;--soft-green:#edf8f2;--soft-amber:#fdfaf6;--soft-red:#fdeaea}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+.shell{max-width:1450px;margin:0 auto;padding:24px}.hero{background:#fff;border:1px solid var(--border);border-left:6px solid var(--accent);border-radius:10px;padding:24px;margin-bottom:18px;box-shadow:0 4px 8px rgba(0,0,0,.06)}
+h1{margin:0 0 8px;color:var(--accent);font-size:30px}h2{color:var(--accent);margin:0 0 12px}p{color:var(--muted)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:1000px){.grid4{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr 1fr}}@media(max-width:760px){.grid2,.grid3,.grid4{grid-template-columns:1fr}.shell{padding:14px}}
+.panel,.card{background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 3px 7px rgba(0,0,0,.06)}.panel{padding:18px;margin-bottom:18px}.card{padding:16px}.card h3{margin:0 0 8px;color:var(--accent);font-size:15px;text-transform:uppercase;letter-spacing:.7px}.card ul{padding-left:18px;margin:0}.card li{margin-bottom:6px;font-size:14px}
+.badge{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800;margin:2px}.purple{background:var(--soft-purple);color:var(--accent)}.green{background:var(--soft-green);color:var(--green)}.amber{background:var(--soft-amber);color:var(--amber)}.blue{background:var(--soft-blue);color:var(--blue)}.red{background:var(--soft-red);color:var(--red)}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:10px 0 16px}th{background:#2b2b2b;color:#fff;padding:10px;text-align:left;font-size:13px}td{border-top:1px solid var(--border);padding:10px;vertical-align:top;font-size:13px}
+pre{background:#f8f9fa;border:1px solid #dee2e6;padding:14px;border-radius:8px;white-space:pre-wrap;overflow-x:auto;font-family:"Cascadia Code",Consolas,monospace;font-size:13px}
+.nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.nav a{display:inline-block;text-decoration:none;color:var(--accent);background:var(--soft-purple);border:1px solid #e1d1f4;border-radius:8px;padding:9px 12px;font-weight:750;font-size:13px}
+.footer{margin-top:18px;color:var(--muted);font-size:13px}
+.metric{font-size:28px;font-weight:850;color:var(--accent)}input{width:100%;padding:9px;border:1px solid var(--border);border-radius:8px;margin-top:4px}button{padding:10px 14px;border:0;border-radius:8px;background:var(--accent);color:white;font-weight:800;cursor:pointer}
+</style></head>
+<body>
+<div class="shell">
+  <div class="hero"><h1>Future-Proof Integration Map</h1><p>The current demo uses TeamCity + GitHub + Jira, but the architecture is adapter-based and not locked to these tools.</p><div class="nav">
+<a href="showcase.html">Showcase Home</a>
+<a href="architecture.html">Architecture</a>
+<a href="before-after.html">Before vs After</a>
+<a href="value-simulator.html">Value Simulator</a>
+<a href="governance.html">Governance</a>
+<a href="future-integrations.html">Future Integrations</a>
+<a href="trust.html">Trust</a>
+</div></div>
+  <div class="grid3" id="integrations"></div>
+  <div class="panel"><h2>Expansion Principle</h2><pre>Adapters change.
+Canonical event model remains stable.
+Policy remains stable.
+Runtime contract remains stable.
+Dashboard and evaluation model remain stable.</pre></div>
+</div>
+
+<script src="assets/showcase_data.js"></script>
+<script>
+const integrations=window.SHOWCASE_DATA.integrations;
+document.getElementById("integrations").innerHTML=Object.keys(integrations).map(function(k){
+ const items=integrations[k].map(function(x){return '<li>'+x+'</li>';}).join('');
+ return '<div class="card"><h3>'+k+'</h3><ul>'+items+'</ul></div>';
+}).join('');
+</script>
+</body></html>

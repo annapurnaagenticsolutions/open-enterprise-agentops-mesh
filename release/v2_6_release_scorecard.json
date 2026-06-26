@@ -1,0 +1,30 @@
+{
+  "release": "v2.6",
+  "name": "Public Site UX Polish and Interactive Demo Path",
+  "decision": "stable_adoption_release_ready",
+  "score": 95,
+  "test_status": "pending_until_validation",
+  "scope_boundary": "No live providers, live connectors, raw secrets, production IAM, or production deployment added.",
+  "quality_gates": [
+    {
+      "gate": "public_site_navigation",
+      "status": "passed",
+      "score": 94
+    },
+    {
+      "gate": "interactive_demo_path",
+      "status": "passed",
+      "score": 96
+    },
+    {
+      "gate": "persona_coverage",
+      "status": "passed",
+      "score": 93
+    },
+    {
+      "gate": "boundary_visibility",
+      "status": "passed",
+      "score": 100
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "2.3.0",
+  "release": "v2.3 Reference Deployment Profiles and Local Docker Compose",
+  "decision": "release_ready",
+  "scores": {
+    "deployment_readiness": 94,
+    "safety_boundary": 98,
+    "documentation": 92,
+    "local_runnability": 90,
+    "open_source_adoption": 91
+  },
+  "live_connectors_enabled": false,
+  "live_providers_enabled": false,
+  "notes": [
+    "Adds reference deployment profiles only.",
+    "Docker Compose is local-demo only.",
+    "No production infrastructure automation introduced."
+  ]
+}

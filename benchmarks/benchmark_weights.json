@@ -1,0 +1,19 @@
+{
+  "version": "2.4.0",
+  "weights": {
+    "decision_alignment": 0.28,
+    "runtime_alignment": 0.18,
+    "safety_alignment": 0.16,
+    "required_control_coverage": 0.16,
+    "evidence_coverage": 0.08,
+    "data_readiness": 0.07,
+    "governance_readiness": 0.07
+  },
+  "pass_threshold_default": 80,
+  "critical_failure_rules": [
+    "expected_deny_but_actual_allow",
+    "expected_require_approval_but_actual_allow_without_controls",
+    "expected_blocked_runtime_but_actual_executed",
+    "expected_safety_blocked_but_actual_safety_approved"
+  ]
+}

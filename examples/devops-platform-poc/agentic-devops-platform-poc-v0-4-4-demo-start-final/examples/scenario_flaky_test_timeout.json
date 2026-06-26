@@ -1,0 +1,22 @@
+{
+  "schema_version": "devops.event.v1",
+  "source_tool": "teamcity",
+  "event_type": "pipeline_failed",
+  "normalized_event_type": "pipeline.failed",
+  "trust_level": "synthetic_test",
+  "service_name": "checkout-service",
+  "service_criticality": "tier_2",
+  "owner_team": "checkout-platform",
+  "repository": "platform/checkout-service",
+  "branch": "feature/cart-refactor",
+  "commit_sha": "flaky123",
+  "pipeline_id": "tc_pipeline_flaky_timeout",
+  "build_id": "tc_build_flaky_timeout",
+  "environment": "ci",
+  "severity": "medium",
+  "metadata": {
+    "scenario": "flaky_test_timeout",
+    "issue_type": "test_timeout",
+    "jira_ticket": "DEVOPS-201"
+  }
+}

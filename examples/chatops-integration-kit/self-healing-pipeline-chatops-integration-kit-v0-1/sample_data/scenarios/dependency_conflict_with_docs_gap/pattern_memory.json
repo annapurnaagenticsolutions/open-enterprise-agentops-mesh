@@ -1,0 +1,6 @@
+{
+  "matched_pattern": "dependency_lockfile_mismatch",
+  "prior_occurrences": 7,
+  "validated_resolutions": 5,
+  "confidence_boost": 0.1
+}

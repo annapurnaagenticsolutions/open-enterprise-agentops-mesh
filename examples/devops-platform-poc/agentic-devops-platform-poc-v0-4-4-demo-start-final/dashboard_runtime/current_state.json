@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-06-18T10:15:10.078066+00:00",
+  "scenario_id": "risky_action",
+  "sequence": 6,
+  "step": "dashboard.updated",
+  "status": "completed",
+  "message": "Dashboard updated with policy-block example.",
+  "payload": {
+    "runtime_mode": "mock_claude",
+    "adapter_mode": "mock",
+    "strict_schema": true,
+    "policy_gated": true
+  }
+}

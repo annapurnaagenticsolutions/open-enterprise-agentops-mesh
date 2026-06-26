@@ -1,0 +1,7 @@
+{
+  "issue_id": "DEVOPS-DEMO-001",
+  "title": "Payments service pipeline failed after billing client upgrade",
+  "priority": "High",
+  "owner_team": "payments-platform",
+  "status": "In Progress"
+}

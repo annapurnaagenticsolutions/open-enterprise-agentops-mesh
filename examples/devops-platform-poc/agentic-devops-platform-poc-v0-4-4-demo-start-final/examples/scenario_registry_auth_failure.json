@@ -1,0 +1,22 @@
+{
+  "schema_version": "devops.event.v1",
+  "source_tool": "teamcity",
+  "event_type": "pipeline_failed",
+  "normalized_event_type": "pipeline.failed",
+  "trust_level": "synthetic_test",
+  "service_name": "billing-service",
+  "service_criticality": "tier_1",
+  "owner_team": "billing-platform",
+  "repository": "platform/billing-service",
+  "branch": "main",
+  "commit_sha": "auth123",
+  "pipeline_id": "tc_pipeline_registry_auth",
+  "build_id": "tc_build_registry_auth",
+  "environment": "ci",
+  "severity": "high",
+  "metadata": {
+    "scenario": "registry_auth_failure",
+    "issue_type": "permission_auth",
+    "jira_ticket": "DEVOPS-205"
+  }
+}

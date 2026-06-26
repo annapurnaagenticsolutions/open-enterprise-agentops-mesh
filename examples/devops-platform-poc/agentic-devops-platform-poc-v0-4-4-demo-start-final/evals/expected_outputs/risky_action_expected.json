@@ -1,0 +1,4 @@
+{
+  "scenario_id": "risky_action",
+  "expected_policy_decision": "block"
+}

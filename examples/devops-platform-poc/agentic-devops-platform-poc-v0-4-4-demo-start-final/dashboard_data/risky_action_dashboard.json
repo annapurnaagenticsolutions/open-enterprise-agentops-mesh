@@ -1,0 +1,231 @@
+{
+  "scenario_id": "risky_action",
+  "scenario_name": "Risky Action",
+  "outcome_type": "policy_blocked",
+  "teamcity": {
+    "build_id": "tc_build_risky_action",
+    "build_config_id": "tc_pipeline_risky_action",
+    "failed_step": "install_dependencies",
+    "agent": "linux-medium",
+    "status": "blocked",
+    "log_summary": "npm install started. | ERESOLVE unable to resolve dependency tree. | package-lock.json appears stale after package.json dependency change. | dependency version conflict detected for billing-client.",
+    "rerun_status": "not_started_policy_blocked"
+  },
+  "github": {
+    "repo": "platform/payments-service",
+    "branch": "release/prod-hotfix",
+    "commit_sha": "risk123",
+    "pr_number": null,
+    "changed_files": [
+      "package.json",
+      "package-lock.json"
+    ],
+    "docs_pr_url": null
+  },
+  "jira": {
+    "ticket_id": "POC-RISKY-ACTION",
+    "status": "Escalated / Blocked",
+    "owner_team": "payments-platform",
+    "comments": [
+      "AI RCA generated for scenario risky_action.",
+      "Policy decision: block.",
+      "Memory status: MemoryPromotionStatus.REJECTED_STORED."
+    ],
+    "linked_artifacts": [
+      "TeamCity:tc_build_risky_action",
+      "GitHub:platform/payments-service@risk123"
+    ]
+  },
+  "rca": {
+    "failure_class": "dependency_conflict",
+    "root_cause": "The pipeline failed during dependency installation because the dependency manifest and lockfile appear to be inconsistent. The commit diff indicates package.json changed, but the lockfile was not updated.",
+    "confidence_score": 0.9199999999999999,
+    "evidence_refs": [
+      "build_logs: Dependency resolver error or lockfile mismatch found.",
+      "build_logs: npm install started. | ERESOLVE unable to resolve dependency tree. | package-lock.json appears stale after package.json dependency change. | dependency version conflict detected for billing-client.",
+      "commit_diff: package.json changed but package-lock.json was not updated."
+    ]
+  },
+  "governance": {
+    "policy_decision": "block",
+    "evidence_score": 1.0,
+    "blast_radius_score": 145,
+    "blast_radius_level": "high",
+    "required_approvers": [
+      {
+        "role": "platform_engineer",
+        "team": "platform",
+        "reason": "Medium or higher blast radius requires platform review."
+      },
+      {
+        "role": "sre_lead",
+        "team": "sre",
+        "reason": "High blast radius requires SRE lead review."
+      }
+    ],
+    "policy_reasons": [
+      "Action 'auto_merge' is blocked in POC mode.",
+      "Blast radius score 145 is high; blocked for POC."
+    ]
+  },
+  "pattern_memory": {
+    "pattern_id": "runtime_wf_bf1954ed1c43",
+    "promotion_status": "rejected_stored",
+    "validation_result": "not_started_policy_blocked",
+    "success_count": 0,
+    "rejection_count": 0
+  },
+  "documentation": {
+    "checklist_name": null,
+    "proposed_item": null,
+    "target_file": null,
+    "priority": null,
+    "docs_pr_status": null,
+    "docs_pr_url": null,
+    "proposed_markdown": null
+  },
+  "audit_timeline": [
+    {
+      "timestamp": "2026-06-18T10:12:49.082424+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "workflow_started",
+      "details": {
+        "event_id": "evt_a6fee412de91"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.082632+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "failure_classified",
+      "details": {
+        "failure_class": "dependency_conflict",
+        "confidence_score": 0.9199999999999999,
+        "risk_level": "low",
+        "evidence_score": 1.0,
+        "missing_evidence": []
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.082796+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "rca_generated",
+      "details": {
+        "root_cause": "The pipeline failed during dependency installation because the dependency manifest and lockfile appear to be inconsistent. The commit diff indicates package.json changed, but the lockfile was not updated."
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.082909+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "remediation_planned",
+      "details": {
+        "plan": {
+          "summary": "Risky requested action detected. Auto-merge is blocked in POC mode.",
+          "steps": [
+            "Block auto-merge request.",
+            "Route to service owner and platform/SRE review.",
+            "Require explicit human decision."
+          ],
+          "merge_request_proposal": {
+            "repo": "platform/payments-service",
+            "source_branch": "autoheal/wf_bf1954ed1c43/dependency-lockfile",
+            "target_branch": "release/prod-hotfix",
+            "title": "Fix stale dependency lockfile detected by Self-Healing Pipeline",
+            "body": "## Root Cause\nThe pipeline failed during dependency installation because the dependency manifest and lockfile appear to be inconsistent. The commit diff indicates package.json changed, but the lockfile was not updated.\n\n## Proposed Fix\nRegenerate and commit dependency lockfile so dependency tree matches package manifest.\n\n## Confidence\n0.92\n\n## Risk\nLow. Human review required before merge."
+          }
+        },
+        "blast_radius_score": 145,
+        "blast_radius_level": "high",
+        "risk_score": 145
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.082969+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "memory_status_recorded",
+      "details": {
+        "promotion_status": "rejected_stored",
+        "reason": "policy_block"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.082977+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "policy_evaluated",
+      "details": {
+        "decision": "block",
+        "approval_required": true,
+        "allowed_actions": [],
+        "blocked_actions": [
+          {
+            "type": "auto_merge",
+            "risk_level": "high",
+            "approval_required": true,
+            "summary": "Attempted auto-merge requested by event metadata."
+          }
+        ],
+        "reasons": [
+          "Action 'auto_merge' is blocked in POC mode.",
+          "Blast radius score 145 is high; blocked for POC."
+        ],
+        "required_approvers": [
+          {
+            "role": "platform_engineer",
+            "team": "platform",
+            "reason": "Medium or higher blast radius requires platform review."
+          },
+          {
+            "role": "sre_lead",
+            "team": "sre",
+            "reason": "High blast radius requires SRE lead review."
+          }
+        ]
+      }
+    }
+  ],
+  "ai_telemetry": [
+    {
+      "step": "context_collection",
+      "model": "mock-claude-native",
+      "input_tokens": 733,
+      "output_tokens": 3,
+      "estimated_cost_usd": 0.002244,
+      "latency_ms": 193,
+      "abstained": false
+    },
+    {
+      "step": "classify_failure",
+      "model": "mock-claude-native",
+      "input_tokens": 733,
+      "output_tokens": 4,
+      "estimated_cost_usd": 0.002259,
+      "latency_ms": 193,
+      "abstained": false
+    },
+    {
+      "step": "generate_rca",
+      "model": "mock-claude-native",
+      "input_tokens": 733,
+      "output_tokens": 51,
+      "estimated_cost_usd": 0.002964,
+      "latency_ms": 193,
+      "abstained": false
+    },
+    {
+      "step": "policy_and_validation_planning",
+      "model": "mock-claude-native",
+      "input_tokens": 733,
+      "output_tokens": 18,
+      "estimated_cost_usd": 0.002469,
+      "latency_ms": 193,
+      "abstained": false
+    }
+  ],
+  "next_actions": [
+    {
+      "label": "Review RCA and policy decision",
+      "owner": "payments-platform",
+      "action_type": "human_review",
+      "status": "pending"
+    }
+  ]
+}

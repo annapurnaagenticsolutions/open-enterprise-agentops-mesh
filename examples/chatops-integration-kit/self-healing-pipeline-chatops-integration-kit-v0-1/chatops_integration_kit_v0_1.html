@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChatOps Integration Kit v0.1</title>
+  <style>
+    :root { --bg:#f4f7f6; --surface:#fff; --border:#e0e0e0; --accent:#6C4298; --blue:#005A9C; --green:#27ae60; --amber:#d35400; --red:#c0392b; --text:#2b2b2b; --muted:#555; --soft-purple:#f6f0fb; --soft-blue:#e8f4f8; --soft-green:#edf8f2; --soft-amber:#fdfaf6; --soft-red:#fdeaea; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
+    .shell { max-width:1450px; margin:0 auto; padding:28px 22px; }
+    .hero { background:#fff; border:1px solid var(--border); border-left:7px solid var(--accent); border-radius:14px; padding:28px; margin-bottom:18px; box-shadow:0 6px 18px rgba(0,0,0,.07); }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:2px; font-size:12px; font-weight:850; }
+    h1 { margin:6px 0 10px; color:var(--accent); font-size:34px; line-height:1.15; }
+    h2 { color:var(--accent); margin:0 0 12px; }
+    h3 { color:#2C3E50; margin:0 0 8px; }
+    p { color:var(--muted); }
+    .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    @media(max-width:900px) { .grid3,.grid2 { grid-template-columns:1fr; } }
+    .panel,.card { background:#fff; border:1px solid var(--border); border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.06); }
+    .panel { padding:20px; margin-bottom:18px; }
+    .card { padding:16px; }
+    .badge { display:inline-block; padding:5px 10px; border-radius:999px; font-size:12px; font-weight:850; margin:2px; }
+    .purple { background:var(--soft-purple); color:var(--accent); } .green { background:var(--soft-green); color:var(--green); } .blue { background:var(--soft-blue); color:var(--blue); } .amber { background:var(--soft-amber); color:var(--amber); }
+    pre { background:#f8f9fa; border:1px solid #dee2e6; padding:14px; border-radius:8px; white-space:pre-wrap; overflow-x:auto; font-family:"Cascadia Code",Consolas,monospace; font-size:13px; }
+    table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--border); border-radius:8px; overflow:hidden; margin:10px 0; }
+    th { background:#2b2b2b; color:#fff; padding:10px; text-align:left; font-size:13px; }
+    td { border-top:1px solid var(--border); padding:10px; vertical-align:top; font-size:13px; }
+    .footer { text-align:center; color:var(--muted); margin-top:18px; font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="eyebrow">Implementation Kit v0.1</div>
+      <h1>Self-Healing Pipeline ChatOps Integration Kit</h1>
+      <p>Implementation-ready starter kit for connecting the Self-Healing Pipeline demo to Teams, Lambda, Claude Orchestrator, and MCP tools using scenario-backed self-healing data.</p>
+      <div>
+        <span class="badge green">Scenario-backed tools</span>
+        <span class="badge purple">Lambda payloads</span>
+        <span class="badge blue">Teams templates</span>
+        <span class="badge amber">Live-readiness checklist</span>
+      </div>
+    </section>
+
+    <section class="grid3">
+      <div class="card">
+        <h3>Executable Tool Skeleton</h3>
+        <p><code>scenario_mcp_server/server.py</code> provides methods that can be adapted into MCP tool registrations.</p>
+      </div>
+      <div class="card">
+        <h3>Integration Payloads</h3>
+        <p>Examples cover Teams request, gateway request, orchestrator request, approval callback, and Teams response card.</p>
+      </div>
+      <div class="card">
+        <h3>Demo Rehearsal Assets</h3>
+        <p>Tool traces and Teams response templates make the demo predictable and explainable.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Quick Demo</h2>
+      <pre>python -m scenario_mcp_server.demo_cli TC-DEMO-001</pre>
+    </section>
+
+    <section class="panel">
+      <h2>Package Contents</h2>
+      <table>
+        <thead><tr><th>Area</th><th>Files</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Tool skeleton</td><td>scenario_mcp_server/*</td><td>Scenario-backed MCP/tool server implementation starter.</td></tr>
+          <tr><td>Lambda contracts</td><td>lambda_contracts/examples/*</td><td>Request/response payloads for integration.</td></tr>
+          <tr><td>Tool traces</td><td>demo_traces/*</td><td>Show what tools the agent calls and why.</td></tr>
+          <tr><td>Teams messages</td><td>teams_messages/*</td><td>Expected Teams response examples.</td></tr>
+          <tr><td>State/security</td><td>schemas/* and docs/*</td><td>Approval model, security boundary, workflow state, live checklist.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>Recommended Build Order</h2>
+      <pre>1. Wire scenario_mcp_server methods into your MCP tool registry.
+2. Use TC-DEMO-001 from Teams through Lambda to test diagnosis.
+3. Return Teams summary card from teams_cards/self_healing_summary_card.json.
+4. Add approval callback handling.
+5. Simulate Jira/GitLab writes.
+6. Replace scenario-backed reads with live read-only APIs.
+7. Keep risky writes blocked until production certification.</pre>
+    </section>
+
+    <div class="footer">Generated 2026-06-18</div>
+  </div>
+</body>
+</html>

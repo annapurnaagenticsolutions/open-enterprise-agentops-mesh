@@ -1,0 +1,8 @@
+[
+  {
+    "tenant_id": "tenant-procurement",
+    "case_id": "proc-case-001",
+    "agent_id": "procurement-agent-001",
+    "validation_status": "caution"
+  }
+]

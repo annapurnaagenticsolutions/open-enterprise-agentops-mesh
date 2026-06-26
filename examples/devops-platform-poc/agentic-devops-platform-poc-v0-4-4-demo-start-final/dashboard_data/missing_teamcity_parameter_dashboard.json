@@ -1,0 +1,205 @@
+{
+  "scenario_id": "missing_teamcity_parameter",
+  "scenario_name": "Missing Teamcity Parameter",
+  "outcome_type": "fix_proposed",
+  "teamcity": {
+    "build_id": "tc_build_missing_param",
+    "build_config_id": "tc_pipeline_missing_param",
+    "failed_step": "install_dependencies",
+    "agent": "linux-medium",
+    "status": "awaiting_approval",
+    "log_summary": "Starting deploy verification step. | Missing required TeamCity parameter env.API_BASE_URL. | Pipeline configuration error: required parameter not defined.",
+    "rerun_status": "pending_human_approval"
+  },
+  "github": {
+    "repo": "platform/pricing-service",
+    "branch": "release/1.8",
+    "commit_sha": "param123",
+    "pr_number": null,
+    "changed_files": [
+      "package.json",
+      "package-lock.json"
+    ],
+    "docs_pr_url": null
+  },
+  "jira": {
+    "ticket_id": "DEVOPS-203",
+    "status": "Awaiting Review",
+    "owner_team": "pricing-platform",
+    "comments": [
+      "AI RCA generated for scenario missing_teamcity_parameter.",
+      "Policy decision: allow_with_review.",
+      "Memory status: MemoryPromotionStatus.ACCEPTED_PENDING_VALIDATION."
+    ],
+    "linked_artifacts": [
+      "TeamCity:tc_build_missing_param",
+      "GitHub:platform/pricing-service@param123"
+    ]
+  },
+  "rca": {
+    "failure_class": "pipeline_config_error",
+    "root_cause": "The pipeline failed because a required TeamCity build parameter is missing or not defined for this build configuration.",
+    "confidence_score": 0.84,
+    "evidence_refs": [
+      "build_logs: Missing TeamCity parameter or pipeline configuration error detected.",
+      "build_logs: Starting deploy verification step. | Missing required TeamCity parameter env.API_BASE_URL. | Pipeline configuration error: required parameter not defined.",
+      "commit_diff: package.json changed but package-lock.json was not updated."
+    ]
+  },
+  "governance": {
+    "policy_decision": "allow_with_review",
+    "evidence_score": 0.9,
+    "blast_radius_score": 23,
+    "blast_radius_level": "low",
+    "required_approvers": [
+      {
+        "role": "service_owner",
+        "team": "pricing-platform",
+        "reason": "Review required before write-capable action."
+      }
+    ],
+    "policy_reasons": []
+  },
+  "pattern_memory": {
+    "pattern_id": "runtime_wf_043e0bf11aa2",
+    "promotion_status": "accepted_pending_validation",
+    "validation_result": "pending_human_approval",
+    "success_count": 0,
+    "rejection_count": 0
+  },
+  "documentation": {
+    "checklist_name": null,
+    "proposed_item": null,
+    "target_file": null,
+    "priority": null,
+    "docs_pr_status": null,
+    "docs_pr_url": null,
+    "proposed_markdown": null
+  },
+  "audit_timeline": [
+    {
+      "timestamp": "2026-06-18T10:12:49.089042+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "workflow_started",
+      "details": {
+        "event_id": "evt_2175417cf50b"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.089198+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "failure_classified",
+      "details": {
+        "failure_class": "pipeline_config_error",
+        "confidence_score": 0.84,
+        "risk_level": "medium",
+        "evidence_score": 0.9,
+        "missing_evidence": []
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.089283+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "rca_generated",
+      "details": {
+        "root_cause": "The pipeline failed because a required TeamCity build parameter is missing or not defined for this build configuration."
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.089398+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "remediation_planned",
+      "details": {
+        "plan": {
+          "summary": "Review TeamCity build parameters and update missing configuration after human approval.",
+          "steps": [
+            "Document missing TeamCity parameter and assign owner."
+          ],
+          "config_review": {
+            "type": "config_review",
+            "reason": "TeamCity parameter/config drift detected."
+          }
+        },
+        "blast_radius_score": 23,
+        "blast_radius_level": "low",
+        "risk_score": 23
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.089436+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "memory_status_recorded",
+      "details": {
+        "promotion_status": "accepted_pending_validation",
+        "reason": "accepted_pending_validation"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.089443+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "policy_evaluated",
+      "details": {
+        "decision": "allow_with_review",
+        "approval_required": true,
+        "allowed_actions": [
+          "comment_on_ticket"
+        ],
+        "blocked_actions": [],
+        "reasons": [],
+        "required_approvers": [
+          {
+            "role": "service_owner",
+            "team": "pricing-platform",
+            "reason": "Review required before write-capable action."
+          }
+        ]
+      }
+    }
+  ],
+  "ai_telemetry": [
+    {
+      "step": "context_collection",
+      "model": "mock-claude-native",
+      "input_tokens": 622,
+      "output_tokens": 3,
+      "estimated_cost_usd": 0.001911,
+      "latency_ms": 182,
+      "abstained": false
+    },
+    {
+      "step": "classify_failure",
+      "model": "mock-claude-native",
+      "input_tokens": 622,
+      "output_tokens": 5,
+      "estimated_cost_usd": 0.001941,
+      "latency_ms": 182,
+      "abstained": false
+    },
+    {
+      "step": "generate_rca",
+      "model": "mock-claude-native",
+      "input_tokens": 622,
+      "output_tokens": 29,
+      "estimated_cost_usd": 0.002301,
+      "latency_ms": 182,
+      "abstained": false
+    },
+    {
+      "step": "policy_and_validation_planning",
+      "model": "mock-claude-native",
+      "input_tokens": 622,
+      "output_tokens": 42,
+      "estimated_cost_usd": 0.002496,
+      "latency_ms": 182,
+      "abstained": false
+    }
+  ],
+  "next_actions": [
+    {
+      "label": "Review RCA and policy decision",
+      "owner": "pricing-platform",
+      "action_type": "human_review",
+      "status": "pending"
+    }
+  ]
+}

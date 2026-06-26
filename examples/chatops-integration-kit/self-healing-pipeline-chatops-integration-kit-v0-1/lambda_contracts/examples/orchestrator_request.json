@@ -1,0 +1,17 @@
+{
+  "workflow_id": "wf-demo-001",
+  "runtime_mode": "claude_api_or_mock",
+  "mode": "scenario_backed_chatops",
+  "command": "diagnose",
+  "build_id": "TC-DEMO-001",
+  "scenario_id": "dependency_conflict_with_docs_gap",
+  "allowed_tools": [
+    "teamcity.get_build",
+    "teamcity.get_failed_logs",
+    "gitlab.get_commit_diff",
+    "jira.get_issue",
+    "memory.search_patterns",
+    "docs.search_checklist",
+    "policy.evaluate_action"
+  ]
+}

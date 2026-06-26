@@ -1,0 +1,22 @@
+{
+  "release": "v2.8",
+  "name": "Public Launch Candidate and GitHub Pages Finalization",
+  "score": 97,
+  "decision": "public_launch_candidate_ready",
+  "validation_targets": [
+    "backend_tests",
+    "api_smoke_checks",
+    "public_repo_validation",
+    "benchmark_harness",
+    "release_evidence_report",
+    "launch_candidate_report"
+  ],
+  "live_execution_boundaries": {
+    "live_model_provider_calls": false,
+    "live_connector_execution": false,
+    "raw_secret_storage": false,
+    "production_iam": false,
+    "external_api_calls": false,
+    "cloud_provisioning": false
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "issue_id": "DEVOPS-DEMO-004",
+  "title": "Billing service registry authentication failure",
+  "priority": "Critical",
+  "owner_team": "platform-security",
+  "status": "Open"
+}

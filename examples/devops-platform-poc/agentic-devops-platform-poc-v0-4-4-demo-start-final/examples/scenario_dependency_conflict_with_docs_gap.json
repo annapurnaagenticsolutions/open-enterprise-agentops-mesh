@@ -1,0 +1,26 @@
+{
+  "schema_version": "devops.event.v1",
+  "source_tool": "teamcity",
+  "event_type": "pipeline_failed",
+  "normalized_event_type": "pipeline.failed",
+  "trust_level": "synthetic_test",
+  "service_name": "payments-service",
+  "service_criticality": "tier_3",
+  "owner_team": "payments-platform",
+  "repository": "platform/payments-service",
+  "branch": "feature/update-billing-client",
+  "commit_sha": "docs123",
+  "pipeline_id": "tc_pipeline_dependency_docs_gap",
+  "build_id": "tc_build_dependency_docs_gap",
+  "environment": "ci",
+  "severity": "medium",
+  "metadata": {
+    "scenario": "dependency_conflict_with_docs_gap",
+    "triggered_by": "developer",
+    "team": "payments-platform",
+    "documentation_intelligence_enabled": true,
+    "docs_gap_type": "dependency_checklist_lockfile_rule",
+    "jira_ticket": "DEVOPS-123",
+    "github_pr": "42"
+  }
+}

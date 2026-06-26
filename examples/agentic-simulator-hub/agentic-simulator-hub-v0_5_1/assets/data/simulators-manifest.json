@@ -1,0 +1,25 @@
+{
+  "version": "0.5.0",
+  "product": "Annapurna Agentic Solutions — Agentic Simulator Hub",
+  "releaseType": "Corrective multi-page portfolio build",
+  "pages": [
+    "index.html",
+    "simulators.html",
+    "demo-guide.html",
+    "architecture.html",
+    "roadmap.html"
+  ],
+  "simulators": [
+    "Local Language Business Page Generator",
+    "Education Concept Tutor",
+    "Digital Safety Scenario Coach",
+    "Multi-Agent Workflow Designer",
+    "Agentic Solution Opportunity Evaluator"
+  ],
+  "criticalFixes": [
+    "Business scenario change updates key services",
+    "Multi-page brochure/book structure",
+    "Simulator field prefixes and separate generators",
+    "Scenario-specific business defaults centralized"
+  ]
+}

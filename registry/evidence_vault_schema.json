@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Evidence Vault Record",
+  "type": "object",
+  "required": [
+    "evidence_id",
+    "agent_id",
+    "artifact_type",
+    "title",
+    "owner",
+    "review_status"
+  ],
+  "properties": {
+    "evidence_id": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "artifact_type": {
+      "enum": [
+        "use_case_canvas",
+        "data_inventory",
+        "evaluation_report",
+        "governance_checklist",
+        "risk_assessment",
+        "security_review",
+        "human_approval_record",
+        "monitoring_plan",
+        "production_runbook",
+        "incident_report",
+        "business_case"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "source_uri": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "review_status": {
+      "enum": [
+        "draft",
+        "submitted",
+        "approved",
+        "rejected",
+        "needs_update"
+      ]
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

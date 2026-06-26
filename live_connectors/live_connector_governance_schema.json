@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Live Connector Governance Evaluation",
+  "type": "object",
+  "required": [
+    "tenant_id",
+    "agent_id",
+    "adapter_id",
+    "connector_id",
+    "identity_id",
+    "secret_ref"
+  ],
+  "properties": {
+    "tenant_id": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "actor_id": {
+      "type": "string"
+    },
+    "actor_role": {
+      "type": "string"
+    },
+    "adapter_id": {
+      "type": "string"
+    },
+    "connector_id": {
+      "type": "string"
+    },
+    "identity_id": {
+      "type": "string"
+    },
+    "secret_ref": {
+      "type": "string"
+    },
+    "target_environment": {
+      "enum": [
+        "sandbox",
+        "pilot",
+        "production"
+      ]
+    },
+    "requested_stage": {
+      "enum": [
+        "live_candidate",
+        "live_enabled"
+      ]
+    },
+    "approval_id": {
+      "type": "string"
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "real_iam_validation_ready": {
+      "type": "boolean"
+    },
+    "external_secret_manager_ready": {
+      "type": "boolean"
+    },
+    "immutable_audit_ready": {
+      "type": "boolean"
+    },
+    "rollback_test_passed": {
+      "type": "boolean"
+    },
+    "incident_runbook_available": {
+      "type": "boolean"
+    },
+    "live_execution_requested": {
+      "type": "boolean"
+    }
+  }
+}

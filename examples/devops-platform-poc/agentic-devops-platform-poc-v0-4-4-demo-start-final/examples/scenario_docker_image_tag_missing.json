@@ -1,0 +1,22 @@
+{
+  "schema_version": "devops.event.v1",
+  "source_tool": "teamcity",
+  "event_type": "pipeline_failed",
+  "normalized_event_type": "pipeline.failed",
+  "trust_level": "synthetic_test",
+  "service_name": "shipping-service",
+  "service_criticality": "tier_2",
+  "owner_team": "shipping-platform",
+  "repository": "platform/shipping-service",
+  "branch": "feature/container-upgrade",
+  "commit_sha": "docker123",
+  "pipeline_id": "tc_pipeline_docker_tag",
+  "build_id": "tc_build_docker_tag",
+  "environment": "ci",
+  "severity": "medium",
+  "metadata": {
+    "scenario": "docker_image_tag_missing",
+    "issue_type": "image_resolution",
+    "jira_ticket": "DEVOPS-204"
+  }
+}

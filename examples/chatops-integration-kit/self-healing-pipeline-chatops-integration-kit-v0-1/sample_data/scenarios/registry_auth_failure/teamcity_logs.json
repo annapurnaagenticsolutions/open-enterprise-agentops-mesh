@@ -1,0 +1,14 @@
+[
+  {
+    "line": 1,
+    "message": "Downloading private package from registry."
+  },
+  {
+    "line": 2,
+    "message": "401 Unauthorized from package registry."
+  },
+  {
+    "line": 3,
+    "message": "Credential or permission issue. Do not rotate secrets automatically."
+  }
+]

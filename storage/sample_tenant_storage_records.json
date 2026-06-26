@@ -1,0 +1,22 @@
+{
+  "version": "1.2.0",
+  "tenants": [
+    {
+      "tenant_id": "tenant-procurement",
+      "datasets": [
+        "agents",
+        "evidence",
+        "runtime_traces",
+        "procurement_cases"
+      ]
+    },
+    {
+      "tenant_id": "tenant-hr",
+      "datasets": [
+        "agents",
+        "evidence",
+        "governance_decisions"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "issue_id": "DEVOPS-DEMO-002",
+  "title": "Checkout integration test timeout",
+  "priority": "Medium",
+  "owner_team": "checkout-platform",
+  "status": "Open"
+}

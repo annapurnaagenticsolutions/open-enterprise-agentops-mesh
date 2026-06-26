@@ -1,0 +1,14 @@
+[
+  {
+    "line": 1,
+    "message": "npm install started."
+  },
+  {
+    "line": 2,
+    "message": "ERESOLVE unable to resolve dependency tree."
+  },
+  {
+    "line": 3,
+    "message": "package-lock.json appears stale after package.json dependency change."
+  }
+]

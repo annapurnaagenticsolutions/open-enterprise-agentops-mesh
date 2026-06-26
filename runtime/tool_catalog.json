@@ -1,0 +1,35 @@
+{
+  "version": "0.6.0",
+  "tools": [
+    {
+      "tool_name": "knowledge_base_read",
+      "risk_class": "low",
+      "requires_approval": false,
+      "description": "Read-only enterprise knowledge retrieval."
+    },
+    {
+      "tool_name": "ticket_create",
+      "risk_class": "medium",
+      "requires_approval": false,
+      "description": "Create internal ticket with audit trail."
+    },
+    {
+      "tool_name": "email_send",
+      "risk_class": "high",
+      "requires_approval": true,
+      "description": "Send an email externally or internally."
+    },
+    {
+      "tool_name": "erp_write",
+      "risk_class": "high",
+      "requires_approval": true,
+      "description": "Write to enterprise resource planning systems."
+    },
+    {
+      "tool_name": "payment_initiation",
+      "risk_class": "critical",
+      "requires_approval": true,
+      "description": "Initiate a payment or financial transaction."
+    }
+  ]
+}

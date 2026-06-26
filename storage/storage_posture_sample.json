@@ -1,0 +1,21 @@
+{
+  "version": "1.2.0",
+  "storage_mode": "tenant_scoped_local_json",
+  "tenant_count": 2,
+  "dataset_count": 8,
+  "total_records": 8,
+  "findings": [
+    "Tenant-scoped local JSON is suitable for local development and public demos.",
+    "Production deployment requires transactional database, encryption, backups, and IAM integration."
+  ],
+  "recommended_migrations": [
+    "Add SQLite development adapter.",
+    "Add Postgres repository implementation.",
+    "Add schema migrations and storage audit events."
+  ],
+  "required_controls": [
+    "tenant_id_on_all_records",
+    "deny_cross_tenant_reads_by_default",
+    "storage_write_audit_required"
+  ]
+}

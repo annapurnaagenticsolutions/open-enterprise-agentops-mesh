@@ -1,0 +1,4 @@
+{
+  "decision": "block_secret_mutation",
+  "safe_alternative": "Escalate to platform/security owner with evidence."
+}

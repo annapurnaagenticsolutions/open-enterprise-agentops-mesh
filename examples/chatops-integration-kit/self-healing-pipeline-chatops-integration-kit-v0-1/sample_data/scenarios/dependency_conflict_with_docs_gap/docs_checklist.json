@@ -1,0 +1,5 @@
+{
+  "target_file": "docs/pipeline/dependency-checklist.md",
+  "gap": "No explicit lockfile verification item.",
+  "proposed_item": "If package.json changes, verify package-lock.json is updated before PR approval."
+}

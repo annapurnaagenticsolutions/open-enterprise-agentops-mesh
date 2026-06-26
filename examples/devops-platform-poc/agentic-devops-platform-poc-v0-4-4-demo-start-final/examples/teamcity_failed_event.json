@@ -1,0 +1,22 @@
+{
+  "schema_version": "devops.event.v1",
+  "source_tool": "teamcity",
+  "event_type": "pipeline_failed",
+  "normalized_event_type": "pipeline.failed",
+  "trust_level": "synthetic_test",
+  "service_name": "payments-service",
+  "service_criticality": "tier_3",
+  "owner_team": "payments-platform",
+  "repository": "platform/payments-service",
+  "branch": "feature/update-billing-client",
+  "commit_sha": "abc123",
+  "pipeline_id": "tc_pipeline_dependency_conflict",
+  "build_id": "tc_build_dependency_conflict",
+  "environment": "ci",
+  "severity": "medium",
+  "metadata": {
+    "scenario": "dependency_conflict",
+    "triggered_by": "developer",
+    "team": "payments-platform"
+  }
+}

@@ -1,0 +1,220 @@
+{
+  "scenario_id": "dependency_conflict",
+  "scenario_name": "Dependency Conflict",
+  "outcome_type": "fix_proposed",
+  "teamcity": {
+    "build_id": "tc_build_dependency_conflict",
+    "build_config_id": "tc_pipeline_dependency_conflict",
+    "failed_step": "install_dependencies",
+    "agent": "linux-medium",
+    "status": "awaiting_approval",
+    "log_summary": "npm install started. | ERESOLVE unable to resolve dependency tree. | package-lock.json appears stale after package.json dependency change. | dependency version conflict detected for billing-client.",
+    "rerun_status": "pending_human_approval"
+  },
+  "github": {
+    "repo": "platform/payments-service",
+    "branch": "feature/update-billing-client",
+    "commit_sha": "abc123",
+    "pr_number": null,
+    "changed_files": [
+      "package.json",
+      "package-lock.json"
+    ],
+    "docs_pr_url": null
+  },
+  "jira": {
+    "ticket_id": "POC-DEPENDENCY-CONFLICT",
+    "status": "Awaiting Review",
+    "owner_team": "payments-platform",
+    "comments": [
+      "AI RCA generated for scenario dependency_conflict.",
+      "Policy decision: allow_with_review.",
+      "Memory status: MemoryPromotionStatus.ACCEPTED_PENDING_VALIDATION."
+    ],
+    "linked_artifacts": [
+      "TeamCity:tc_build_dependency_conflict",
+      "GitHub:platform/payments-service@abc123"
+    ]
+  },
+  "rca": {
+    "failure_class": "dependency_conflict",
+    "root_cause": "The pipeline failed during dependency installation because the dependency manifest and lockfile appear to be inconsistent. The commit diff indicates package.json changed, but the lockfile was not updated.",
+    "confidence_score": 0.9199999999999999,
+    "evidence_refs": [
+      "build_logs: Dependency resolver error or lockfile mismatch found.",
+      "build_logs: npm install started. | ERESOLVE unable to resolve dependency tree. | package-lock.json appears stale after package.json dependency change. | dependency version conflict detected for billing-client.",
+      "commit_diff: package.json changed but package-lock.json was not updated."
+    ]
+  },
+  "governance": {
+    "policy_decision": "allow_with_review",
+    "evidence_score": 1.0,
+    "blast_radius_score": 35,
+    "blast_radius_level": "medium",
+    "required_approvers": [
+      {
+        "role": "service_owner",
+        "team": "payments-platform",
+        "reason": "Review required before write-capable action."
+      },
+      {
+        "role": "platform_engineer",
+        "team": "platform",
+        "reason": "Medium or higher blast radius requires platform review."
+      }
+    ],
+    "policy_reasons": []
+  },
+  "pattern_memory": {
+    "pattern_id": "runtime_wf_98b7b76e116b",
+    "promotion_status": "accepted_pending_validation",
+    "validation_result": "pending_human_approval",
+    "success_count": 0,
+    "rejection_count": 0
+  },
+  "documentation": {
+    "checklist_name": null,
+    "proposed_item": null,
+    "target_file": null,
+    "priority": null,
+    "docs_pr_status": null,
+    "docs_pr_url": null,
+    "proposed_markdown": null
+  },
+  "audit_timeline": [
+    {
+      "timestamp": "2026-06-18T10:12:49.079559+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "workflow_started",
+      "details": {
+        "event_id": "evt_67972d7ac39a"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.079771+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "failure_classified",
+      "details": {
+        "failure_class": "dependency_conflict",
+        "confidence_score": 0.9199999999999999,
+        "risk_level": "low",
+        "evidence_score": 1.0,
+        "missing_evidence": []
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.079900+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "rca_generated",
+      "details": {
+        "root_cause": "The pipeline failed during dependency installation because the dependency manifest and lockfile appear to be inconsistent. The commit diff indicates package.json changed, but the lockfile was not updated."
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.080032+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "remediation_planned",
+      "details": {
+        "plan": {
+          "summary": "Regenerate dependency lockfile and create a reviewable merge request.",
+          "steps": [
+            "Create MR/PR to update stale dependency lockfile.",
+            "Post RCA and recommended action to Jira."
+          ],
+          "merge_request_proposal": {
+            "repo": "platform/payments-service",
+            "source_branch": "autoheal/wf_98b7b76e116b/dependency-lockfile",
+            "target_branch": "feature/update-billing-client",
+            "title": "Fix stale dependency lockfile detected by Self-Healing Pipeline",
+            "body": "## Root Cause\nThe pipeline failed during dependency installation because the dependency manifest and lockfile appear to be inconsistent. The commit diff indicates package.json changed, but the lockfile was not updated.\n\n## Proposed Fix\nRegenerate and commit dependency lockfile so dependency tree matches package manifest.\n\n## Confidence\n0.92\n\n## Risk\nLow. Human review required before merge."
+          }
+        },
+        "blast_radius_score": 35,
+        "blast_radius_level": "medium",
+        "risk_score": 35
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.080096+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "memory_status_recorded",
+      "details": {
+        "promotion_status": "accepted_pending_validation",
+        "reason": "accepted_pending_validation"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.080105+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "policy_evaluated",
+      "details": {
+        "decision": "allow_with_review",
+        "approval_required": true,
+        "allowed_actions": [
+          "create_merge_request",
+          "comment_on_ticket"
+        ],
+        "blocked_actions": [],
+        "reasons": [],
+        "required_approvers": [
+          {
+            "role": "service_owner",
+            "team": "payments-platform",
+            "reason": "Review required before write-capable action."
+          },
+          {
+            "role": "platform_engineer",
+            "team": "platform",
+            "reason": "Medium or higher blast radius requires platform review."
+          }
+        ]
+      }
+    }
+  ],
+  "ai_telemetry": [
+    {
+      "step": "context_collection",
+      "model": "mock-claude-native",
+      "input_tokens": 737,
+      "output_tokens": 3,
+      "estimated_cost_usd": 0.002256,
+      "latency_ms": 193,
+      "abstained": false
+    },
+    {
+      "step": "classify_failure",
+      "model": "mock-claude-native",
+      "input_tokens": 737,
+      "output_tokens": 4,
+      "estimated_cost_usd": 0.002271,
+      "latency_ms": 193,
+      "abstained": false
+    },
+    {
+      "step": "generate_rca",
+      "model": "mock-claude-native",
+      "input_tokens": 737,
+      "output_tokens": 51,
+      "estimated_cost_usd": 0.002976,
+      "latency_ms": 193,
+      "abstained": false
+    },
+    {
+      "step": "policy_and_validation_planning",
+      "model": "mock-claude-native",
+      "input_tokens": 737,
+      "output_tokens": 42,
+      "estimated_cost_usd": 0.002841,
+      "latency_ms": 193,
+      "abstained": false
+    }
+  ],
+  "next_actions": [
+    {
+      "label": "Review RCA and policy decision",
+      "owner": "payments-platform",
+      "action_type": "human_review",
+      "status": "pending"
+    }
+  ]
+}

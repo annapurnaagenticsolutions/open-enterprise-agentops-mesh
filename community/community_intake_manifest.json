@@ -1,0 +1,21 @@
+{
+  "version": "2.5.0",
+  "release": "v2.5",
+  "purpose": "Structured public feedback loop and community intake for the AgentOps control plane.",
+  "community_readiness_score": 94,
+  "decision": "community_intake_ready",
+  "boundaries": {
+    "live_model_provider_calls": false,
+    "live_connector_execution": false,
+    "real_github_sync": false,
+    "raw_secrets": false
+  },
+  "intake_artifacts": [
+    "feedback_channels.json",
+    "use_case_submissions.json",
+    "architecture_critiques.json",
+    "roadmap_feedback.json",
+    "adoption_feedback.json",
+    "community_triage_policy.json"
+  ]
+}

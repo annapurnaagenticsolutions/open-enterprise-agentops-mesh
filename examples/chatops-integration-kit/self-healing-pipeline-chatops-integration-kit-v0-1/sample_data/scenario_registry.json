@@ -1,0 +1,26 @@
+{
+  "mode": "scenario_backed_chatops",
+  "description": "Mapping layer that makes Teams/Lambda/Claude/MCP demo calls behave like real tools while using curated self-healing scenario data.",
+  "build_id_map": {
+    "TC-DEMO-001": "dependency_conflict_with_docs_gap",
+    "TC-DEMO-002": "flaky_test_timeout",
+    "TC-DEMO-003": "build_agent_disk_full",
+    "TC-DEMO-004": "registry_auth_failure",
+    "TC-DEMO-005": "risky_action",
+    "TC-DEMO-006": "weak_evidence"
+  },
+  "jira_issue_map": {
+    "DEVOPS-DEMO-001": "dependency_conflict_with_docs_gap",
+    "DEVOPS-DEMO-002": "flaky_test_timeout",
+    "DEVOPS-DEMO-003": "build_agent_disk_full",
+    "DEVOPS-DEMO-004": "registry_auth_failure",
+    "DEVOPS-DEMO-005": "risky_action",
+    "DEVOPS-DEMO-006": "weak_evidence"
+  },
+  "git_ref_map": {
+    "demo-dep-001": "dependency_conflict_with_docs_gap",
+    "demo-flaky-002": "flaky_test_timeout",
+    "demo-agent-003": "build_agent_disk_full",
+    "demo-auth-004": "registry_auth_failure"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "business_value": 15,
+  "task_suitability": 10,
+  "data_readiness": 15,
+  "governance_readiness": 15,
+  "evaluation_coverage": 10,
+  "safety_security": 10,
+  "human_in_loop": 10,
+  "operational_readiness": 10,
+  "open_architecture_fit": 5
+}

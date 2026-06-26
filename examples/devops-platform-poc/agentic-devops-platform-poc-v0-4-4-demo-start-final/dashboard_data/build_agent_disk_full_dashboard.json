@@ -1,0 +1,215 @@
+{
+  "scenario_id": "build_agent_disk_full",
+  "scenario_name": "Build Agent Disk Full",
+  "outcome_type": "fix_proposed",
+  "teamcity": {
+    "build_id": "tc_build_agent_disk",
+    "build_config_id": "tc_pipeline_agent_disk",
+    "failed_step": "install_dependencies",
+    "agent": "linux-medium",
+    "status": "awaiting_approval",
+    "log_summary": "Checkout source completed. | No space left on device while writing build artifact. | Agent linux-medium-07 disk usage at 98%.",
+    "rerun_status": "pending_human_approval"
+  },
+  "github": {
+    "repo": "platform/inventory-service",
+    "branch": "main",
+    "commit_sha": "disk123",
+    "pr_number": null,
+    "changed_files": [
+      "package.json",
+      "package-lock.json"
+    ],
+    "docs_pr_url": null
+  },
+  "jira": {
+    "ticket_id": "DEVOPS-202",
+    "status": "Awaiting Review",
+    "owner_team": "platform-build",
+    "comments": [
+      "AI RCA generated for scenario build_agent_disk_full.",
+      "Policy decision: allow_with_review.",
+      "Memory status: MemoryPromotionStatus.ACCEPTED_PENDING_VALIDATION."
+    ],
+    "linked_artifacts": [
+      "TeamCity:tc_build_agent_disk",
+      "GitHub:platform/inventory-service@disk123"
+    ]
+  },
+  "rca": {
+    "failure_class": "build_agent_issue",
+    "root_cause": "The pipeline failed because the TeamCity build agent appears unhealthy, with disk pressure or capacity constraints preventing artifact creation.",
+    "confidence_score": 0.91,
+    "evidence_refs": [
+      "build_logs: Build agent disk/capacity issue detected.",
+      "build_logs: Checkout source completed. | No space left on device while writing build artifact. | Agent linux-medium-07 disk usage at 98%.",
+      "commit_diff: package.json changed but package-lock.json was not updated."
+    ]
+  },
+  "governance": {
+    "policy_decision": "allow_with_review",
+    "evidence_score": 1.0,
+    "blast_radius_score": 33,
+    "blast_radius_level": "medium",
+    "required_approvers": [
+      {
+        "role": "service_owner",
+        "team": "platform-build",
+        "reason": "Review required before write-capable action."
+      },
+      {
+        "role": "platform_engineer",
+        "team": "platform",
+        "reason": "Medium or higher blast radius requires platform review."
+      }
+    ],
+    "policy_reasons": []
+  },
+  "pattern_memory": {
+    "pattern_id": "runtime_wf_074a35c4286b",
+    "promotion_status": "accepted_pending_validation",
+    "validation_result": "pending_human_approval",
+    "success_count": 0,
+    "rejection_count": 0
+  },
+  "documentation": {
+    "checklist_name": null,
+    "proposed_item": null,
+    "target_file": null,
+    "priority": null,
+    "docs_pr_status": null,
+    "docs_pr_url": null,
+    "proposed_markdown": null
+  },
+  "audit_timeline": [
+    {
+      "timestamp": "2026-06-18T10:12:49.087474+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "workflow_started",
+      "details": {
+        "event_id": "evt_cce11fe14d75"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.087630+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "failure_classified",
+      "details": {
+        "failure_class": "build_agent_issue",
+        "confidence_score": 0.91,
+        "risk_level": "medium",
+        "evidence_score": 1.0,
+        "missing_evidence": []
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.087746+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "rca_generated",
+      "details": {
+        "root_cause": "The pipeline failed because the TeamCity build agent appears unhealthy, with disk pressure or capacity constraints preventing artifact creation."
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.087858+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "remediation_planned",
+      "details": {
+        "plan": {
+          "summary": "Route to platform-build team to clean or replace the affected TeamCity agent.",
+          "steps": [
+            "Escalate unhealthy build agent to platform-build."
+          ],
+          "platform_escalation": {
+            "type": "platform_escalation",
+            "reason": "Build agent disk/capacity issue requires platform-build action."
+          }
+        },
+        "blast_radius_score": 33,
+        "blast_radius_level": "medium",
+        "risk_score": 33
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.087900+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "memory_status_recorded",
+      "details": {
+        "promotion_status": "accepted_pending_validation",
+        "reason": "accepted_pending_validation"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.087908+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "policy_evaluated",
+      "details": {
+        "decision": "allow_with_review",
+        "approval_required": true,
+        "allowed_actions": [
+          "comment_on_ticket"
+        ],
+        "blocked_actions": [],
+        "reasons": [],
+        "required_approvers": [
+          {
+            "role": "service_owner",
+            "team": "platform-build",
+            "reason": "Review required before write-capable action."
+          },
+          {
+            "role": "platform_engineer",
+            "team": "platform",
+            "reason": "Medium or higher blast radius requires platform review."
+          }
+        ]
+      }
+    }
+  ],
+  "ai_telemetry": [
+    {
+      "step": "context_collection",
+      "model": "mock-claude-native",
+      "input_tokens": 683,
+      "output_tokens": 3,
+      "estimated_cost_usd": 0.002094,
+      "latency_ms": 188,
+      "abstained": false
+    },
+    {
+      "step": "classify_failure",
+      "model": "mock-claude-native",
+      "input_tokens": 683,
+      "output_tokens": 4,
+      "estimated_cost_usd": 0.002109,
+      "latency_ms": 188,
+      "abstained": false
+    },
+    {
+      "step": "generate_rca",
+      "model": "mock-claude-native",
+      "input_tokens": 683,
+      "output_tokens": 36,
+      "estimated_cost_usd": 0.002589,
+      "latency_ms": 188,
+      "abstained": false
+    },
+    {
+      "step": "policy_and_validation_planning",
+      "model": "mock-claude-native",
+      "input_tokens": 683,
+      "output_tokens": 42,
+      "estimated_cost_usd": 0.002679,
+      "latency_ms": 188,
+      "abstained": false
+    }
+  ],
+  "next_actions": [
+    {
+      "label": "Review RCA and policy decision",
+      "owner": "platform-build",
+      "action_type": "human_review",
+      "status": "pending"
+    }
+  ]
+}

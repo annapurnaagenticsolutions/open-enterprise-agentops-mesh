@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Community use case submission",
+  "type": "object",
+  "required": [
+    "title",
+    "domain",
+    "submitter_role",
+    "business_problem",
+    "agentops_relevance",
+    "data_sensitivity",
+    "expected_value",
+    "status"
+  ],
+  "properties": {
+    "submission_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "submitter_role": {
+      "type": "string"
+    },
+    "business_problem": {
+      "type": "string"
+    },
+    "agentops_relevance": {
+      "type": "string"
+    },
+    "data_sensitivity": {
+      "type": "string"
+    },
+    "expected_value": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "triaged",
+        "accepted",
+        "needs_evidence",
+        "deferred",
+        "declined"
+      ]
+    }
+  }
+}

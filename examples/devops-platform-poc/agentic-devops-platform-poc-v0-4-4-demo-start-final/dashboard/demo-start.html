@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Self-Healing Pipeline POC Demo Start</title>
+  <style>
+    :root {
+      --bg:#f4f7f6;
+      --surface:#ffffff;
+      --border:#e0e0e0;
+      --accent:#6C4298;
+      --blue:#005A9C;
+      --green:#27ae60;
+      --amber:#d35400;
+      --red:#c0392b;
+      --text:#2b2b2b;
+      --muted:#555555;
+      --soft-purple:#f6f0fb;
+      --soft-blue:#e8f4f8;
+      --soft-green:#edf8f2;
+      --soft-amber:#fdfaf6;
+      --soft-red:#fdeaea;
+    }
+    * { box-sizing:border-box; }
+    body {
+      margin:0;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(108,66,152,.14), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(0,90,156,.12), transparent 30%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    .shell {
+      max-width:1320px;
+      margin:0 auto;
+      padding:32px 24px;
+    }
+    .hero {
+      background:rgba(255,255,255,.94);
+      border:1px solid var(--border);
+      border-left:7px solid var(--accent);
+      border-radius:14px;
+      padding:30px;
+      margin-bottom:22px;
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
+    }
+    .eyebrow {
+      color:var(--accent);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:12px;
+      font-weight:850;
+      margin-bottom:8px;
+    }
+    h1 {
+      margin:0 0 10px;
+      color:var(--accent);
+      font-size:36px;
+      line-height:1.15;
+    }
+    .hero p {
+      color:var(--muted);
+      max-width:980px;
+      font-size:16px;
+      margin:0;
+    }
+    .status-row {
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+    .badge {
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:850;
+      border:1px solid var(--border);
+    }
+    .purple { background:var(--soft-purple); color:var(--accent); border-color:#e1d1f4; }
+    .green { background:var(--soft-green); color:var(--green); border-color:#c8ead7; }
+    .blue { background:var(--soft-blue); color:var(--blue); border-color:#bce0ee; }
+    .amber { background:var(--soft-amber); color:var(--amber); border-color:#f5d4b6; }
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:18px;
+      margin-bottom:22px;
+    }
+    @media(max-width:1100px) {
+      .grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media(max-width:720px) {
+      .shell { padding:18px 12px; }
+      h1 { font-size:27px; }
+      .hero { padding:22px; }
+      .grid { grid-template-columns:1fr; }
+    }
+    .demo-card {
+      position:relative;
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:22px;
+      min-height:255px;
+      box-shadow:0 5px 16px rgba(0,0,0,.07);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      overflow:hidden;
+    }
+    .demo-card:before {
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:5px;
+      background:var(--accent);
+    }
+    .demo-card h2 {
+      margin:0 0 10px;
+      color:#2C3E50;
+      font-size:21px;
+    }
+    .demo-card p {
+      color:var(--muted);
+      font-size:14px;
+      margin:0 0 12px;
+    }
+    .demo-card ul {
+      padding-left:18px;
+      margin:0 0 14px;
+      color:var(--text);
+      font-size:13px;
+    }
+    .demo-card li { margin-bottom:5px; }
+    .button {
+      display:inline-block;
+      text-decoration:none;
+      text-align:center;
+      background:var(--accent);
+      color:#ffffff;
+      border-radius:9px;
+      padding:11px 14px;
+      font-weight:850;
+      font-size:14px;
+      border:1px solid var(--accent);
+    }
+    .button.secondary {
+      background:#ffffff;
+      color:var(--accent);
+    }
+    .panel {
+      background:rgba(255,255,255,.94);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:22px;
+      margin-bottom:18px;
+      box-shadow:0 5px 16px rgba(0,0,0,.06);
+    }
+    .panel h2 {
+      margin:0 0 10px;
+      color:var(--accent);
+    }
+    table {
+      width:100%;
+      border-collapse:collapse;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:8px;
+      overflow:hidden;
+    }
+    th {
+      background:#2b2b2b;
+      color:#fff;
+      padding:10px;
+      text-align:left;
+      font-size:13px;
+    }
+    td {
+      border-top:1px solid var(--border);
+      padding:10px;
+      vertical-align:top;
+      font-size:13px;
+    }
+    .footer {
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+      margin-top:18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="eyebrow">Demo Start · Self-Healing Pipeline POC v0.4.4</div>
+      <h1>Governed Self-Healing Pipeline Intelligence</h1>
+      <p>
+        Start the demo from here. This single launch page routes viewers to the operational dashboard,
+        near-real-time replay, reasoning and impact view, and architecture/value showcase.
+      </p>
+      <div class="status-row">
+        <span class="badge green">Demo-stable</span>
+        <span class="badge purple">TeamCity + GitHub + Jira</span>
+        <span class="badge blue">Claude-ready runtime architecture</span>
+        <span class="badge amber">Mock / Replay / Live path</span>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="demo-card">
+        <div>
+          <h2>1. Operational Dashboard</h2>
+          <p>Use this first to show breadth: multiple failure classes, policy outcomes, RCA, evidence, memory, and documentation recommendations.</p>
+          <ul>
+            <li>10 pipeline scenarios</li>
+            <li>Failure class and policy status</li>
+            <li>Pattern memory and documentation intelligence</li>
+          </ul>
+        </div>
+        <a class="button" href="index.html">Open Operational Dashboard</a>
+      </article>
+
+      <article class="demo-card">
+        <div>
+          <h2>2. Near-Real-Time Replay</h2>
+          <p>Use this to make the POC feel operational. It shows event progression from pipeline failure to RCA, policy, memory, and documentation action.</p>
+          <ul>
+            <li>Step-by-step event stream</li>
+            <li>Mock near-real-time behavior</li>
+            <li>Live-adapter-ready structure</li>
+          </ul>
+        </div>
+        <a class="button" href="realtime.html">Open Near-Real-Time Replay</a>
+      </article>
+
+      <article class="demo-card">
+        <div>
+          <h2>3. Reasoning & Impact</h2>
+          <p>Use this for management discussion. It shows decision rationale, evidence used, alternatives considered, and long-term engineering benefit.</p>
+          <ul>
+            <li>Explainable decision rationale</li>
+            <li>Evidence-backed recommendations</li>
+            <li>Long-term recurrence reduction</li>
+          </ul>
+        </div>
+        <a class="button" href="impact.html">Open Reasoning & Impact</a>
+      </article>
+
+      <article class="demo-card">
+        <div>
+          <h2>4. Architecture & Value</h2>
+          <p>Use this to defend why the design is strong, future-proof, and not a one-off CI/CD bot.</p>
+          <ul>
+            <li>Architecture pillars</li>
+            <li>Governance and trust model</li>
+            <li>Future integrations and ROI simulator</li>
+          </ul>
+        </div>
+        <a class="button" href="showcase.html">Open Architecture & Value</a>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Recommended Presentation Flow</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Step</th>
+            <th>Open</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Operational Dashboard</td>
+            <td>Show that the platform handles multiple realistic pipeline failure modes, not only one example.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Near-Real-Time Replay</td>
+            <td>Show the operational loop: TeamCity failure → GitHub/Jira context → RCA → policy → memory → docs improvement.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Reasoning & Impact</td>
+            <td>Show why the agent acted, what evidence it used, what it rejected, and how the system improves over time.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Architecture & Value</td>
+            <td>Show why the architecture is strong, governed, future-ready, and commercially meaningful.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>Closing Message</h2>
+      <p>
+        This is a governed engineering intelligence layer: it diagnoses failures, proposes safe action,
+        blocks unsafe automation, learns from validated outcomes, and improves the delivery system over time.
+      </p>
+    </section>
+
+    <div class="footer">
+      v0.4.4 final demo-start polish · Generated 2026-06-18
+    </div>
+  </div>
+</body>
+</html>

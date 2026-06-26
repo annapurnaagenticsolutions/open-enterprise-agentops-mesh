@@ -1,0 +1,21 @@
+{
+  "release": "v2.8",
+  "primary_announcement": {
+    "title": "Launching Open Enterprise AgentOps Mesh",
+    "body": "I am preparing Open Enterprise AgentOps Mesh as an open-source AgentOps control plane for governing, evaluating, operating, and auditing enterprise AI agents before production. The launch candidate includes governance workflows, policy-as-code guardrails, audit trails, model-routing controls, connector sandboxing, benchmark scenarios, public demo paths, and release evidence assets."
+  },
+  "short_tagline": "Open-source AgentOps control plane for enterprise AI agents.",
+  "audiences": {
+    "executives": "Move from agent demos to governed, measurable readiness.",
+    "architects": "Inspect the control-plane patterns for policy, audit, approvals, routing, safety, and evidence.",
+    "developers": "Run the deterministic FastAPI backend locally and extend the scenario library.",
+    "contributors": "Submit use cases, architecture critiques, and benchmark scenarios."
+  },
+  "hashtags": [
+    "AgentOps",
+    "EnterpriseAI",
+    "OpenSource",
+    "AIGovernance",
+    "AgenticAI"
+  ]
+}

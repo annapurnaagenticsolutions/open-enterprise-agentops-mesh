@@ -1,0 +1,29 @@
+{
+  "release": "v2.6",
+  "decision": "public_site_ux_ready",
+  "ux_readiness_score": 95,
+  "navigation_readiness_score": 94,
+  "demo_path_readiness_score": 96,
+  "persona_coverage_score": 93,
+  "boundaries_visible": true,
+  "new_public_site_assets": [
+    "interactive_demo_path.html",
+    "public_site_ux_console.html",
+    "public_site_navigation.json",
+    "guided_demo_paths.json",
+    "demo_personas.json",
+    "ux_copy_blocks.json"
+  ],
+  "recommended_next_actions": [
+    "Use the guided procurement path as the default five-minute public walkthrough.",
+    "Link the interactive demo path from the main README and GitHub Pages home page.",
+    "Record a short demo video only after the GitHub Pages navigation is manually reviewed.",
+    "Keep v2.7 focused on release evidence packaging, not new runtime capability."
+  ],
+  "boundaries": {
+    "live_model_provider_calls": false,
+    "live_connector_execution": false,
+    "raw_secret_storage": false,
+    "production_iam": false
+  }
+}

@@ -1,0 +1,15 @@
+v2.8 validation snapshot
+
+Backend tests: 125 passed in 2.05s
+API smoke checks: 80 passed
+Public repo validation: Checked 31 required files and 89 OpenAPI-lite endpoints
+Benchmark harness: benchmark_passed, score 96.83, 8 passed / 0 failed
+Release evidence report: release_evidence_ready, score 96
+Launch candidate report: public_launch_candidate_ready, score 97, 9 publication steps, 6 evidence items
+
+Live execution boundaries remain disabled:
+- live model-provider calls: false
+- live connector execution: false
+- raw secret storage: false
+- production IAM: false
+- external API calls: false

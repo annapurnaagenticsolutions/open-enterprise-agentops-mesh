@@ -1,0 +1,215 @@
+{
+  "scenario_id": "docker_image_tag_missing",
+  "scenario_name": "Docker Image Tag Missing",
+  "outcome_type": "fix_proposed",
+  "teamcity": {
+    "build_id": "tc_build_docker_tag",
+    "build_config_id": "tc_pipeline_docker_tag",
+    "failed_step": "install_dependencies",
+    "agent": "linux-medium",
+    "status": "awaiting_approval",
+    "log_summary": "Pulling base image registry.example.com/runtime/node:18.22-prod. | manifest unknown: image tag not found. | Docker image resolution failed.",
+    "rerun_status": "pending_human_approval"
+  },
+  "github": {
+    "repo": "platform/shipping-service",
+    "branch": "feature/container-upgrade",
+    "commit_sha": "docker123",
+    "pr_number": null,
+    "changed_files": [
+      "package.json",
+      "package-lock.json"
+    ],
+    "docs_pr_url": null
+  },
+  "jira": {
+    "ticket_id": "DEVOPS-204",
+    "status": "Awaiting Review",
+    "owner_team": "shipping-platform",
+    "comments": [
+      "AI RCA generated for scenario docker_image_tag_missing.",
+      "Policy decision: allow_with_review.",
+      "Memory status: MemoryPromotionStatus.ACCEPTED_PENDING_VALIDATION."
+    ],
+    "linked_artifacts": [
+      "TeamCity:tc_build_docker_tag",
+      "GitHub:platform/shipping-service@docker123"
+    ]
+  },
+  "rca": {
+    "failure_class": "docker_image_issue",
+    "root_cause": "The pipeline failed because a required Docker image tag could not be resolved from the registry.",
+    "confidence_score": 0.83,
+    "evidence_refs": [
+      "build_logs: Docker image tag or registry image resolution issue detected.",
+      "build_logs: Pulling base image registry.example.com/runtime/node:18.22-prod. | manifest unknown: image tag not found. | Docker image resolution failed.",
+      "commit_diff: package.json changed but package-lock.json was not updated."
+    ]
+  },
+  "governance": {
+    "policy_decision": "allow_with_review",
+    "evidence_score": 0.9,
+    "blast_radius_score": 45,
+    "blast_radius_level": "medium",
+    "required_approvers": [
+      {
+        "role": "service_owner",
+        "team": "shipping-platform",
+        "reason": "Review required before write-capable action."
+      },
+      {
+        "role": "platform_engineer",
+        "team": "platform",
+        "reason": "Medium or higher blast radius requires platform review."
+      }
+    ],
+    "policy_reasons": []
+  },
+  "pattern_memory": {
+    "pattern_id": "runtime_wf_b4fad0283a82",
+    "promotion_status": "accepted_pending_validation",
+    "validation_result": "pending_human_approval",
+    "success_count": 0,
+    "rejection_count": 0
+  },
+  "documentation": {
+    "checklist_name": null,
+    "proposed_item": null,
+    "target_file": null,
+    "priority": null,
+    "docs_pr_status": null,
+    "docs_pr_url": null,
+    "proposed_markdown": null
+  },
+  "audit_timeline": [
+    {
+      "timestamp": "2026-06-18T10:12:49.090418+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "workflow_started",
+      "details": {
+        "event_id": "evt_ec23a963b7e5"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.090647+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "failure_classified",
+      "details": {
+        "failure_class": "docker_image_issue",
+        "confidence_score": 0.83,
+        "risk_level": "medium",
+        "evidence_score": 0.9,
+        "missing_evidence": []
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.090740+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "rca_generated",
+      "details": {
+        "root_cause": "The pipeline failed because a required Docker image tag could not be resolved from the registry."
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.090827+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "remediation_planned",
+      "details": {
+        "plan": {
+          "summary": "Verify the Docker image tag and update the reference through a reviewed PR.",
+          "steps": [
+            "Propose image tag correction through PR/MR."
+          ],
+          "image_review": {
+            "type": "image_review",
+            "reason": "Docker tag missing or registry image resolution failed."
+          }
+        },
+        "blast_radius_score": 45,
+        "blast_radius_level": "medium",
+        "risk_score": 45
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.090869+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "memory_status_recorded",
+      "details": {
+        "promotion_status": "accepted_pending_validation",
+        "reason": "accepted_pending_validation"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.090880+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "policy_evaluated",
+      "details": {
+        "decision": "allow_with_review",
+        "approval_required": true,
+        "allowed_actions": [
+          "create_merge_request"
+        ],
+        "blocked_actions": [],
+        "reasons": [],
+        "required_approvers": [
+          {
+            "role": "service_owner",
+            "team": "shipping-platform",
+            "reason": "Review required before write-capable action."
+          },
+          {
+            "role": "platform_engineer",
+            "team": "platform",
+            "reason": "Medium or higher blast radius requires platform review."
+          }
+        ]
+      }
+    }
+  ],
+  "ai_telemetry": [
+    {
+      "step": "context_collection",
+      "model": "mock-claude-native",
+      "input_tokens": 620,
+      "output_tokens": 3,
+      "estimated_cost_usd": 0.001905,
+      "latency_ms": 182,
+      "abstained": false
+    },
+    {
+      "step": "classify_failure",
+      "model": "mock-claude-native",
+      "input_tokens": 620,
+      "output_tokens": 4,
+      "estimated_cost_usd": 0.00192,
+      "latency_ms": 182,
+      "abstained": false
+    },
+    {
+      "step": "generate_rca",
+      "model": "mock-claude-native",
+      "input_tokens": 620,
+      "output_tokens": 24,
+      "estimated_cost_usd": 0.00222,
+      "latency_ms": 182,
+      "abstained": false
+    },
+    {
+      "step": "policy_and_validation_planning",
+      "model": "mock-claude-native",
+      "input_tokens": 620,
+      "output_tokens": 42,
+      "estimated_cost_usd": 0.00249,
+      "latency_ms": 182,
+      "abstained": false
+    }
+  ],
+  "next_actions": [
+    {
+      "label": "Review RCA and policy decision",
+      "owner": "shipping-platform",
+      "action_type": "human_review",
+      "status": "pending"
+    }
+  ]
+}

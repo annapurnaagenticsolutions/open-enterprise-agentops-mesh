@@ -1,0 +1,22 @@
+{
+  "schema_version": "devops.event.v1",
+  "source_tool": "teamcity",
+  "event_type": "pipeline_failed",
+  "normalized_event_type": "pipeline.failed",
+  "trust_level": "synthetic_test",
+  "service_name": "inventory-service",
+  "service_criticality": "tier_2",
+  "owner_team": "platform-build",
+  "repository": "platform/inventory-service",
+  "branch": "main",
+  "commit_sha": "disk123",
+  "pipeline_id": "tc_pipeline_agent_disk",
+  "build_id": "tc_build_agent_disk",
+  "environment": "ci",
+  "severity": "high",
+  "metadata": {
+    "scenario": "build_agent_disk_full",
+    "issue_type": "agent_capacity",
+    "jira_ticket": "DEVOPS-202"
+  }
+}

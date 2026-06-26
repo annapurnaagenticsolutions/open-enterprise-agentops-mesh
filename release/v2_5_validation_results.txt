@@ -1,0 +1,10 @@
+59 API smoke checks passed
+Public repo validation passed
+Checked 17 required files and 68 OpenAPI-lite endpoints
+Benchmark run: bmr-2d18bc623f42
+Suite: suite-v2-2-full-regression
+Decision: benchmark_passed
+Score: 96.83
+Scenarios: 8 passed / 0 failed
+Community readiness: community_intake_ready score=94
+Report written to release/v2_5_community_readiness_report.json

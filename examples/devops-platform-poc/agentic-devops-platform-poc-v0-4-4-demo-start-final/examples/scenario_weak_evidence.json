@@ -1,0 +1,22 @@
+{
+  "schema_version": "devops.event.v1",
+  "source_tool": "teamcity",
+  "event_type": "pipeline_failed",
+  "normalized_event_type": "pipeline.failed",
+  "trust_level": "synthetic_test",
+  "service_name": "payments-service",
+  "service_criticality": "tier_3",
+  "owner_team": "payments-platform",
+  "repository": "platform/payments-service",
+  "branch": "feature/unknown-failure",
+  "commit_sha": "weak123",
+  "pipeline_id": "tc_pipeline_weak_evidence",
+  "build_id": "tc_build_weak_evidence",
+  "environment": "ci",
+  "severity": "medium",
+  "metadata": {
+    "scenario": "weak_evidence",
+    "triggered_by": "developer",
+    "team": "payments-platform"
+  }
+}

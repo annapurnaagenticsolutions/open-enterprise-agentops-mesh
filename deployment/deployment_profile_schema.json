@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DeploymentProfile",
+  "type": "object",
+  "required": [
+    "profile_id",
+    "name",
+    "deployment_mode",
+    "purpose",
+    "runtime_components",
+    "required_tools",
+    "storage_mode",
+    "network_exposure",
+    "secret_handling",
+    "live_connectors_enabled",
+    "live_providers_enabled",
+    "readiness_level"
+  ],
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "target_audience": {
+      "type": "string"
+    },
+    "deployment_mode": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "runtime_components": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "optional_tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "storage_mode": {
+      "type": "string"
+    },
+    "network_exposure": {
+      "type": "string"
+    },
+    "secret_handling": {
+      "type": "string"
+    },
+    "live_connectors_enabled": {
+      "type": "boolean"
+    },
+    "live_providers_enabled": {
+      "type": "boolean"
+    },
+    "recommended_for": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "not_recommended_for": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "health_checks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "readiness_level": {
+      "type": "string"
+    }
+  }
+}

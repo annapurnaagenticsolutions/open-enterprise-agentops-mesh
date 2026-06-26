@@ -1,0 +1,41 @@
+{
+  "release": "v2.8",
+  "evidence_status": "ready",
+  "evidence_items": [
+    {
+      "name": "Backend test suite",
+      "status": "expected_pass",
+      "latest_known_count": 121
+    },
+    {
+      "name": "API smoke checks",
+      "status": "expected_pass",
+      "latest_known_count": 72
+    },
+    {
+      "name": "Benchmark harness",
+      "status": "expected_pass",
+      "latest_known_score": 96.83
+    },
+    {
+      "name": "Public repo validation",
+      "status": "expected_pass"
+    },
+    {
+      "name": "Release evidence report",
+      "status": "expected_pass",
+      "latest_known_score": 96
+    },
+    {
+      "name": "Launch candidate report",
+      "status": "ready_to_run"
+    }
+  ],
+  "claims_supported": [
+    "The project includes deterministic control-plane APIs.",
+    "The public launch candidate disables live connectors and live provider calls.",
+    "The project includes static site assets for GitHub Pages.",
+    "The project includes validation scripts and benchmark assets.",
+    "The project includes contribution and community intake paths."
+  ]
+}

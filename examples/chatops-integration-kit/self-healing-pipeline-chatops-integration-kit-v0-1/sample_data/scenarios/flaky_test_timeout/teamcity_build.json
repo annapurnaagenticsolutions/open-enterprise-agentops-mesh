@@ -1,0 +1,10 @@
+{
+  "build_id": "TC-DEMO-002",
+  "status": "failed",
+  "project": "Checkout Platform",
+  "build_configuration": "checkout-service-ci",
+  "failed_stage": "integration_tests",
+  "agent": "linux-medium-04",
+  "branch": "feature/cart-repricing",
+  "commit_sha": "demo-flaky-002"
+}

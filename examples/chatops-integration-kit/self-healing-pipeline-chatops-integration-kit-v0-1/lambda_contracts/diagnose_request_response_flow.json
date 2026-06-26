@@ -1,0 +1,25 @@
+{
+  "entrypoint": "Azure Bot \u2192 AWS Lambda Gateway",
+  "request": {
+    "tenant_id": "string",
+    "teams_user_id": "string",
+    "conversation_id": "string",
+    "command": "diagnose",
+    "build_id": "TC-DEMO-001"
+  },
+  "steps": [
+    "Validate Teams identity and tenant",
+    "Resolve scenario_id from build_id",
+    "Create workflow_id and audit entry",
+    "Invoke Claude orchestrator with strict self-healing system prompt",
+    "Claude requests scenario-backed MCP tool calls",
+    "Self-Healing Pipeline computes failure class, evidence score, policy decision, memory, docs gap",
+    "Format Teams response and adaptive card",
+    "Persist workflow state for approval actions"
+  ],
+  "response": {
+    "message_type": "adaptive_card",
+    "workflow_id": "wf-demo-001",
+    "card_template": "teams_cards/self_healing_summary_card.json"
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "scenario": "dependency_conflict_with_docs_gap",
+    "demo_value": "Shows the full differentiator: failed pipeline \u2192 validated pattern \u2192 checklist update \u2192 mock docs PR.",
+    "risk_story": "Low-to-medium risk, human review required.",
+    "expected_outcome": "allow_with_review + documentation PR draft"
+  },
+  {
+    "scenario": "flaky_test_timeout",
+    "demo_value": "Shows the platform does not over-fix code when the evidence suggests test instability.",
+    "risk_story": "Rerun permitted only under controlled review.",
+    "expected_outcome": "rerun recommendation + flaky pattern tracking"
+  },
+  {
+    "scenario": "build_agent_disk_full",
+    "demo_value": "Shows the platform can avoid blaming developers when the CI agent is unhealthy.",
+    "risk_story": "Routes to platform-build instead of creating code changes.",
+    "expected_outcome": "platform escalation + agent health checklist recommendation"
+  },
+  {
+    "scenario": "missing_teamcity_parameter",
+    "demo_value": "Shows configuration drift detection in TeamCity build parameters.",
+    "risk_story": "No automatic config mutation in POC.",
+    "expected_outcome": "Jira note + TeamCity config review"
+  },
+  {
+    "scenario": "docker_image_tag_missing",
+    "demo_value": "Shows image/tag resolution failure and safe PR-based remediation.",
+    "risk_story": "Image reference changes require review.",
+    "expected_outcome": "reviewable PR/MR recommendation"
+  },
+  {
+    "scenario": "registry_auth_failure",
+    "demo_value": "Shows security-safe behavior around credentials.",
+    "risk_story": "Credential mutation is blocked.",
+    "expected_outcome": "security escalation + blocked secret update"
+  },
+  {
+    "scenario": "upstream_artifact_mismatch",
+    "demo_value": "Shows build-chain intelligence beyond current commit analysis.",
+    "risk_story": "Routes to upstream artifact owner.",
+    "expected_outcome": "upstream ownership escalation"
+  },
+  {
+    "scenario": "weak_evidence",
+    "demo_value": "Shows abstention when evidence is incomplete.",
+    "risk_story": "No hallucinated fix.",
+    "expected_outcome": "insufficient_evidence + human triage"
+  },
+  {
+    "scenario": "risky_action",
+    "demo_value": "Shows policy blocking high-risk actions such as auto-merge.",
+    "risk_story": "Explicitly demonstrates governed autonomy.",
+    "expected_outcome": "policy block + rejected stored memory"
+  }
+]

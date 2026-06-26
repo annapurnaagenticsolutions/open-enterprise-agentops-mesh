@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MCPToolContract",
+  "type": "object",
+  "required": [
+    "description",
+    "risk",
+    "input_schema",
+    "output_schema"
+  ],
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "risk": {
+      "type": "string",
+      "enum": [
+        "read_only",
+        "write_review_required",
+        "blocked"
+      ]
+    },
+    "input_schema": {
+      "type": "object"
+    },
+    "output_schema": {
+      "type": "object"
+    },
+    "scenario_backing": {
+      "type": "string"
+    }
+  }
+}

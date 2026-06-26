@@ -1,0 +1,27 @@
+{
+  "version": "0.6.0",
+  "default_provider_id": "mock-safe-local",
+  "default_model_id": "mock-governed-small",
+  "routing_rules": [
+    {
+      "rule_id": "ROUTE-SANDBOX-MOCK-001",
+      "when": {
+        "target_environment": "sandbox"
+      },
+      "provider_id": "mock-safe-local",
+      "model_id": "mock-governed-small",
+      "rationale": "Sandbox runs should default to deterministic local mock execution."
+    },
+    {
+      "rule_id": "ROUTE-PILOT-MOCK-002",
+      "when": {
+        "target_environment": "pilot"
+      },
+      "provider_id": "mock-safe-local",
+      "model_id": "mock-governed-large",
+      "rationale": "Pilot demonstration can use larger mock context while preserving local execution."
+    }
+  ],
+  "blocked_without_policy_pass": true,
+  "allow_fallback": false
+}

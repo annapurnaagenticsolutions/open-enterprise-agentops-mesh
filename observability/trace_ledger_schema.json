@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TraceLedgerRecord",
+  "type": "object",
+  "required": [
+    "request_id",
+    "agent_id",
+    "action",
+    "execution_decision",
+    "policy_decision",
+    "created_at"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "target_environment": {
+      "type": "string"
+    },
+    "execution_decision": {
+      "type": "string"
+    },
+    "allowed": {
+      "type": "boolean"
+    },
+    "policy_decision": {
+      "type": "string"
+    },
+    "provider_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "model_name": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "token_estimate": {
+      "type": "integer"
+    },
+    "estimated_cost_usd": {
+      "type": "number"
+    },
+    "blocked_reason": {
+      "type": "string"
+    },
+    "required_controls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "audit_trace": {
+      "type": "array"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

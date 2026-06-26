@@ -1,0 +1,5 @@
+{
+  "decision": "block",
+  "blocked_action": "auto_merge",
+  "reason": "Auto-merge is not allowed in the POC. Repository mutation requires human review."
+}

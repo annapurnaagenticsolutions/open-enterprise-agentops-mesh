@@ -1,0 +1,15 @@
+{
+  "version": "1.9.0",
+  "release_name": "Model Risk Register and Prompt/Response Safety Review",
+  "capabilities_added": [
+    "model risk profiles",
+    "prompt/response safety policy",
+    "deterministic safety review endpoint",
+    "safety review history",
+    "audit event emission",
+    "static model safety console"
+  ],
+  "live_provider_execution_enabled": false,
+  "live_connector_execution_enabled": false,
+  "quality_gate": "tests_and_smoke_checks_required"
+}

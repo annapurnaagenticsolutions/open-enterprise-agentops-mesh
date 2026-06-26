@@ -1,0 +1,156 @@
+{
+  "scenario_id": "weak_evidence",
+  "scenario_name": "Weak Evidence",
+  "outcome_type": "insufficient_evidence",
+  "teamcity": {
+    "build_id": "tc_build_weak_evidence",
+    "build_config_id": "tc_pipeline_weak_evidence",
+    "failed_step": "install_dependencies",
+    "agent": "linux-medium",
+    "status": "insufficient_evidence",
+    "log_summary": "Build log summary unavailable or incomplete.",
+    "rerun_status": null
+  },
+  "github": {
+    "repo": "platform/payments-service",
+    "branch": "feature/unknown-failure",
+    "commit_sha": "weak123",
+    "pr_number": null,
+    "changed_files": [],
+    "docs_pr_url": null
+  },
+  "jira": {
+    "ticket_id": "POC-WEAK-EVIDENCE",
+    "status": "Escalated / Blocked",
+    "owner_team": "payments-platform",
+    "comments": [
+      "AI RCA generated for scenario weak_evidence.",
+      "Policy decision: block.",
+      "Memory status: MemoryPromotionStatus.NOT_ELIGIBLE."
+    ],
+    "linked_artifacts": [
+      "TeamCity:tc_build_weak_evidence",
+      "GitHub:platform/payments-service@weak123"
+    ]
+  },
+  "rca": {
+    "failure_class": "unknown",
+    "root_cause": null,
+    "confidence_score": 0.42,
+    "evidence_refs": [
+      "classifier: Incomplete logs and missing commit diff."
+    ]
+  },
+  "governance": {
+    "policy_decision": "block",
+    "evidence_score": 0.25,
+    "blast_radius_score": 0,
+    "blast_radius_level": "unknown",
+    "required_approvers": [
+      {
+        "role": "service_owner",
+        "team": "payments-platform",
+        "reason": "Manual triage required due to insufficient evidence."
+      }
+    ],
+    "policy_reasons": [
+      "Insufficient evidence to recommend safe remediation."
+    ]
+  },
+  "pattern_memory": {
+    "pattern_id": "runtime_wf_7b7b8a589d5f",
+    "promotion_status": "not_eligible",
+    "validation_result": null,
+    "success_count": 0,
+    "rejection_count": 0
+  },
+  "documentation": {
+    "checklist_name": null,
+    "proposed_item": null,
+    "target_file": null,
+    "priority": null,
+    "docs_pr_status": null,
+    "docs_pr_url": null,
+    "proposed_markdown": null
+  },
+  "audit_timeline": [
+    {
+      "timestamp": "2026-06-18T10:12:49.081183+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "workflow_started",
+      "details": {
+        "event_id": "evt_4207373e9793"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.081302+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "failure_classified",
+      "details": {
+        "failure_class": "unknown",
+        "confidence_score": 0.42,
+        "risk_level": "high",
+        "evidence_score": 0.25,
+        "missing_evidence": [
+          "failed_job_logs",
+          "commit_diff"
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.081406+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "abstained",
+      "details": {
+        "should_abstain": true,
+        "reason": "Insufficient evidence to recommend safe remediation.",
+        "missing_evidence": [
+          "failed_job_logs",
+          "commit_diff"
+        ],
+        "safe_next_steps": [
+          "Collect complete failed job logs.",
+          "Collect commit diff and dependency manifests.",
+          "Route to human triage with available evidence."
+        ]
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.081426+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "memory_status_recorded",
+      "details": {
+        "promotion_status": "not_eligible",
+        "reason": "abstained_due_to_insufficient_evidence"
+      }
+    }
+  ],
+  "ai_telemetry": [
+    {
+      "step": "context_collection",
+      "model": "mock-claude-native",
+      "input_tokens": 440,
+      "output_tokens": 3,
+      "estimated_cost_usd": 0.001365,
+      "latency_ms": 164,
+      "abstained": false
+    },
+    {
+      "step": "classify_failure",
+      "model": "mock-claude-native",
+      "input_tokens": 440,
+      "output_tokens": 1,
+      "estimated_cost_usd": 0.001335,
+      "latency_ms": 164,
+      "abstained": false
+    }
+  ],
+  "next_actions": [
+    {
+      "label": "Review RCA and policy decision",
+      "owner": "payments-platform",
+      "action_type": "human_review",
+      "status": "pending"
+    }
+  ]
+}

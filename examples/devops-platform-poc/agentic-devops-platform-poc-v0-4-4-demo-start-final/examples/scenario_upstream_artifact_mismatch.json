@@ -1,0 +1,22 @@
+{
+  "schema_version": "devops.event.v1",
+  "source_tool": "teamcity",
+  "event_type": "pipeline_failed",
+  "normalized_event_type": "pipeline.failed",
+  "trust_level": "synthetic_test",
+  "service_name": "settlement-service",
+  "service_criticality": "tier_1",
+  "owner_team": "settlement-platform",
+  "repository": "platform/settlement-service",
+  "branch": "feature/reconcile-v2",
+  "commit_sha": "artifact123",
+  "pipeline_id": "tc_pipeline_artifact_mismatch",
+  "build_id": "tc_build_artifact_mismatch",
+  "environment": "ci",
+  "severity": "high",
+  "metadata": {
+    "scenario": "upstream_artifact_mismatch",
+    "issue_type": "build_chain",
+    "jira_ticket": "DEVOPS-206"
+  }
+}

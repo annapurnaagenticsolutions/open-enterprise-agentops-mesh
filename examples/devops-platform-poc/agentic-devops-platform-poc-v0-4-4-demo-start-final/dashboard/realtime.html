@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Near-Real-Time DevOps Replay</title>
+  <style>
+    :root{--bg:#f4f7f6;--surface:#fff;--border:#e0e0e0;--accent:#6C4298;--blue:#005A9C;--green:#27ae60;--amber:#d35400;--red:#c0392b;--text:#2b2b2b;--muted:#555;--soft-purple:#f6f0fb;--soft-blue:#e8f4f8;--soft-green:#edf8f2;--soft-amber:#fdfaf6;--soft-red:#fdeaea}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .shell{max-width:1400px;margin:0 auto;padding:24px}.hero{background:#fff;border:1px solid var(--border);border-left:6px solid var(--accent);border-radius:10px;padding:24px;margin-bottom:18px;box-shadow:0 4px 8px rgba(0,0,0,.06)}
+    h1{margin:0 0 8px;color:var(--accent)}p{color:var(--muted);line-height:1.55}.controls{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}
+    button,select{padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:#fff;cursor:pointer;font-weight:750}button.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+    .grid{display:grid;grid-template-columns:340px 1fr;gap:18px}@media(max-width:900px){.grid{grid-template-columns:1fr}}
+    .panel,.card{background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 3px 7px rgba(0,0,0,.06)}.panel{padding:16px}.card{padding:14px;margin-bottom:10px}
+    .card h3{margin:0 0 6px;color:var(--accent);font-size:14px;text-transform:uppercase;letter-spacing:.6px}.big{font-size:22px;font-weight:850;color:#2C3E50}.muted{font-size:13px;color:var(--muted)}
+    .timeline{border-left:5px solid var(--accent);padding-left:14px;min-height:500px}.event{background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:10px;animation:fade .25s ease-in}.event strong{color:var(--accent)}.event .meta{font-size:12px;color:var(--muted);margin-top:4px}
+    @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .badge{display:inline-block;padding:4px 9px;border-radius:999px;font-size:12px;font-weight:800}.completed{background:var(--soft-green);color:var(--green)}.failed{background:var(--soft-red);color:var(--red)}.blocked{background:var(--soft-red);color:var(--red)}.review_required{background:var(--soft-amber);color:var(--amber)}
+    .message{font-size:14px;margin-top:5px}.footer{margin-top:20px;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <div class="hero">
+    <h1>Near-Real-Time Self-Healing Replay</h1>
+    <p>This replay shows the POC behaving like an operational loop: TeamCity event → GitHub/Jira context → Claude RCA → policy → memory → documentation improvement. Data is mocked, but the structure is live-adapter ready.</p>
+    <div class="controls">
+      <select id="scenarioSelect"></select>
+      <button class="primary" onclick="playReplay()">Play Replay</button>
+      <button onclick="pauseReplay()">Pause</button>
+      <button onclick="resetReplay()">Reset</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <aside class="panel">
+      <div class="card"><h3>Scenario</h3><div class="big" id="currentScenario">-</div><div class="muted">Selected replay path</div></div>
+      <div class="card"><h3>Current Step</h3><div class="big" id="currentStep">-</div><div class="muted" id="currentMessage">No event played yet.</div></div>
+      <div class="card"><h3>Runtime</h3><div class="big">mock_claude</div><div class="muted">Switchable later to claude_api / claude_agent_sdk / langgraph.</div></div>
+      <div class="card"><h3>Adapter Mode</h3><div class="big">mock</div><div class="muted">Same contract can later use replay or live.</div></div>
+      <div class="card"><h3>Policy</h3><div class="big">enforced</div><div class="muted">Claude cannot bypass policy-gated adapters.</div></div>
+    </aside>
+
+    <main class="panel">
+      <h2 style="color:var(--accent);margin-top:0">Event Timeline</h2>
+      <div class="timeline" id="timeline"></div>
+    </main>
+  </div>
+
+  <div class="footer">v0.4.1 demo polish · Generated event replay from dashboard_runtime/events.jsonl</div>
+</div>
+
+<script src="assets/runtime_events.js"></script>
+<script>
+  const allEvents = window.RUNTIME_EVENTS || [];
+  const select = document.getElementById("scenarioSelect");
+  const timeline = document.getElementById("timeline");
+  const currentScenario = document.getElementById("currentScenario");
+  const currentStep = document.getElementById("currentStep");
+  const currentMessage = document.getElementById("currentMessage");
+  let activeEvents = [];
+  let pointer = 0;
+  let timer = null;
+
+  const scenarios = [...new Set(allEvents.map(e => e.scenario_id))];
+  select.innerHTML = scenarios.map(s => `<option value="${s}">${s}</option>`).join("");
+
+  function loadScenario() {
+    activeEvents = allEvents.filter(e => e.scenario_id === select.value);
+    pointer = 0;
+    timeline.innerHTML = "";
+    currentScenario.textContent = select.value || "-";
+    currentStep.textContent = "-";
+    currentMessage.textContent = "Ready to replay.";
+  }
+
+  function renderNext() {
+    if (pointer >= activeEvents.length) {
+      pauseReplay();
+      return;
+    }
+    const e = activeEvents[pointer++];
+    currentStep.textContent = e.step;
+    currentMessage.textContent = e.message;
+    const div = document.createElement("div");
+    div.className = "event";
+    div.innerHTML = `
+      <span class="badge ${e.status}">${e.status}</span>
+      <div class="message"><strong>${e.step}</strong><br/>${e.message}</div>
+      <div class="meta">${e.scenario_id} · sequence ${e.sequence} · ${e.payload.runtime_mode} · ${e.payload.adapter_mode}</div>
+    `;
+    timeline.appendChild(div);
+    div.scrollIntoView({behavior:"smooth", block:"nearest"});
+  }
+
+  function playReplay() {
+    if (!activeEvents.length || pointer >= activeEvents.length) loadScenario();
+    pauseReplay();
+    timer = setInterval(renderNext, 850);
+  }
+
+  function pauseReplay() {
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
+
+  function resetReplay() {
+    pauseReplay();
+    loadScenario();
+  }
+
+  select.addEventListener("change", loadScenario);
+  loadScenario();
+</script>
+</body>
+</html>

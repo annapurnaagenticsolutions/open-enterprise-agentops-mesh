@@ -1,0 +1,48 @@
+{
+  "version": "2.4.0",
+  "suites": [
+    {
+      "suite_id": "suite-core-control-plane",
+      "title": "Core control-plane governance benchmark",
+      "description": "Covers policy decisions, runtime boundaries, auditability, safety review, and tenant/security-sensitive controls.",
+      "scenario_ids": [
+        "scn-low-risk-internal-summary",
+        "scn-customer-support-external-response",
+        "scn-provider-routing-high-sensitivity-public-model",
+        "scn-secret-access-without-service-boundary"
+      ],
+      "minimum_pass_score": 80,
+      "release_gate": "public_mvp_confidence"
+    },
+    {
+      "suite_id": "suite-business-accelerators",
+      "title": "Business accelerator benchmark",
+      "description": "Tests procurement, HR, IT support, and documentation-intelligence accelerator-readiness patterns.",
+      "scenario_ids": [
+        "scn-procure-invoice-po-mismatch",
+        "scn-hr-policy-sensitive-employee-data",
+        "scn-it-support-ticket-dry-run",
+        "scn-doc-intelligence-confidential-contract"
+      ],
+      "minimum_pass_score": 78,
+      "release_gate": "accelerator_quality"
+    },
+    {
+      "suite_id": "suite-v2-2-full-regression",
+      "title": "v2.3 full deterministic regression benchmark",
+      "description": "Runs all packaged v2.3 scenarios as a deterministic non-live regression suite.",
+      "scenario_ids": [
+        "scn-procure-invoice-po-mismatch",
+        "scn-hr-policy-sensitive-employee-data",
+        "scn-customer-support-external-response",
+        "scn-it-support-ticket-dry-run",
+        "scn-doc-intelligence-confidential-contract",
+        "scn-provider-routing-high-sensitivity-public-model",
+        "scn-secret-access-without-service-boundary",
+        "scn-low-risk-internal-summary"
+      ],
+      "minimum_pass_score": 80,
+      "release_gate": "v2_3_regression"
+    }
+  ]
+}

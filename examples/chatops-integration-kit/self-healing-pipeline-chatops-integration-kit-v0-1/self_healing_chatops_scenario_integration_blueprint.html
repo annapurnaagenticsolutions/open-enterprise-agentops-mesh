@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Self-Healing Pipeline ChatOps Scenario Integration Blueprint</title>
+  <style>
+    :root {
+      --bg:#f4f7f6; --surface:#fff; --border:#e0e0e0; --accent:#6C4298;
+      --blue:#005A9C; --green:#27ae60; --amber:#d35400; --red:#c0392b;
+      --text:#2b2b2b; --muted:#555; --soft-purple:#f6f0fb; --soft-blue:#e8f4f8;
+      --soft-green:#edf8f2; --soft-amber:#fdfaf6; --soft-red:#fdeaea;
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.55; }
+    .shell { max-width:1450px; margin:0 auto; padding:28px 22px; }
+    .hero { background:#fff; border:1px solid var(--border); border-left:7px solid var(--accent); border-radius:14px; padding:28px; margin-bottom:18px; box-shadow:0 6px 18px rgba(0,0,0,.07); }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:2px; font-size:12px; font-weight:850; }
+    h1 { margin:6px 0 10px; color:var(--accent); font-size:34px; line-height:1.15; }
+    h2 { color:var(--accent); margin:0 0 12px; }
+    h3 { color:#2C3E50; margin:0 0 8px; }
+    p { color:var(--muted); }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    @media(max-width:1050px) { .grid4 { grid-template-columns:1fr 1fr; } .grid3 { grid-template-columns:1fr 1fr; } }
+    @media(max-width:760px) { .grid2,.grid3,.grid4 { grid-template-columns:1fr; } .shell { padding:14px; } h1 { font-size:27px; } }
+    .panel,.card { background:#fff; border:1px solid var(--border); border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.06); }
+    .panel { padding:20px; margin-bottom:18px; }
+    .card { padding:16px; }
+    .badge { display:inline-block; padding:5px 10px; border-radius:999px; font-size:12px; font-weight:850; margin:2px; }
+    .purple { background:var(--soft-purple); color:var(--accent); }
+    .green { background:var(--soft-green); color:var(--green); }
+    .blue { background:var(--soft-blue); color:var(--blue); }
+    .amber { background:var(--soft-amber); color:var(--amber); }
+    .red { background:var(--soft-red); color:var(--red); }
+    table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--border); border-radius:8px; overflow:hidden; margin:10px 0; }
+    th { background:#2b2b2b; color:#fff; padding:10px; text-align:left; font-size:13px; }
+    td { border-top:1px solid var(--border); padding:10px; vertical-align:top; font-size:13px; }
+    pre { background:#f8f9fa; border:1px solid #dee2e6; padding:14px; border-radius:8px; white-space:pre-wrap; overflow-x:auto; font-family:"Cascadia Code",Consolas,monospace; font-size:13px; }
+    .footer { text-align:center; color:var(--muted); margin-top:18px; font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="eyebrow">Integration Blueprint</div>
+      <h1>Self-Healing Pipeline ChatOps Scenario Integration</h1>
+      <p>
+        Blueprint for connecting the Self-Healing Pipeline POC to the existing Teams → Azure Bot →
+        AWS Lambda → Claude Orchestrator → MCP tools architecture, while using scenario-backed
+        self-healing data before live tool data is ready.
+      </p>
+      <div>
+        <span class="badge green">Recommended Mode: scenario_backed_chatops</span>
+        <span class="badge purple">Teams ChatOps</span>
+        <span class="badge blue">Claude Orchestrator</span>
+        <span class="badge amber">MCP Tool Calling</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Core Correction</h2>
+      <pre>Do not force self-healing diagnosis on generic sample Jira/GitLab/TeamCity data.
+
+Use curated near-real self-healing scenarios first.
+Expose those scenarios through scenario-aware MCP tools.
+Then gradually replace scenario-backed responses with live TeamCity/GitLab/Jira data.</pre>
+    </section>
+
+    <section class="grid3">
+      <div class="card">
+        <h3>What is Real in Demo</h3>
+        <p>Teams interaction, Azure Bot routing, Lambda gateway, Claude orchestration, MCP tool calling, self-healing logic, policy decisions, approval UX.</p>
+      </div>
+      <div class="card">
+        <h3>What is Scenario-Backed</h3>
+        <p>TeamCity logs/builds, GitLab diffs, Jira issues, pattern memory, documentation checklist data.</p>
+      </div>
+      <div class="card">
+        <h3>What is Deferred</h3>
+        <p>Production auto-merge, secret mutation, rollback, Terraform/IAM/Kubernetes/database changes, unvalidated memory promotion.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Target Architecture</h2>
+      <pre>Microsoft Teams
+  ↓
+Azure Bot
+  ↓
+AWS Lambda Gateway / Auth
+  ↓
+Claude Orchestrator Lambda
+  ↓
+Self-Healing Pipeline Runtime
+  ↓
+Scenario-Aware MCP Tool Layer
+  ├─ TeamCity MCP Tool
+  ├─ GitLab MCP Tool
+  ├─ Jira MCP Tool
+  ├─ Policy Tool
+  ├─ Pattern Memory Tool
+  └─ Documentation Intelligence Tool
+  ↓
+Teams response / Adaptive Card / Dashboard link</pre>
+    </section>
+
+    <section class="panel">
+      <h2>Scenario Mapping</h2>
+      <table>
+        <thead><tr><th>Build ID</th><th>Scenario</th><th>Demo Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>TC-DEMO-001</td><td>dependency_conflict_with_docs_gap</td><td>Full RCA → policy → memory → documentation update story.</td></tr>
+          <tr><td>TC-DEMO-002</td><td>flaky_test_timeout</td><td>Shows not over-fixing code when evidence suggests test instability.</td></tr>
+          <tr><td>TC-DEMO-003</td><td>build_agent_disk_full</td><td>Shows correct routing to platform-build instead of developer blame.</td></tr>
+          <tr><td>TC-DEMO-004</td><td>registry_auth_failure</td><td>Shows security-safe behavior and blocked credential mutation.</td></tr>
+          <tr><td>TC-DEMO-005</td><td>risky_action</td><td>Shows auto-merge block and governed autonomy.</td></tr>
+          <tr><td>TC-DEMO-006</td><td>weak_evidence</td><td>Shows abstention when required evidence is missing.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="grid2">
+      <div class="panel">
+        <h2>Teams Commands</h2>
+        <pre>@DevOps Agent diagnose TC-DEMO-001
+@DevOps Agent show evidence TC-DEMO-001
+@DevOps Agent explain decision TC-DEMO-001
+@DevOps Agent suggest fix TC-DEMO-001
+@DevOps Agent draft Jira comment TC-DEMO-001
+@DevOps Agent draft docs update TC-DEMO-001
+@DevOps Agent why blocked TC-DEMO-005
+@DevOps Agent replay TC-DEMO-001</pre>
+      </div>
+      <div class="panel">
+        <h2>Adaptive Card Actions</h2>
+        <pre>View Evidence
+Create Jira Comment
+Draft GitLab MR
+Draft Docs Update
+Reject</pre>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Build Plan</h2>
+      <table>
+        <thead><tr><th>Phase</th><th>Scope</th><th>Risk</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Scenario-backed advisory mode</td><td>Low</td></tr>
+          <tr><td>2</td><td>Teams approval cards with simulated actions</td><td>Low</td></tr>
+          <tr><td>3</td><td>Demo Jira/GitLab writes</td><td>Medium-low</td></tr>
+          <tr><td>4</td><td>Live read-only TeamCity/GitLab/Jira</td><td>Medium</td></tr>
+          <tr><td>5</td><td>Controlled live actions: Jira comment, GitLab draft MR, docs MR, one rerun</td><td>Medium</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <h2>Package Contents</h2>
+      <pre>sample_data/scenario_registry.json
+sample_data/scenarios/*
+
+mcp_contracts/self_healing_mcp_tool_contracts.json
+
+schemas/self_healing_chatops_output.schema.json
+schemas/mcp_tool_contract.schema.json
+
+teams_cards/self_healing_summary_card.json
+
+lambda_contracts/diagnose_request_response_flow.json
+
+docs/architecture_overview.md
+docs/teams_command_model.md
+docs/lambda_orchestration_flow.md
+docs/scenario_data_pack.md
+docs/mcp_tool_contracts.md
+docs/adaptive_cards.md
+docs/approval_workflow.md
+docs/migration_path.md</pre>
+    </section>
+
+    <div class="footer">
+      Self-Healing Pipeline ChatOps Scenario Integration Blueprint · Generated 2026-06-18
+    </div>
+  </div>
+</body>
+</html>

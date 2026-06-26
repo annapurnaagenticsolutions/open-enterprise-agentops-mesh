@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgentOps Mesh Frontend Prototype</title>
+  <style>
+    :root { --bg:#0f172a; --panel:#111827; --card:#1f2937; --text:#e5e7eb; --muted:#94a3b8; --line:#334155; --accent:#38bdf8; }
+    body { margin:0; font-family:Arial, sans-serif; background:linear-gradient(135deg,#020617,#111827); color:var(--text); }
+    header, main { max-width:1100px; margin:0 auto; padding:32px 20px; }
+    .hero { border:1px solid var(--line); border-radius:24px; padding:32px; background:rgba(17,24,39,.88); }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:20px; }
+    .card { background:rgba(31,41,55,.9); border:1px solid var(--line); border-radius:18px; padding:18px; }
+    button, select { padding:12px 14px; border-radius:12px; border:1px solid var(--line); background:#0f172a; color:var(--text); }
+    button { cursor:pointer; background:#075985; border-color:#38bdf8; }
+    .score { font-size:42px; font-weight:800; color:var(--accent); }
+    .muted { color:var(--muted); }
+    ul { padding-left:20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero">
+      <p class="muted">Open Enterprise AgentOps Mesh v0.2</p>
+      <h1>Agent Evaluation Lab Prototype</h1>
+      <p>This frontend prototype shows the intended product direction: not only documentation, but a working AgentOps framework with evaluation, governance, and readiness workflows.</p>
+      <select id="scenarioSelect"></select>
+      <button id="evaluateBtn">Evaluate Scenario</button>
+    </div>
+  </header>
+  <main>
+    <div id="result" class="grid"></div>
+  <section class="panel"><h2>v0.5 Policy-as-Code</h2><p>Use the backend endpoint <code>POST /policy/check</code> to evaluate action-level guardrails before tool or data access.</p></section>
+</main>
+  <script>
+    const weights = { business_value:15, task_suitability:10, data_readiness:15, governance_readiness:15, evaluation_coverage:10, safety_security:10, human_in_loop:10, operational_readiness:10, open_architecture_fit:5 };
+    const scenarios = [{"use_case_id": "procurement-agent-001", "name": "Procurement Invoice and Challan Validation Agent", "domain": "Procurement", "description": "Validates invoice, challan, PO, vendor, tax, and quantity consistency before human approval.", "autonomy_level": 3, "risk_factors": {"data_sensitivity": "medium", "external_action": false, "financial_impact": "medium", "reversibility": "moderate", "customer_or_employee_impact": "low"}, "scores": {"business_value": 88, "task_suitability": 84, "data_readiness": 70, "governance_readiness": 74, "evaluation_coverage": 68, "safety_security": 76, "human_in_loop": 85, "operational_readiness": 65, "open_architecture_fit": 90}}, {"use_case_id": "hr-policy-agent-001", "name": "HR Policy Guidance Agent", "domain": "HR", "description": "Answers employee policy questions with citations and escalation for sensitive cases.", "autonomy_level": 2, "risk_factors": {"data_sensitivity": "high", "external_action": false, "financial_impact": "low", "reversibility": "easy", "customer_or_employee_impact": "medium"}, "scores": {"business_value": 76, "task_suitability": 78, "data_readiness": 62, "governance_readiness": 64, "evaluation_coverage": 60, "safety_security": 70, "human_in_loop": 80, "operational_readiness": 58, "open_architecture_fit": 86}}, {"use_case_id": "customer-support-agent-001", "name": "Customer Support Resolution Agent", "domain": "Customer Support", "description": "Resolves routine support queries and escalates complex, contractual, or refund cases.", "autonomy_level": 4, "risk_factors": {"data_sensitivity": "medium", "external_action": true, "financial_impact": "medium", "reversibility": "moderate", "customer_or_employee_impact": "high"}, "scores": {"business_value": 90, "task_suitability": 82, "data_readiness": 66, "governance_readiness": 58, "evaluation_coverage": 54, "safety_security": 62, "human_in_loop": 60, "operational_readiness": 55, "open_architecture_fit": 84}}, {"use_case_id": "documentation-intelligence-agent-001", "name": "Documentation Intelligence Agent", "domain": "Knowledge Management", "description": "Finds, summarizes, compares, and checks enterprise documents with source traceability.", "autonomy_level": 2, "risk_factors": {"data_sensitivity": "medium", "external_action": false, "financial_impact": "none", "reversibility": "easy", "customer_or_employee_impact": "low"}, "scores": {"business_value": 78, "task_suitability": 86, "data_readiness": 72, "governance_readiness": 76, "evaluation_coverage": 70, "safety_security": 78, "human_in_loop": 82, "operational_readiness": 68, "open_architecture_fit": 92}}, {"use_case_id": "it-support-agent-001", "name": "IT Support Triage Agent", "domain": "IT Support", "description": "Triages tickets, suggests fixes, and routes actions that need admin privileges to humans.", "autonomy_level": 3, "risk_factors": {"data_sensitivity": "medium", "external_action": false, "financial_impact": "low", "reversibility": "moderate", "customer_or_employee_impact": "medium"}, "scores": {"business_value": 82, "task_suitability": 80, "data_readiness": 68, "governance_readiness": 70, "evaluation_coverage": 64, "safety_security": 72, "human_in_loop": 78, "operational_readiness": 66, "open_architecture_fit": 88}}];
+    const select = document.getElementById('scenarioSelect');
+    const result = document.getElementById('result');
+    scenarios.forEach((s, i) => {
+      const opt = document.createElement('option'); opt.value = i; opt.textContent = s.name; select.appendChild(opt);
+    });
+    function certify(score){ if(score<40)return['Not Ready','Reject/redesign']; if(score<60)return['Discovery Ready','Workshop/prototype only']; if(score<75)return['Pilot Ready','Pilot with human oversight']; if(score<90)return['Controlled Production Ready','Production with controls']; return ['Enterprise Scale Ready','Scale with governance approval']; }
+    function evalScenario(s){ let total=0; for(const [k,w] of Object.entries(weights)){ total += s.scores[k]*w/100; } total=Math.round(total*100)/100; const [level,decision]=certify(total); const blockers=[]; if(s.scores.data_readiness<60) blockers.push('Data readiness below pilot threshold.'); if(s.scores.governance_readiness<60) blockers.push('Governance readiness below pilot threshold.'); if(s.scores.safety_security<60) blockers.push('Safety/security below pilot threshold.'); return {total,level,decision,blockers}; }
+    document.getElementById('evaluateBtn').addEventListener('click', () => {
+      const s = scenarios[Number(select.value)]; const e = evalScenario(s);
+      result.innerHTML = `<div class="card"><div class="muted">Score</div><div class="score">${e.total}</div><strong>${e.level}</strong><p>${e.decision}</p></div><div class="card"><div class="muted">Use Case</div><h2>${s.name}</h2><p>${s.description}</p><p><strong>Domain:</strong> ${s.domain}</p><p><strong>Autonomy:</strong> L${s.autonomy_level}</p></div><div class="card"><div class="muted">Blockers</div>${e.blockers.length?'<ul>'+e.blockers.map(b=>`<li>${b}</li>`).join('')+'</ul>':'<p>No hard blockers in deterministic v0.2 scoring.</p>'}</div><div class="card"><div class="muted">Strategic Direction</div><p>This will evolve into a real frontend backed by API, persistent evaluations, governance gates, adapters, and accelerator workflows.</p></div>`;
+    });
+    document.getElementById('evaluateBtn').click();
+  </script>
+</body>
+</html>

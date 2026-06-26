@@ -1,0 +1,15 @@
+{
+  "repo": "platform/payments-service",
+  "commit_sha": "demo-dep-001",
+  "files_changed": [
+    {
+      "path": "package.json",
+      "change": "billing-client version updated from 2.1.0 to 2.2.0"
+    },
+    {
+      "path": "package-lock.json",
+      "change": "not modified"
+    }
+  ],
+  "summary": "package.json changed but package-lock.json was not updated."
+}

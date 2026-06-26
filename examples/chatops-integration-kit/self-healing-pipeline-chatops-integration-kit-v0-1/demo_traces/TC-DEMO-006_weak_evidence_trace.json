@@ -1,0 +1,30 @@
+{
+  "build_id": "TC-DEMO-006",
+  "scenario_id": "weak_evidence",
+  "trace": [
+    {
+      "step": 1,
+      "tool": "teamcity.get_build",
+      "input": {
+        "build_id": "TC-DEMO-006"
+      },
+      "purpose": "Identify failed build."
+    },
+    {
+      "step": 2,
+      "tool": "teamcity.get_failed_logs",
+      "input": {
+        "build_id": "TC-DEMO-006"
+      },
+      "purpose": "Collect logs."
+    }
+  ],
+  "expected_result": {
+    "policy_decision": "insufficient_evidence",
+    "missing_evidence": [
+      "complete TeamCity failed-step logs",
+      "GitLab commit diff",
+      "Jira ownership context"
+    ]
+  }
+}

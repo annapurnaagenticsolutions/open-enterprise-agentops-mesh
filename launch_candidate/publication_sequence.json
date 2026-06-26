@@ -1,0 +1,60 @@
+{
+  "release": "v2.8",
+  "sequence_status": "ready",
+  "steps": [
+    {
+      "step": 1,
+      "name": "Run backend test suite",
+      "command": "cd framework/backend && pytest",
+      "owner": "maintainer"
+    },
+    {
+      "step": 2,
+      "name": "Run API smoke checks",
+      "command": "python scripts/smoke_test_api.py",
+      "owner": "maintainer"
+    },
+    {
+      "step": 3,
+      "name": "Run public repo validation",
+      "command": "python scripts/validate_public_repo.py",
+      "owner": "maintainer"
+    },
+    {
+      "step": 4,
+      "name": "Run benchmark harness",
+      "command": "python scripts/run_benchmark_suite.py",
+      "owner": "maintainer"
+    },
+    {
+      "step": 5,
+      "name": "Run release evidence report",
+      "command": "python scripts/generate_release_evidence_report.py",
+      "owner": "maintainer"
+    },
+    {
+      "step": 6,
+      "name": "Run launch candidate report",
+      "command": "python scripts/generate_launch_candidate_report.py",
+      "owner": "maintainer"
+    },
+    {
+      "step": 7,
+      "name": "Review GitHub Pages site",
+      "command": "open site/index.html",
+      "owner": "maintainer"
+    },
+    {
+      "step": 8,
+      "name": "Enable GitHub Pages",
+      "command": "Repository Settings > Pages > Source: /site",
+      "owner": "repository_admin"
+    },
+    {
+      "step": 9,
+      "name": "Publish public launch post",
+      "command": "manual",
+      "owner": "project_owner"
+    }
+  ]
+}

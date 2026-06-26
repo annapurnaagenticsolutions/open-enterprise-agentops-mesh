@@ -1,0 +1,72 @@
+{
+  "build_id": "TC-DEMO-001",
+  "scenario_id": "dependency_conflict_with_docs_gap",
+  "trace": [
+    {
+      "step": 1,
+      "tool": "teamcity.get_build",
+      "input": {
+        "build_id": "TC-DEMO-001"
+      },
+      "purpose": "Identify failed build and commit."
+    },
+    {
+      "step": 2,
+      "tool": "teamcity.get_failed_logs",
+      "input": {
+        "build_id": "TC-DEMO-001"
+      },
+      "purpose": "Collect failed step logs."
+    },
+    {
+      "step": 3,
+      "tool": "gitlab.get_commit_diff",
+      "input": {
+        "repo": "platform/payments-service",
+        "commit_sha": "demo-dep-001"
+      },
+      "purpose": "Check changed files and dependency manifests."
+    },
+    {
+      "step": 4,
+      "tool": "jira.get_issue",
+      "input": {
+        "issue_id": "DEVOPS-DEMO-001"
+      },
+      "purpose": "Get ownership and operating context."
+    },
+    {
+      "step": 5,
+      "tool": "memory.search_patterns",
+      "input": {
+        "failure_signature": "dependency lockfile mismatch"
+      },
+      "purpose": "Find validated prior patterns."
+    },
+    {
+      "step": 6,
+      "tool": "docs.search_checklist",
+      "input": {
+        "query": "dependency lockfile checklist"
+      },
+      "purpose": "Find documentation gap."
+    },
+    {
+      "step": 7,
+      "tool": "policy.evaluate_action",
+      "input": {
+        "action": "draft_gitlab_mr"
+      },
+      "purpose": "Decide allowed/review/blocked."
+    }
+  ],
+  "expected_result": {
+    "failure_class": "dependency_conflict",
+    "policy_decision": "allow_with_review",
+    "recommended_actions": [
+      "draft_gitlab_mr",
+      "create_jira_comment",
+      "draft_docs_update"
+    ]
+  }
+}

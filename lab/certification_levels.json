@@ -1,0 +1,32 @@
+[
+  {
+    "min_score": 0,
+    "max_score": 39,
+    "level": "Not Ready",
+    "decision": "Reject or redesign before prototype."
+  },
+  {
+    "min_score": 40,
+    "max_score": 59,
+    "level": "Discovery Ready",
+    "decision": "Use only for workshop, discovery, or constrained prototype."
+  },
+  {
+    "min_score": 60,
+    "max_score": 74,
+    "level": "Pilot Ready",
+    "decision": "Pilot with strict human oversight and limited scope."
+  },
+  {
+    "min_score": 75,
+    "max_score": 89,
+    "level": "Controlled Production Ready",
+    "decision": "Production possible with monitoring, controls, and audit."
+  },
+  {
+    "min_score": 90,
+    "max_score": 100,
+    "level": "Enterprise Scale Ready",
+    "decision": "Ready for broader scale with governance board approval."
+  }
+]

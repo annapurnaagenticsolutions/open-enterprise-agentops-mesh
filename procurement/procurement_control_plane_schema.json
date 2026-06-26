@@ -1,0 +1,30 @@
+{
+  "version": "0.9.0",
+  "name": "Procurement Agent Control-Plane Demo Schema",
+  "description": "Schema-level description of how procurement validation moves through governance, policy, runtime, tool sandbox, trace ledger, and readiness reporting.",
+  "flow": [
+    "procurement_case_intake",
+    "document_consistency_validation",
+    "governance_workflow",
+    "policy_check",
+    "runtime_summary_generation",
+    "tool_sandbox_execution",
+    "exception_draft_if_needed",
+    "trace_and_case_record",
+    "readiness_report"
+  ],
+  "primary_controls": [
+    "maker-checker approval",
+    "invoice source validation",
+    "vendor record scope check",
+    "goods receipt verification",
+    "audit log",
+    "human approval before financial action"
+  ],
+  "non_goals": [
+    "No live ERP write-back",
+    "No autonomous payment approval",
+    "No external vendor communication",
+    "No replacement for statutory finance review"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SelfHealingChatOpsOutput",
+  "type": "object",
+  "required": [
+    "workflow_id",
+    "build_id",
+    "failure_class",
+    "confidence",
+    "evidence_score",
+    "policy_decision",
+    "root_cause",
+    "evidence",
+    "recommended_actions"
+  ],
+  "properties": {
+    "workflow_id": {
+      "type": "string"
+    },
+    "build_id": {
+      "type": "string"
+    },
+    "scenario_id": {
+      "type": "string"
+    },
+    "failure_class": {
+      "type": "string"
+    },
+    "confidence": {
+      "type": "number"
+    },
+    "evidence_score": {
+      "type": "number"
+    },
+    "blast_radius": {
+      "type": "string"
+    },
+    "policy_decision": {
+      "type": "string",
+      "enum": [
+        "allow",
+        "allow_with_review",
+        "block",
+        "insufficient_evidence"
+      ]
+    },
+    "root_cause": {
+      "type": "string"
+    },
+    "decision_rationale": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "missing_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommended_actions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "teams_card_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dashboard_link": {
+      "type": "string"
+    }
+  }
+}

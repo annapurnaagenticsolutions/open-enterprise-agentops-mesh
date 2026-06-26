@@ -1,0 +1,21 @@
+{
+  "version": "2.1.0",
+  "release": "Documentation Pruning, OpenAPI Polish, and Contributor Readiness",
+  "decision": "stable_public_adoption_ready",
+  "tests_expected": "all backend tests plus API smoke checks plus repo validation",
+  "scores": {
+    "documentation_clarity": 92,
+    "api_discoverability": 91,
+    "contributor_readiness": 90,
+    "public_repo_readiness": 89,
+    "security_boundary_clarity": 94,
+    "live_execution_boundary_clarity": 95
+  },
+  "boundaries": [
+    "No live connector execution",
+    "No live model-provider calls",
+    "No raw secret storage",
+    "No production IAM/OIDC integration",
+    "No irreversible enterprise write-back"
+  ]
+}

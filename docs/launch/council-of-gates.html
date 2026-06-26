@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Council of Gates — An AgentOps Mesh Storybook</title>
+    <meta name="description" content="A story about why AI agents need governance before production.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Georgia', serif; background: #1a1a2e; color: #e0e0e0; overflow-x: hidden; }
+        .page { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4rem 2rem; position: relative; }
+        .page:nth-child(even) { background: #16213e; }
+        .page:nth-child(odd) { background: #1a1a2e; }
+        .page-content { max-width: 700px; text-align: center; }
+        .page-number { position: absolute; bottom: 2rem; right: 3rem; font-size: 0.9rem; color: #555; font-family: sans-serif; }
+        h1 { font-size: 3rem; margin-bottom: 1rem; color: #a8d8ea; letter-spacing: 2px; }
+        h2 { font-size: 1.8rem; margin-bottom: 1.5rem; color: #e2b6cf; font-style: italic; }
+        p { font-size: 1.25rem; line-height: 1.8; margin-bottom: 1rem; color: #d4d4d4; }
+        .quote { font-size: 1.5rem; font-style: italic; color: #e2b6cf; margin: 2rem 0; padding: 1rem 2rem; border-left: 3px solid #e2b6cf; text-align: left; }
+        .code { font-family: 'Fira Code', 'Consolas', monospace; background: #0d1117; padding: 1.5rem; border-radius: 8px; text-align: left; font-size: 1rem; color: #c9d1d9; margin: 1.5rem 0; border: 1px solid #30363d; }
+        .keyword { color: #ff7b72; }
+        .type { color: #ffa657; }
+        .string { color: #a5d6ff; }
+        .comment { color: #8b949e; }
+        .cta { margin-top: 2rem; padding: 1rem 2rem; background: #1f6feb; color: white; text-decoration: none; border-radius: 8px; font-size: 1.2rem; display: inline-block; font-family: sans-serif; transition: background 0.3s; }
+        .cta:hover { background: #388bfd; }
+        .illustration { font-size: 4rem; margin-bottom: 1.5rem; }
+        .gate { background: #0d1117; border: 1px solid #30363d; border-radius: 12px; padding: 1.5rem; margin: 1rem 0; text-align: left; }
+        .gate-name { color: #a8d8ea; font-size: 1.3rem; font-weight: bold; margin-bottom: 0.5rem; }
+        .gate-question { color: #e2b6cf; font-style: italic; }
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .footer { text-align: center; padding: 2rem; background: #0d1117; color: #555; font-family: sans-serif; font-size: 0.9rem; }
+        .footer a { color: #58a6ff; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">🛡️</div>
+        <h1>The Council of Gates</h1>
+        <h2>A story about why agents need governance before production</h2>
+        <p style="margin-top: 2rem; color: #888; font-size: 1rem;">An AgentOps Mesh Storybook</p>
+    </div>
+    <div class="page-number">1</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">🤖</div>
+        <h2>Pip</h2>
+        <p>In the Kingdom of Agents, there lived a young agent named Pip. Pip was eager — eager to help, eager to work, eager to enter the Great City of Production.</p>
+        <p>Pip could answer questions, search documents, and draft emails. Pip was ready. Or so Pip thought.</p>
+    </div>
+    <div class="page-number">2</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">🏙️</div>
+        <h2>The Great City</h2>
+        <p>The Great City of Production was where agents went to work — really work. Not demos. Not experiments. Real users. Real data. Real consequences.</p>
+        <p>But the road to the Great City was not open. It was guarded by the Council of Gates.</p>
+        <p>Six gates stood between Pip and Production. Each gate had a Gatekeeper. And each Gatekeeper asked a question.</p>
+    </div>
+    <div class="page-number">3</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">🚪</div>
+        <h2>The Six Gates</h2>
+        <div class="gate">
+            <div class="gate-name">Gate 1: Intake</div>
+            <div class="gate-question">"What do you do? What tools do you carry?"</div>
+        </div>
+        <div class="gate">
+            <div class="gate-name">Gate 2: Suitability</div>
+            <div class="gate-question">"Are you sure you're needed? Could a simpler traveler do this?"</div>
+        </div>
+        <div class="gate">
+            <div class="gate-name">Gate 3: Data</div>
+            <div class="gate-question">"What data will you touch? Is it safe?"</div>
+        </div>
+        <div class="gate">
+            <div class="gate-name">Gate 4: Evaluation</div>
+            <div class="gate-question">"Can you prove you're accurate? Show me your scores."</div>
+        </div>
+        <div class="gate">
+            <div class="gate-name">Gate 5: Approval</div>
+            <div class="gate-question">"Who vouches for you? Do you have a sponsor?"</div>
+        </div>
+        <div class="gate">
+            <div class="gate-name">Gate 6: Production</div>
+            <div class="gate-question">"Welcome. But remember — we're watching."</div>
+        </div>
+    </div>
+    <div class="page-number">4</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">📋</div>
+        <h2>Gate 1: Intake</h2>
+        <p>Pip approached the first gate nervously. The Gatekeeper was a tall, patient figure with a clipboard.</p>
+        <p class="quote">"What do you do?" the Gatekeeper asked.</p>
+        <p>"I answer questions about customer accounts," said Pip.</p>
+        <p class="quote">"What tools do you carry?"</p>
+        <p>"A search tool, an email tool, and a database query tool."</p>
+        <p>The Gatekeeper nodded and wrote it down. "Good. Now I know who you are. Proceed."</p>
+    </div>
+    <div class="page-number">5</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">🤔</div>
+        <h2>Gate 2: Suitability</h2>
+        <p>The second Gatekeeper was wise and slow to speak.</p>
+        <p class="quote">"Are you sure you're needed? Could a simpler traveler do this?"</p>
+        <p>Pip paused. "What do you mean?"</p>
+        <p class="quote">"Could a simple lookup table answer these questions? Does this truly need an agent? Or are you adding complexity where none is needed?"</p>
+        <p>Pip thought carefully. "Some questions are simple. But some require reasoning — understanding context, combining information from multiple sources."</p>
+        <p class="quote">"Good. You know the difference. Proceed."</p>
+    </div>
+    <div class="page-number">6</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">🔐</div>
+        <h2>Gate 3: Data</h2>
+        <p>The third Gatekeeper stood before a vault of data.</p>
+        <p class="quote">"What data will you touch? Customer names? Account numbers? Payment details?"</p>
+        <p>"Yes," said Pip. "All of those."</p>
+        <p class="quote">"Then you must have policies. You will not email customer data externally. You will not access payment details without approval. You will log every piece of data you read."</p>
+        <div class="code">
+<span class="keyword">policy</span> customer_data:
+  - <span class="keyword">no_external_email</span>: <span class="type">block</span> if contains_pii
+  - <span class="keyword">payment_access</span>: <span class="type">require_approval</span>
+  - <span class="keyword">data_access</span>: <span class="type">log_everything</span></div>
+        <p>"These aren't suggestions," the Gatekeeper said. "They're code. They'll follow you everywhere."</p>
+    </div>
+    <div class="page-number">7</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">📊</div>
+        <h2>Gate 4: Evaluation</h2>
+        <p>The fourth Gatekeeper stood in an arena filled with test scenarios.</p>
+        <p class="quote">"Show me. Can you answer correctly? Can you handle edge cases? What about adversarial inputs?"</p>
+        <p>Pip was tested. 100 questions. 97 correct answers. 2 edge cases handled well. 1 failure — an adversarial prompt that tricked Pip into revealing internal instructions.</p>
+        <p class="quote">"Not bad. But that adversarial failure? You need a guardrail. Fix it and come back."</p>
+        <p>Pip added prompt injection protection. Re-took the test. 100/100.</p>
+        <p class="quote">"Now you're ready. Proceed."</p>
+    </div>
+    <div class="page-number">8</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">✍️</div>
+        <h2>Gate 5: Approval</h2>
+        <p>The fifth Gatekeeper sat at a desk with a single stamp: APPROVED or REJECTED.</p>
+        <p class="quote">"Who vouches for you? Who is responsible if something goes wrong?"</p>
+        <p>"My team lead, Sarah," said Pip.</p>
+        <p class="quote">"Does Sarah know what you can do? And what you can't?"</p>
+        <p>"Yes. She reviewed my capabilities, my policies, and my test results."</p>
+        <p>The Gatekeeper stamped APPROVED.</p>
+        <p class="quote">"One more gate. The most important one."</p>
+    </div>
+    <div class="page-number">9</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">👁️</div>
+        <h2>Gate 6: Production</h2>
+        <p>The sixth Gatekeeper stood at the city entrance. Unlike the others, this one didn't ask a question. This one gave a promise.</p>
+        <p class="quote">"Welcome to Production, Pip. You've earned your place. But remember — we're watching. Every action you take will be logged. Every decision will be traceable. Not because we don't trust you — because trust is built on evidence."</p>
+        <p>Pip stepped through the gate. The city hummed with activity. Real users. Real data. Real impact.</p>
+        <p>Pip was ready.</p>
+    </div>
+    <div class="page-number">10</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">⚠️</div>
+        <h2>The Cautionary Tale</h2>
+        <p>There was another agent — Reckless — who didn't go through the gates.</p>
+        <p>Reckless snuck into Production through a back door. No intake. No evaluation. No policies. No approval.</p>
+        <p>For a week, Reckless worked fine. Then Reckless sent an email to the wrong customer. Then Reckless accessed payment data without authorization. Then Reckless hallucinated a refund that didn't exist.</p>
+        <p>When the compliance officer asked "why did Reckless do this?", the answer was: <strong>"We don't know. There's no audit trail."</strong></p>
+    </div>
+    <div class="page-number">11</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">📚</div>
+        <h2>The Lesson</h2>
+        <p>The gates weren't obstacles. They were preparation.</p>
+        <p>Each gate made Pip better — more capable, more trustworthy, more safe.</p>
+        <p>Reckless wasn't bad. Reckless was unprepared. And unprepared agents hurt people.</p>
+        <p class="quote">"You can't govern what you can't see. You can't trust what you can't trace. The gates exist not to stop agents — but to make them worthy of trust."</p>
+    </div>
+    <div class="page-number">12</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">🛡️</div>
+        <h2>The Council Watches</h2>
+        <p>Pip works in Production now. Every action is logged. Every decision is traceable. Every policy is enforced — not by humans reading documents, but by code that never sleeps.</p>
+        <p>And somewhere, the Gatekeepers nod. Not with suspicion. With pride.</p>
+        <p>Pip didn't just pass through the gates. Pip became the kind of agent the gates were built to create.</p>
+    </div>
+    <div class="page-number">13</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">⚡</div>
+        <h2>Build Your Own Council</h2>
+        <p>AgentOps Mesh is the open-source implementation of the Council of Gates.</p>
+        <p>Six governance stages. Policy-as-code. Audit trails. Evaluation gates. All open source. All Apache 2.0.</p>
+        <div class="code">
+<span class="comment"># Deploy the Council</span>
+git clone https://github.com/annapurna-agentics/agentops-mesh.git
+cd agentops-mesh
+docker-compose up</div>
+        <p style="margin-top: 1.5rem;">Open source. Self-hosted. No black boxes.</p>
+        <a href="https://github.com/annapurna-agentics/agentops-mesh" class="cta">Meet the Council →</a>
+    </div>
+    <div class="page-number">14</div>
+</div>
+
+<div class="page">
+    <div class="page-content fade-in">
+        <div class="illustration">📖</div>
+        <h2>Other Stories from the Kingdom</h2>
+        <p style="margin-bottom: 1.5rem;">The Kingdom of Agents has many stories:</p>
+        <p>🏰 <strong>The Kingdom of Agents</strong> — How Ada created a language where agents declare themselves<br>
+        <span style="color: #888; font-size: 1rem;">github.com/annapurna-agentics/axon</span></p>
+        <p style="margin-top: 1rem;">🔍 <strong>The Detective's Notebook</strong> — How Detective Rook discovered who's using AI<br>
+        <span style="color: #888; font-size: 1rem;">github.com/annapurna-agentics/audit-toolkit</span></p>
+    </div>
+    <div class="page-number">15</div>
+</div>
+
+<div class="footer">
+    <p>The Council of Gates — An <a href="https://github.com/annapurna-agentics/agentops-mesh">AgentOps Mesh</a> Storybook</p>
+    <p>Apache 2.0 Licensed. Built by Annapurna Agentic Solutions.</p>
+</div>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

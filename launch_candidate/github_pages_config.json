@@ -1,0 +1,42 @@
+{
+  "release": "v2.8",
+  "pages_source": "/site",
+  "entry_page": "index.html",
+  "recommended_pages": [
+    {
+      "path": "index.html",
+      "purpose": "public landing page"
+    },
+    {
+      "path": "interactive_demo_path.html",
+      "purpose": "guided procurement control-plane demo"
+    },
+    {
+      "path": "control_plane_console.html",
+      "purpose": "capability map and end-to-end report"
+    },
+    {
+      "path": "launch_candidate_console.html",
+      "purpose": "launch-candidate readiness"
+    },
+    {
+      "path": "release_evidence_console.html",
+      "purpose": "release evidence and proof bundle"
+    },
+    {
+      "path": "api_catalog.html",
+      "purpose": "API surface"
+    },
+    {
+      "path": "community_intake_console.html",
+      "purpose": "feedback and use-case intake"
+    }
+  ],
+  "required_static_files": [
+    "site/index.html",
+    "site/404.html",
+    "site/sitemap.xml",
+    "site/launch_candidate_console.html"
+  ],
+  "finalization_status": "ready_after_repository_publication"
+}

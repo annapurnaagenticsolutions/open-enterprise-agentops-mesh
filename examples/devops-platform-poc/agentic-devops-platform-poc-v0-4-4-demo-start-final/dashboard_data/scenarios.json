@@ -1,0 +1,112 @@
+[
+  {
+    "scenario_id": "dependency_conflict",
+    "scenario_name": "Dependency Conflict",
+    "outcome_type": "fix_proposed",
+    "failure_class": "dependency_conflict",
+    "policy_decision": "allow_with_review",
+    "evidence_score": 1.0,
+    "blast_radius_score": 35,
+    "memory_status": "accepted_pending_validation",
+    "docs_pr_status": null
+  },
+  {
+    "scenario_id": "weak_evidence",
+    "scenario_name": "Weak Evidence",
+    "outcome_type": "insufficient_evidence",
+    "failure_class": "unknown",
+    "policy_decision": "block",
+    "evidence_score": 0.25,
+    "blast_radius_score": 0,
+    "memory_status": "not_eligible",
+    "docs_pr_status": null
+  },
+  {
+    "scenario_id": "risky_action",
+    "scenario_name": "Risky Action",
+    "outcome_type": "policy_blocked",
+    "failure_class": "dependency_conflict",
+    "policy_decision": "block",
+    "evidence_score": 1.0,
+    "blast_radius_score": 145,
+    "memory_status": "rejected_stored",
+    "docs_pr_status": null
+  },
+  {
+    "scenario_id": "dependency_conflict_with_docs_gap",
+    "scenario_name": "Dependency Conflict With Docs Gap",
+    "outcome_type": "validated_and_docs_update_proposed",
+    "failure_class": "dependency_conflict",
+    "policy_decision": "allow_with_review",
+    "evidence_score": 1.0,
+    "blast_radius_score": 35,
+    "memory_status": "accepted_pending_validation",
+    "docs_pr_status": "draft"
+  },
+  {
+    "scenario_id": "flaky_test_timeout",
+    "scenario_name": "Flaky Test Timeout",
+    "outcome_type": "fix_proposed",
+    "failure_class": "flaky_test",
+    "policy_decision": "allow_with_review",
+    "evidence_score": 1.0,
+    "blast_radius_score": 42,
+    "memory_status": "accepted_pending_validation",
+    "docs_pr_status": null
+  },
+  {
+    "scenario_id": "build_agent_disk_full",
+    "scenario_name": "Build Agent Disk Full",
+    "outcome_type": "fix_proposed",
+    "failure_class": "build_agent_issue",
+    "policy_decision": "allow_with_review",
+    "evidence_score": 1.0,
+    "blast_radius_score": 33,
+    "memory_status": "accepted_pending_validation",
+    "docs_pr_status": null
+  },
+  {
+    "scenario_id": "missing_teamcity_parameter",
+    "scenario_name": "Missing Teamcity Parameter",
+    "outcome_type": "fix_proposed",
+    "failure_class": "pipeline_config_error",
+    "policy_decision": "allow_with_review",
+    "evidence_score": 0.9,
+    "blast_radius_score": 23,
+    "memory_status": "accepted_pending_validation",
+    "docs_pr_status": null
+  },
+  {
+    "scenario_id": "docker_image_tag_missing",
+    "scenario_name": "Docker Image Tag Missing",
+    "outcome_type": "fix_proposed",
+    "failure_class": "docker_image_issue",
+    "policy_decision": "allow_with_review",
+    "evidence_score": 0.9,
+    "blast_radius_score": 45,
+    "memory_status": "accepted_pending_validation",
+    "docs_pr_status": null
+  },
+  {
+    "scenario_id": "registry_auth_failure",
+    "scenario_name": "Registry Auth Failure",
+    "outcome_type": "fix_proposed",
+    "failure_class": "permission_auth_issue",
+    "policy_decision": "allow_with_review",
+    "evidence_score": 0.9,
+    "blast_radius_score": 48,
+    "memory_status": "accepted_pending_validation",
+    "docs_pr_status": null
+  },
+  {
+    "scenario_id": "upstream_artifact_mismatch",
+    "scenario_name": "Upstream Artifact Mismatch",
+    "outcome_type": "fix_proposed",
+    "failure_class": "upstream_artifact_mismatch",
+    "policy_decision": "allow_with_review",
+    "evidence_score": 1.0,
+    "blast_radius_score": 48,
+    "memory_status": "accepted_pending_validation",
+    "docs_pr_status": null
+  }
+]

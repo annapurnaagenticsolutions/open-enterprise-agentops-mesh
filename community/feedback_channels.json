@@ -1,0 +1,29 @@
+{
+  "version": "2.5.0",
+  "channels": [
+    {
+      "id": "use_case_submission",
+      "label": "Use-case submission",
+      "best_for": "New enterprise-agent use cases and accelerator candidates",
+      "triage_lane": "accelerator_candidate"
+    },
+    {
+      "id": "architecture_critique",
+      "label": "Architecture critique",
+      "best_for": "Security, governance, audit, policy, model-risk, and deployment review",
+      "triage_lane": "core_control_plane"
+    },
+    {
+      "id": "adoption_feedback",
+      "label": "Adoption feedback",
+      "best_for": "Install, README, site navigation, local dev, Docker Compose, and contributor friction",
+      "triage_lane": "adoption"
+    },
+    {
+      "id": "roadmap_feedback",
+      "label": "Roadmap feedback",
+      "best_for": "Prioritizing future releases without breaking the product boundary",
+      "triage_lane": "roadmap"
+    }
+  ]
+}

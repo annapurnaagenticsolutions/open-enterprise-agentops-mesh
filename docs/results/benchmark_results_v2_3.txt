@@ -1,0 +1,5 @@
+Benchmark run: bmr-6e80490c90c8
+Suite: suite-v2-2-full-regression
+Decision: benchmark_passed
+Score: 96.83
+Scenarios: 8 passed / 0 failed

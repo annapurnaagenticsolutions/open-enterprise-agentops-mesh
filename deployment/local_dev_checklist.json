@@ -1,0 +1,35 @@
+{
+  "version": "2.4.0",
+  "checks": [
+    {
+      "id": "dep-check-001",
+      "name": "backend_imports",
+      "description": "FastAPI app imports without side effects.",
+      "required": true
+    },
+    {
+      "id": "dep-check-002",
+      "name": "health_endpoint",
+      "description": "/health returns deterministic mode and version.",
+      "required": true
+    },
+    {
+      "id": "dep-check-003",
+      "name": "live_execution_disabled",
+      "description": "Live connectors and live providers remain disabled.",
+      "required": true
+    },
+    {
+      "id": "dep-check-004",
+      "name": "static_site_available",
+      "description": "site/index.html and site/control_plane_console.html exist.",
+      "required": true
+    },
+    {
+      "id": "dep-check-005",
+      "name": "compose_files_present",
+      "description": "Dockerfile and docker-compose.yml are present.",
+      "required": true
+    }
+  ]
+}

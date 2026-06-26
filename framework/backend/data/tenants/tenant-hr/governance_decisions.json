@@ -1,0 +1,8 @@
+[
+  {
+    "tenant_id": "tenant-hr",
+    "decision_id": "gd-hr-001",
+    "agent_id": "hr-policy-agent-001",
+    "decision": "needs_data_readiness_review"
+  }
+]

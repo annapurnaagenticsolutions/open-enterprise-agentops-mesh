@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ChatOpsWorkflowState",
+  "type": "object",
+  "required": [
+    "workflow_id",
+    "state",
+    "build_id",
+    "scenario_id",
+    "policy_hash"
+  ],
+  "properties": {
+    "workflow_id": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "received",
+        "diagnosing",
+        "context_collected",
+        "rca_ready",
+        "policy_evaluated",
+        "awaiting_user_approval",
+        "action_approved",
+        "action_executed",
+        "action_rejected",
+        "blocked",
+        "insufficient_evidence",
+        "completed"
+      ]
+    },
+    "build_id": {
+      "type": "string"
+    },
+    "scenario_id": {
+      "type": "string"
+    },
+    "policy_hash": {
+      "type": "string"
+    },
+    "approved_by": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "last_action_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "audit_events": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

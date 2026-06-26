@@ -1,0 +1,10 @@
+{
+  "build_id": "TC-DEMO-003",
+  "status": "failed",
+  "project": "Inventory Platform",
+  "build_configuration": "inventory-service-ci",
+  "failed_stage": "package_artifact",
+  "agent": "linux-medium-07",
+  "branch": "main",
+  "commit_sha": "demo-agent-003"
+}

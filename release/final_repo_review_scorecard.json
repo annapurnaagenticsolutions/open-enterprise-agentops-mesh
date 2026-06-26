@@ -1,0 +1,43 @@
+{
+  "release": "v2.8-final-review",
+  "project": "Open Enterprise AgentOps Mesh",
+  "product_narrative": "Open Enterprise AgentOps Control Plane",
+  "decision": "go_for_public_launch",
+  "development_status": "close_active_development_until_external_feedback",
+  "scores": {
+    "product_positioning": 96,
+    "repo_structure": 94,
+    "documentation_readiness": 95,
+    "static_site_readiness": 95,
+    "backend_test_readiness": 100,
+    "api_smoke_readiness": 100,
+    "benchmark_readiness": 97,
+    "release_evidence_readiness": 96,
+    "launch_candidate_readiness": 97,
+    "safety_boundary_clarity": 98,
+    "overall_public_launch_readiness": 97
+  },
+  "validation": {
+    "backend_tests_passed": 125,
+    "api_smoke_checks_passed": 80,
+    "required_files_checked": 31,
+    "openapi_lite_endpoints": 89,
+    "benchmark_decision": "benchmark_passed",
+    "benchmark_score": 96.83,
+    "benchmark_scenarios_passed": 8,
+    "benchmark_scenarios_failed": 0,
+    "release_evidence_score": 96,
+    "launch_candidate_score": 97,
+    "static_html_pages_checked": 32,
+    "missing_static_links": 0
+  },
+  "boundaries": {
+    "live_model_provider_calls": false,
+    "live_connector_execution": false,
+    "raw_secret_storage": false,
+    "production_iam": false,
+    "external_api_calls": false,
+    "cloud_provisioning": false
+  },
+  "final_recommendation": "Publish v2.8, record demo, share publicly, then use external feedback to decide next work."
+}

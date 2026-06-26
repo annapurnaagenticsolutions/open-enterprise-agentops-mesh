@@ -1,0 +1,32 @@
+{
+  "version": "2.5.0",
+  "feedback": [
+    {
+      "feedback_id": "adopt-001",
+      "source": "local_demo_user",
+      "area": "README",
+      "finding": "The project is strong but needs a clearer first five minutes for architects.",
+      "impact": "medium",
+      "status": "accepted",
+      "mapped_action": "v2.6 guided demo path"
+    },
+    {
+      "feedback_id": "adopt-002",
+      "source": "developer_reviewer",
+      "area": "API catalog",
+      "finding": "API grouping is useful, but community endpoints should be visible in OpenAPI-lite.",
+      "impact": "low",
+      "status": "implemented",
+      "mapped_action": "v2.5 OpenAPI-lite update"
+    },
+    {
+      "feedback_id": "adopt-003",
+      "source": "enterprise_architect",
+      "area": "boundaries",
+      "finding": "Live execution boundaries are valuable and should remain prominent.",
+      "impact": "high",
+      "status": "accepted",
+      "mapped_action": "Boundary callout in v2.5 release notes"
+    }
+  ]
+}

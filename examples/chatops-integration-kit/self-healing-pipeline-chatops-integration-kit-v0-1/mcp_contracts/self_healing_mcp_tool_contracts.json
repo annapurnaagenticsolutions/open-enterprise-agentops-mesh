@@ -1,0 +1,111 @@
+{
+  "teamcity.get_build": {
+    "description": "Return TeamCity build summary for a build id.",
+    "risk": "read_only",
+    "input_schema": {
+      "build_id": "string"
+    },
+    "output_schema": {
+      "build_id": "string",
+      "status": "string",
+      "failed_stage": "string",
+      "commit_sha": "string"
+    },
+    "scenario_backing": "sample_data/scenarios/{scenario_id}/teamcity_build.json"
+  },
+  "teamcity.get_failed_logs": {
+    "description": "Return failed-step logs.",
+    "risk": "read_only",
+    "input_schema": {
+      "build_id": "string"
+    },
+    "output_schema": {
+      "logs": "array"
+    },
+    "scenario_backing": "sample_data/scenarios/{scenario_id}/teamcity_logs.json"
+  },
+  "gitlab.get_commit_diff": {
+    "description": "Return GitLab commit/MR diff.",
+    "risk": "read_only",
+    "input_schema": {
+      "repo": "string",
+      "commit_sha": "string"
+    },
+    "output_schema": {
+      "repo": "string",
+      "commit_sha": "string",
+      "files_changed": "array",
+      "summary": "string"
+    },
+    "scenario_backing": "sample_data/scenarios/{scenario_id}/gitlab_commit_diff.json"
+  },
+  "jira.get_issue": {
+    "description": "Return Jira context and ownership.",
+    "risk": "read_only",
+    "input_schema": {
+      "issue_id": "string"
+    },
+    "output_schema": {
+      "issue_id": "string",
+      "priority": "string",
+      "owner_team": "string",
+      "status": "string"
+    },
+    "scenario_backing": "sample_data/scenarios/{scenario_id}/jira_issue.json"
+  },
+  "memory.search_patterns": {
+    "description": "Return scenario-backed or persisted pattern matches.",
+    "risk": "read_only",
+    "input_schema": {
+      "failure_signature": "string"
+    },
+    "output_schema": {
+      "matched_pattern": "string",
+      "prior_occurrences": "number",
+      "validated_resolutions": "number"
+    },
+    "scenario_backing": "sample_data/scenarios/{scenario_id}/pattern_memory.json"
+  },
+  "docs.search_checklist": {
+    "description": "Return checklist context and documentation gap.",
+    "risk": "read_only",
+    "input_schema": {
+      "query": "string"
+    },
+    "output_schema": {
+      "target_file": "string",
+      "gap": "string",
+      "proposed_item": "string"
+    },
+    "scenario_backing": "sample_data/scenarios/{scenario_id}/docs_checklist.json"
+  },
+  "jira.add_comment": {
+    "description": "Add Jira RCA comment after approval. Simulated in scenario-backed mode.",
+    "risk": "write_review_required",
+    "input_schema": {
+      "issue_id": "string",
+      "comment": "string",
+      "approval_token": "string"
+    },
+    "output_schema": {
+      "status": "string",
+      "issue_id": "string",
+      "comment_id": "string"
+    }
+  },
+  "gitlab.create_mr_draft": {
+    "description": "Create draft MR after approval. Simulated in scenario-backed mode.",
+    "risk": "write_review_required",
+    "input_schema": {
+      "repo": "string",
+      "branch": "string",
+      "title": "string",
+      "body": "string",
+      "approval_token": "string"
+    },
+    "output_schema": {
+      "status": "string",
+      "mr_url": "string"
+    }
+  }
+}

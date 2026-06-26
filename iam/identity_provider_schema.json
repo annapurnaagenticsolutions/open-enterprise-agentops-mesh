@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentOps Identity Provider Record",
+  "type": "object",
+  "required": [
+    "provider_id",
+    "display_name",
+    "issuer",
+    "mode",
+    "status",
+    "trust_level"
+  ],
+  "properties": {
+    "provider_id": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "issuer": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "trust_level": {
+      "type": "string"
+    },
+    "allowed_tenants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supported_flows": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_claims": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

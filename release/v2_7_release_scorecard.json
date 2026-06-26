@@ -1,0 +1,22 @@
+{
+  "release": "v2.7",
+  "release_name": "Release Evidence Pack and Demo Recording Readiness",
+  "decision": "release_evidence_ready",
+  "score": 96,
+  "checks": {
+    "release_evidence_manifest": "ready",
+    "demo_recording_storyboard": "ready",
+    "proof_bundle": "ready",
+    "backend_tests": "passed_after_validation",
+    "api_smoke_checks": "passed_after_validation",
+    "public_repo_validation": "passed_after_validation",
+    "benchmark_harness": "passed"
+  },
+  "boundaries": {
+    "live_model_provider_calls": false,
+    "live_connector_execution": false,
+    "raw_secret_storage": false,
+    "production_iam": false,
+    "external_api_calls": false
+  }
+}

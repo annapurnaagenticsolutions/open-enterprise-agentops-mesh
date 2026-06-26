@@ -1,0 +1,22 @@
+{
+  "schema_version": "devops.event.v1",
+  "source_tool": "teamcity",
+  "event_type": "pipeline_failed",
+  "normalized_event_type": "pipeline.failed",
+  "trust_level": "synthetic_test",
+  "service_name": "pricing-service",
+  "service_criticality": "tier_3",
+  "owner_team": "pricing-platform",
+  "repository": "platform/pricing-service",
+  "branch": "release/1.8",
+  "commit_sha": "param123",
+  "pipeline_id": "tc_pipeline_missing_param",
+  "build_id": "tc_build_missing_param",
+  "environment": "ci",
+  "severity": "medium",
+  "metadata": {
+    "scenario": "missing_teamcity_parameter",
+    "issue_type": "pipeline_config",
+    "jira_ticket": "DEVOPS-203"
+  }
+}

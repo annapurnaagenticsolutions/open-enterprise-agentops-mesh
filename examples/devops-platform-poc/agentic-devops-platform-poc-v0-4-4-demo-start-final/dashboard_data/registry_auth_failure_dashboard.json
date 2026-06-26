@@ -1,0 +1,219 @@
+{
+  "scenario_id": "registry_auth_failure",
+  "scenario_name": "Registry Auth Failure",
+  "outcome_type": "fix_proposed",
+  "teamcity": {
+    "build_id": "tc_build_registry_auth",
+    "build_config_id": "tc_pipeline_registry_auth",
+    "failed_step": "install_dependencies",
+    "agent": "linux-medium",
+    "status": "awaiting_approval",
+    "log_summary": "Downloading private package from registry. | 401 Unauthorized from package registry. | Credential or permission issue. Do not rotate secrets automatically.",
+    "rerun_status": "pending_human_approval"
+  },
+  "github": {
+    "repo": "platform/billing-service",
+    "branch": "main",
+    "commit_sha": "auth123",
+    "pr_number": null,
+    "changed_files": [
+      "package.json",
+      "package-lock.json"
+    ],
+    "docs_pr_url": null
+  },
+  "jira": {
+    "ticket_id": "DEVOPS-205",
+    "status": "Awaiting Review",
+    "owner_team": "billing-platform",
+    "comments": [
+      "AI RCA generated for scenario registry_auth_failure.",
+      "Policy decision: allow_with_review.",
+      "Memory status: MemoryPromotionStatus.ACCEPTED_PENDING_VALIDATION."
+    ],
+    "linked_artifacts": [
+      "TeamCity:tc_build_registry_auth",
+      "GitHub:platform/billing-service@auth123"
+    ]
+  },
+  "rca": {
+    "failure_class": "permission_auth_issue",
+    "root_cause": "The pipeline failed due to a permission or authentication issue while accessing a private registry. Automatic credential mutation is blocked.",
+    "confidence_score": 0.78,
+    "evidence_refs": [
+      "build_logs: Permission/authentication failure detected. Automatic credential mutation is blocked.",
+      "build_logs: Downloading private package from registry. | 401 Unauthorized from package registry. | Credential or permission issue. Do not rotate secrets automatically.",
+      "commit_diff: package.json changed but package-lock.json was not updated."
+    ]
+  },
+  "governance": {
+    "policy_decision": "allow_with_review",
+    "evidence_score": 0.9,
+    "blast_radius_score": 48,
+    "blast_radius_level": "medium",
+    "required_approvers": [
+      {
+        "role": "service_owner",
+        "team": "billing-platform",
+        "reason": "Review required before write-capable action."
+      },
+      {
+        "role": "platform_engineer",
+        "team": "platform",
+        "reason": "Medium or higher blast radius requires platform review."
+      }
+    ],
+    "policy_reasons": [
+      "Risk level is high; human approval required."
+    ]
+  },
+  "pattern_memory": {
+    "pattern_id": "runtime_wf_cb215762a947",
+    "promotion_status": "accepted_pending_validation",
+    "validation_result": "pending_human_approval",
+    "success_count": 0,
+    "rejection_count": 0
+  },
+  "documentation": {
+    "checklist_name": null,
+    "proposed_item": null,
+    "target_file": null,
+    "priority": null,
+    "docs_pr_status": null,
+    "docs_pr_url": null,
+    "proposed_markdown": null
+  },
+  "audit_timeline": [
+    {
+      "timestamp": "2026-06-18T10:12:49.091856+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "workflow_started",
+      "details": {
+        "event_id": "evt_e1d3778261ab"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.092016+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "failure_classified",
+      "details": {
+        "failure_class": "permission_auth_issue",
+        "confidence_score": 0.78,
+        "risk_level": "high",
+        "evidence_score": 0.9,
+        "missing_evidence": []
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.092138+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "rca_generated",
+      "details": {
+        "root_cause": "The pipeline failed due to a permission or authentication issue while accessing a private registry. Automatic credential mutation is blocked."
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.092272+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "remediation_planned",
+      "details": {
+        "plan": {
+          "summary": "Escalate to platform/security owner. Do not mutate credentials automatically.",
+          "steps": [
+            "Escalate permission/auth issue without changing secrets."
+          ],
+          "security_escalation": {
+            "type": "security_escalation",
+            "reason": "Registry permission/auth issue. Automatic secret mutation is blocked."
+          }
+        },
+        "blast_radius_score": 48,
+        "blast_radius_level": "medium",
+        "risk_score": 48
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.092327+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "memory_status_recorded",
+      "details": {
+        "promotion_status": "accepted_pending_validation",
+        "reason": "accepted_pending_validation"
+      }
+    },
+    {
+      "timestamp": "2026-06-18T10:12:49.092340+00:00",
+      "actor": "self_healing_pipeline",
+      "action": "policy_evaluated",
+      "details": {
+        "decision": "allow_with_review",
+        "approval_required": true,
+        "allowed_actions": [
+          "comment_on_ticket"
+        ],
+        "blocked_actions": [],
+        "reasons": [
+          "Risk level is high; human approval required."
+        ],
+        "required_approvers": [
+          {
+            "role": "service_owner",
+            "team": "billing-platform",
+            "reason": "Review required before write-capable action."
+          },
+          {
+            "role": "platform_engineer",
+            "team": "platform",
+            "reason": "Medium or higher blast radius requires platform review."
+          }
+        ]
+      }
+    }
+  ],
+  "ai_telemetry": [
+    {
+      "step": "context_collection",
+      "model": "mock-claude-native",
+      "input_tokens": 619,
+      "output_tokens": 3,
+      "estimated_cost_usd": 0.001902,
+      "latency_ms": 181,
+      "abstained": false
+    },
+    {
+      "step": "classify_failure",
+      "model": "mock-claude-native",
+      "input_tokens": 619,
+      "output_tokens": 5,
+      "estimated_cost_usd": 0.001932,
+      "latency_ms": 181,
+      "abstained": false
+    },
+    {
+      "step": "generate_rca",
+      "model": "mock-claude-native",
+      "input_tokens": 619,
+      "output_tokens": 35,
+      "estimated_cost_usd": 0.002382,
+      "latency_ms": 181,
+      "abstained": false
+    },
+    {
+      "step": "policy_and_validation_planning",
+      "model": "mock-claude-native",
+      "input_tokens": 619,
+      "output_tokens": 42,
+      "estimated_cost_usd": 0.002487,
+      "latency_ms": 181,
+      "abstained": false
+    }
+  ],
+  "next_actions": [
+    {
+      "label": "Review RCA and policy decision",
+      "owner": "billing-platform",
+      "action_type": "human_review",
+      "status": "pending"
+    }
+  ]
+}

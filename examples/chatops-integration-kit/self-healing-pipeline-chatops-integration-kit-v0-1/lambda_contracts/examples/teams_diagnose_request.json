@@ -1,0 +1,8 @@
+{
+  "source": "microsoft_teams",
+  "tenant_id": "tenant-demo",
+  "teams_user_id": "user-demo-123",
+  "conversation_id": "conv-demo-001",
+  "message_text": "@DevOps Agent diagnose TC-DEMO-001",
+  "timestamp": "2026-06-18T11:10:24.257383+00:00"
+}

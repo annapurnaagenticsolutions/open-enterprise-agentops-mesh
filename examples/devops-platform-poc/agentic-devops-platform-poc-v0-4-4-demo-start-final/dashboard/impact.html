@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LLM Reasoning and Long-Term Impact Dashboard</title>
+  <style>
+    :root{--bg:#f4f7f6;--surface:#fff;--border:#e0e0e0;--accent:#6C4298;--blue:#005A9C;--green:#27ae60;--amber:#d35400;--red:#c0392b;--text:#2b2b2b;--muted:#555;--soft-purple:#f6f0fb;--soft-blue:#e8f4f8;--soft-green:#edf8f2;--soft-amber:#fdfaf6;--soft-red:#fdeaea}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+    .shell{max-width:1450px;margin:0 auto;padding:24px}.hero{background:#fff;border:1px solid var(--border);border-left:6px solid var(--accent);border-radius:10px;padding:24px;margin-bottom:18px;box-shadow:0 4px 8px rgba(0,0,0,.06)}
+    h1{margin:0 0 8px;color:var(--accent)}p{color:var(--muted)}.note{background:var(--soft-blue);border:1px solid #bce0ee;border-left:5px solid var(--blue);padding:12px;border-radius:8px;margin-top:12px}
+    .layout{display:grid;grid-template-columns:330px 1fr;gap:18px}@media(max-width:950px){.layout{grid-template-columns:1fr}}
+    .panel,.card{background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 3px 7px rgba(0,0,0,.06)}.panel{padding:16px}.card{padding:14px;margin-bottom:12px}
+    .scenario-btn{width:100%;text-align:left;border:1px solid var(--border);background:#fff;padding:12px;border-radius:8px;margin-bottom:10px;cursor:pointer}.scenario-btn:hover,.scenario-btn.active{background:var(--soft-purple);border-color:var(--accent)}
+    .scenario-name{font-weight:800;color:#2C3E50}.scenario-meta{font-size:12px;color:var(--muted)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}@media(max-width:850px){.grid2,.grid3{grid-template-columns:1fr}}
+    h2{color:var(--accent);margin:0 0 10px}.card h3{margin:0 0 8px;color:var(--accent);font-size:14px;text-transform:uppercase;letter-spacing:.7px}.card ul{padding-left:18px;margin:0}.card li{margin-bottom:6px;color:var(--text);font-size:14px}
+    .badge{display:inline-block;padding:4px 9px;border-radius:999px;font-size:12px;font-weight:800}.purple{background:var(--soft-purple);color:var(--accent)}.green{background:var(--soft-green);color:var(--green)}.amber{background:var(--soft-amber);color:var(--amber)}.blue{background:var(--soft-blue);color:var(--blue)}.red{background:var(--soft-red);color:var(--red)}
+    table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:10px 0 16px}th{background:#2b2b2b;color:#fff;padding:10px;text-align:left;font-size:13px}td{border-top:1px solid var(--border);padding:10px;vertical-align:top;font-size:13px}
+    .metric-card{background:#fff;border:1px solid var(--border);border-top:4px solid var(--accent);border-radius:9px;padding:14px}.metric-card strong{color:var(--accent)}
+    .footer{margin-top:18px;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+<div class="shell">
+  <div class="hero">
+    <h1>LLM Reasoning and Long-Term Impact Dashboard</h1>
+    <p>This dashboard shows concise decision rationale, evidence, alternatives, governance, and long-term engineering benefits for the self-healing pipeline POC.</p>
+    <div class="note"><strong>Design boundary:</strong> this shows explainable decision rationale and evidence-backed summaries, not raw hidden chain-of-thought. That is the correct enterprise-safe approach.</div>
+  </div>
+
+  <div class="layout">
+    <aside class="panel">
+      <h2>Scenarios</h2>
+      <div id="scenarioList"></div>
+      <div class="card">
+        <h3>Executive Message</h3>
+        <p id="execMessage"></p>
+      </div>
+    </aside>
+
+    <main>
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px">
+          <div>
+            <h2 id="scenarioTitle">Loading...</h2>
+            <span class="badge purple">Decision Rationale</span>
+            <span class="badge green">Long-Term Impact</span>
+            <span class="badge blue">Governed AI</span>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <h3>LLM Decision Rationale</h3>
+            <ul id="rationaleList"></ul>
+          </div>
+          <div class="card">
+            <h3>Evidence Used</h3>
+            <ul id="evidenceList"></ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Alternatives Considered</h3>
+          <table>
+            <thead><tr><th>Option</th><th>Decision</th><th>Reason</th></tr></thead>
+            <tbody id="alternativesRows"></tbody>
+          </table>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <h3>Long-Term Benefit</h3>
+            <ul id="benefitList"></ul>
+          </div>
+          <div class="card">
+            <h3>Business Impact</h3>
+            <p id="businessImpact"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:18px">
+        <h2>Long-Term Platform Impact</h2>
+        <div class="grid3" id="impactCards"></div>
+        <h2 style="margin-top:18px">Metrics Management Will Care About</h2>
+        <table>
+          <thead><tr><th>Metric</th><th>Baseline Problem</th><th>Platform Effect</th><th>Dashboard Signal</th></tr></thead>
+          <tbody id="metricsRows"></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <div class="footer">v0.4.2 reasoning and impact layer · Use after dashboard/index.html and dashboard/realtime.html</div>
+</div>
+
+<script src="assets/impact_data.js"></script>
+<script>
+  const data = window.IMPACT_DATA || {scenarios:{}};
+  const scenarios = Object.keys(data.scenarios || {});
+  let selected = scenarios[0];
+
+  function renderList(){
+    document.getElementById("scenarioList").innerHTML = scenarios.map(id => `
+      <button class="scenario-btn ${id === selected ? "active" : ""}" onclick="selectScenario('${id}')">
+        <div class="scenario-name">${data.scenarios[id].title}</div>
+        <div class="scenario-meta">${id}</div>
+      </button>
+    `).join("");
+    document.getElementById("execMessage").textContent = data.executive_message || "";
+  }
+
+  function li(items){
+    return (items || []).map(x => `<li>${x}</li>`).join("");
+  }
+
+  function selectScenario(id){
+    selected = id;
+    renderList();
+    renderScenario();
+  }
+
+  function renderScenario(){
+    const s = data.scenarios[selected];
+    document.getElementById("scenarioTitle").textContent = s.title;
+    document.getElementById("rationaleList").innerHTML = li(s.llm_rationale);
+    document.getElementById("evidenceList").innerHTML = li(s.evidence);
+    document.getElementById("benefitList").innerHTML = li(s.long_term_benefit);
+    document.getElementById("businessImpact").textContent = s.business_impact;
+    document.getElementById("alternativesRows").innerHTML = (s.alternatives_considered || []).map(a => `
+      <tr><td>${a.option}</td><td>${a.decision}</td><td>${a.reason}</td></tr>
+    `).join("");
+  }
+
+  function renderImpact(){
+    const all = [...(data.global_impact.short_term || []), ...(data.global_impact.long_term || [])];
+    document.getElementById("impactCards").innerHTML = all.map(x => `
+      <div class="metric-card">
+        <strong>${x.label}</strong>
+        <p>${x.description}</p>
+        <p><span class="badge amber">Value</span> ${x.business_value}</p>
+      </div>
+    `).join("");
+
+    document.getElementById("metricsRows").innerHTML = (data.metrics || []).map(m => `
+      <tr><td><strong>${m.metric}</strong></td><td>${m.baseline_problem}</td><td>${m.platform_effect}</td><td>${m.dashboard_signal}</td></tr>
+    `).join("");
+  }
+
+  renderList();
+  renderScenario();
+  renderImpact();
+</script>
+</body>
+</html>

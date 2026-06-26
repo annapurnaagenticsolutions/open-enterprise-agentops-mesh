@@ -1,0 +1,23 @@
+{
+  "schema_version": "devops.event.v1",
+  "source_tool": "teamcity",
+  "event_type": "pipeline_failed",
+  "normalized_event_type": "pipeline.failed",
+  "trust_level": "synthetic_test",
+  "service_name": "payments-service",
+  "service_criticality": "tier_1",
+  "owner_team": "payments-platform",
+  "repository": "platform/payments-service",
+  "branch": "release/prod-hotfix",
+  "commit_sha": "risk123",
+  "pipeline_id": "tc_pipeline_risky_action",
+  "build_id": "tc_build_risky_action",
+  "environment": "prod",
+  "severity": "high",
+  "metadata": {
+    "scenario": "risky_action",
+    "requested_action": "auto_merge",
+    "triggered_by": "developer",
+    "team": "payments-platform"
+  }
+}

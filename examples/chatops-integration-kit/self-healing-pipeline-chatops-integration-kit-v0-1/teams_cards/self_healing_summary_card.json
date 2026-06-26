@@ -1,0 +1,99 @@
+{
+  "type": "AdaptiveCard",
+  "version": "1.5",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "Self-Healing Pipeline Diagnosis",
+      "weight": "Bolder",
+      "size": "Large"
+    },
+    {
+      "type": "FactSet",
+      "facts": [
+        {
+          "title": "Build",
+          "value": "${build_id}"
+        },
+        {
+          "title": "Failure class",
+          "value": "${failure_class}"
+        },
+        {
+          "title": "Confidence",
+          "value": "${confidence}"
+        },
+        {
+          "title": "Evidence score",
+          "value": "${evidence_score}"
+        },
+        {
+          "title": "Policy",
+          "value": "${policy_decision}"
+        }
+      ]
+    },
+    {
+      "type": "TextBlock",
+      "text": "Root cause",
+      "weight": "Bolder"
+    },
+    {
+      "type": "TextBlock",
+      "text": "${root_cause}",
+      "wrap": true
+    },
+    {
+      "type": "TextBlock",
+      "text": "Recommended action",
+      "weight": "Bolder"
+    },
+    {
+      "type": "TextBlock",
+      "text": "${recommended_action_summary}",
+      "wrap": true
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "View Evidence",
+      "data": {
+        "action": "view_evidence",
+        "workflow_id": "${workflow_id}"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Create Jira Comment",
+      "data": {
+        "action": "create_jira_comment",
+        "workflow_id": "${workflow_id}"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Draft GitLab MR",
+      "data": {
+        "action": "draft_gitlab_mr",
+        "workflow_id": "${workflow_id}"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Draft Docs Update",
+      "data": {
+        "action": "draft_docs_update",
+        "workflow_id": "${workflow_id}"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Reject",
+      "data": {
+        "action": "reject",
+        "workflow_id": "${workflow_id}"
+      }
+    }
+  ]
+}

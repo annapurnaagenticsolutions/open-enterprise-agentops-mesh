@@ -1,0 +1,33 @@
+{
+  "version": "2.4.0",
+  "profile_id": "docker-compose-local",
+  "services": [
+    {
+      "service": "agentops-api",
+      "image_source": "local Dockerfile",
+      "port": "8080:8080",
+      "command": "uvicorn agentops_mesh_api.main:app --host 0.0.0.0 --port 8080",
+      "live_execution": "disabled"
+    },
+    {
+      "service": "agentops-site",
+      "image_source": "nginx:alpine",
+      "port": "8081:80",
+      "content": "./site mounted read-only",
+      "live_execution": "not_applicable_static"
+    }
+  ],
+  "volumes": [
+    "./framework/backend/data:/app/data"
+  ],
+  "health_checks": [
+    "curl http://localhost:8080/health",
+    "open http://localhost:8081/index.html"
+  ],
+  "boundaries": [
+    "No live providers",
+    "No live connectors",
+    "No raw secrets",
+    "Localhost only"
+  ]
+}

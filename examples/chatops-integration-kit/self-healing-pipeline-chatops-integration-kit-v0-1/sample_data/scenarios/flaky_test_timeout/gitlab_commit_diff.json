@@ -1,0 +1,11 @@
+{
+  "repo": "platform/checkout-service",
+  "commit_sha": "demo-flaky-002",
+  "files_changed": [
+    {
+      "path": "src/cart/repricing.ts",
+      "change": "minor refactor"
+    }
+  ],
+  "summary": "No deterministic dependency or config change detected."
+}

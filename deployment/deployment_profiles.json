@@ -1,0 +1,181 @@
+{
+  "version": "2.4.0",
+  "live_execution_status": "disabled_reference_profiles_only",
+  "profiles": [
+    {
+      "profile_id": "local-dev",
+      "name": "Local Developer Profile",
+      "target_audience": "individual_contributor",
+      "deployment_mode": "local_python",
+      "purpose": "Run the control-plane API and static site locally without Docker or external services.",
+      "runtime_components": [
+        "FastAPI backend",
+        "static HTML site",
+        "local JSON persistence"
+      ],
+      "required_tools": [
+        "Python 3.10+",
+        "pip",
+        "pytest"
+      ],
+      "optional_tools": [
+        "VS Code",
+        "PowerShell or Bash"
+      ],
+      "storage_mode": "local_json",
+      "network_exposure": "localhost_only",
+      "secret_handling": "no_raw_secrets_reference_only",
+      "live_connectors_enabled": false,
+      "live_providers_enabled": false,
+      "recommended_for": [
+        "framework review",
+        "documentation demos",
+        "deterministic benchmark runs",
+        "contributor onboarding"
+      ],
+      "not_recommended_for": [
+        "production",
+        "multi-user access",
+        "live enterprise connectors"
+      ],
+      "health_checks": [
+        "/health",
+        "/control-plane/release-status",
+        "/benchmarks/posture"
+      ],
+      "readiness_level": "stable_for_local_review"
+    },
+    {
+      "profile_id": "docker-compose-local",
+      "name": "Local Docker Compose Profile",
+      "target_audience": "developer_platform_team",
+      "deployment_mode": "docker_compose",
+      "purpose": "Run the backend and static documentation through a repeatable containerized local profile.",
+      "runtime_components": [
+        "agentops-api container",
+        "agentops-site container",
+        "mounted local data volume"
+      ],
+      "required_tools": [
+        "Docker",
+        "Docker Compose v2"
+      ],
+      "optional_tools": [
+        "Make",
+        "curl"
+      ],
+      "storage_mode": "local_json_volume",
+      "network_exposure": "localhost_only",
+      "secret_handling": "environment_placeholders_and_secret_references_only",
+      "live_connectors_enabled": false,
+      "live_providers_enabled": false,
+      "recommended_for": [
+        "repeatable demos",
+        "public repo evaluation",
+        "platform team review",
+        "CI smoke experiments"
+      ],
+      "not_recommended_for": [
+        "production traffic",
+        "real secrets",
+        "live connector execution"
+      ],
+      "health_checks": [
+        "http://localhost:8080/health",
+        "http://localhost:8080/control-plane/release-status"
+      ],
+      "readiness_level": "reference_profile_ready"
+    },
+    {
+      "profile_id": "public-github-pages-demo",
+      "name": "Public GitHub Pages Demo Profile",
+      "target_audience": "industry_audience",
+      "deployment_mode": "static_site_only",
+      "purpose": "Publish the static site and consoles without backend execution for industry presence and portfolio visibility.",
+      "runtime_components": [
+        "GitHub Pages",
+        "static HTML",
+        "sample JSON data"
+      ],
+      "required_tools": [
+        "GitHub repository",
+        "GitHub Pages"
+      ],
+      "optional_tools": [
+        "custom domain"
+      ],
+      "storage_mode": "static_sample_data_only",
+      "network_exposure": "public_static_content",
+      "secret_handling": "not_applicable_no_runtime_secrets",
+      "live_connectors_enabled": false,
+      "live_providers_enabled": false,
+      "recommended_for": [
+        "industry presence",
+        "LinkedIn sharing",
+        "architecture walkthrough",
+        "executive demo"
+      ],
+      "not_recommended_for": [
+        "interactive API tests",
+        "private enterprise data",
+        "user-specific runtime flows"
+      ],
+      "health_checks": [
+        "site/index.html",
+        "site/control_plane_console.html",
+        "site/deployment_console.html"
+      ],
+      "readiness_level": "public_demo_ready"
+    },
+    {
+      "profile_id": "enterprise-reference-non-prod",
+      "name": "Enterprise Non-Production Reference Profile",
+      "target_audience": "enterprise_architecture_and_security",
+      "deployment_mode": "reference_architecture_only",
+      "purpose": "Describe the minimum enterprise controls needed before pilots: IAM, tenant storage, audit retention, secrets manager, gateway policy, and network segmentation.",
+      "runtime_components": [
+        "API service",
+        "UI service",
+        "Postgres-compatible storage",
+        "object store for evidence",
+        "OIDC provider",
+        "secrets manager",
+        "audit sink"
+      ],
+      "required_tools": [
+        "container platform",
+        "OIDC/IAM",
+        "secrets manager",
+        "database",
+        "central logging"
+      ],
+      "optional_tools": [
+        "Kubernetes",
+        "API gateway",
+        "SIEM",
+        "policy engine"
+      ],
+      "storage_mode": "external_database_required_for_real_use",
+      "network_exposure": "private_network_only",
+      "secret_handling": "external_vault_required",
+      "live_connectors_enabled": false,
+      "live_providers_enabled": false,
+      "recommended_for": [
+        "enterprise pilot planning",
+        "security review",
+        "architecture board discussion"
+      ],
+      "not_recommended_for": [
+        "copy-paste production deployment",
+        "regulated production workloads without additional hardening"
+      ],
+      "health_checks": [
+        "API liveness",
+        "audit sink reachability",
+        "tenant boundary tests",
+        "secret reference policy tests"
+      ],
+      "readiness_level": "reference_not_runtime_certified"
+    }
+  ]
+}

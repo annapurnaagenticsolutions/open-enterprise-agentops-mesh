@@ -1,0 +1,45 @@
+{
+  "release": "v2.7",
+  "asset_pack": "release_evidence_and_demo_recording_readiness",
+  "decision": "release_evidence_ready",
+  "release_evidence_score": 96,
+  "assets": [
+    {
+      "asset_id": "validation-snapshot",
+      "path": "release_evidence/validation_snapshot.json",
+      "purpose": "Summarize test, smoke, benchmark, and repo-validation evidence."
+    },
+    {
+      "asset_id": "demo-recording-storyboard",
+      "path": "release_evidence/demo_recording_storyboard.json",
+      "purpose": "Guide demo recording sequence and timing."
+    },
+    {
+      "asset_id": "demo-recording-checklist",
+      "path": "release_evidence/demo_recording_checklist.json",
+      "purpose": "Checklist before recording public walkthrough."
+    },
+    {
+      "asset_id": "public-proof-bundle",
+      "path": "release_evidence/public_proof_bundle.json",
+      "purpose": "Collect public proof artifacts for launch."
+    },
+    {
+      "asset_id": "release-evidence-console",
+      "path": "site/release_evidence_console.html",
+      "purpose": "Static evidence review console."
+    }
+  ],
+  "boundaries": {
+    "live_model_provider_calls": false,
+    "live_connector_execution": false,
+    "raw_secret_storage": false,
+    "production_iam": false,
+    "external_api_calls": false
+  },
+  "recommended_next_actions": [
+    "Record a five-to-seven-minute public walkthrough.",
+    "Capture screenshots listed in the public proof bundle.",
+    "Prepare v2.8 public launch candidate and GitHub Pages finalization."
+  ]
+}

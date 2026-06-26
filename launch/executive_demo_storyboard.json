@@ -1,0 +1,50 @@
+{
+  "storyboard_id": "exec-demo-v2-4",
+  "title": "From GenAI Pilot to Governed AgentOps Control Plane",
+  "duration_minutes": 5,
+  "slides_or_scenes": [
+    {
+      "step": 1,
+      "title": "The enterprise problem",
+      "message": "AI agent pilots are easy to start but hard to govern, evaluate, audit, and scale.",
+      "show": "site/index.html"
+    },
+    {
+      "step": 2,
+      "title": "The missing layer",
+      "message": "Enterprises need a control plane between agents, data, tools, models, approvals, and audit.",
+      "show": "site/control_plane_console.html"
+    },
+    {
+      "step": 3,
+      "title": "Governance before execution",
+      "message": "A use case should pass suitability, risk, data, evaluation, approval, and production gates before real action.",
+      "show": "site/governance_workflow.html"
+    },
+    {
+      "step": 4,
+      "title": "Policy and runtime boundaries",
+      "message": "Agent actions are evaluated deterministically before tools, providers, or external channels are used.",
+      "show": "site/policy_workbench.html"
+    },
+    {
+      "step": 5,
+      "title": "Evidence and audit",
+      "message": "Every important decision should be backed by evidence and traceable through an audit event bus.",
+      "show": "site/audit_console.html"
+    },
+    {
+      "step": 6,
+      "title": "Business proof point",
+      "message": "Procurement demonstrates PO, invoice, challan, vendor, governance, and sandbox flow without risky live execution.",
+      "show": "site/procurement_accelerator.html"
+    },
+    {
+      "step": 7,
+      "title": "Open-source invitation",
+      "message": "The project is open, deterministic, local-first, and ready for architecture feedback and contribution.",
+      "show": "site/public_launch_console.html"
+    }
+  ],
+  "demo_outcome": "Audience understands why this is not a chatbot framework, but an AgentOps control plane."
+}

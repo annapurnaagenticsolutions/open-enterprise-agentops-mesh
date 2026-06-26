@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentOps Connector Approval Record",
+  "type": "object",
+  "required": [
+    "approval_id",
+    "tenant_id",
+    "requester_id",
+    "agent_id",
+    "connector_id",
+    "tool_id",
+    "action",
+    "status"
+  ],
+  "properties": {
+    "approval_id": {
+      "type": "string"
+    },
+    "tenant_id": {
+      "type": "string"
+    },
+    "requester_id": {
+      "type": "string"
+    },
+    "requester_role": {
+      "type": "string"
+    },
+    "agent_id": {
+      "type": "string"
+    },
+    "connector_id": {
+      "type": "string"
+    },
+    "tool_id": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "target_environment": {
+      "enum": [
+        "sandbox",
+        "pilot",
+        "production"
+      ]
+    },
+    "risk_level": {
+      "enum": [
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ]
+    },
+    "autonomy_level": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "side_effect_class": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "pending",
+        "approved",
+        "rejected",
+        "changes_requested",
+        "cancelled",
+        "expired"
+      ]
+    },
+    "requested_at": {
+      "type": "string"
+    },
+    "reviewed_at": {
+      "type": "string"
+    },
+    "reviewer_id": {
+      "type": "string"
+    },
+    "reviewer_role": {
+      "type": "string"
+    },
+    "decision_rationale": {
+      "type": "string"
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_request_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_controls": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "payload_summary": {
+      "type": "object"
+    }
+  }
+}

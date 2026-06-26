@@ -1,0 +1,10 @@
+{
+  "build_id": "TC-DEMO-004",
+  "status": "failed",
+  "project": "Billing Platform",
+  "build_configuration": "billing-service-ci",
+  "failed_stage": "download_private_package",
+  "agent": "linux-medium-02",
+  "branch": "main",
+  "commit_sha": "demo-auth-004"
+}
