@@ -12,6 +12,10 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8.0.0", "httpx>=0.26.0"]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agentops_mesh_api*"]
+
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
